@@ -1,0 +1,68 @@
+Daily report: thespec.com for 2018-10-16
+
+Based on *post* views, about 54% of total page views
+===========================================================
+SITE         Totals | Diff. | KPIs
+DETAILS:            | vs MA |
+-----------------------------------------------------------
+Post views    103K    -11.2   1.59 views/vis.
+Visitors       65K    --------------------------------------
+Minutes        97K     -3.9   1.49 minutes/vis.
+===========================================================
+TRAFFIC DETAILS:  % of views  |  VISITORS %:
+----------------------------- |  New 60, Returning 40
+Search + Others      38       |  --------------------------
+Internal             36       |  DEVICES %:
+Direct               11       |  Mobile 45
+Facebook             12       |  Desktop 45
+Twitter               3       |  Tablet 10
+-----------------------------------------------------------
+Note: MA = 3-month moving average
+Due to rounding, numbers may not add up to 100%
+===========================================================
+
+===========================================================
+TOP POSTS: by Total Engaged Minutes
+-----------------------------------------------------------
+1. Bernardo Parole Hearing Set For Wednesday
+By Susan Clairmont in opinion
+
+VISITORS: 2.05 min/visitor, visitors: 3.5K, returning: 42%
+TRAFFIC %: social 37, search&other 10, internal 16
+DEVICES %: mobile 73, desktop 17, tablet 10
+
+-----------------------------------------------------------
+2. Police Conclude Ray Emery’S Cause Of Death Was Drowning. It Could Take Months To Determine Why
+By Scott Radley in news|local
+
+VISITORS: 0.9 min/visitor, visitors: 7.2K, returning: 12%
+TRAFFIC %: social 0, search&other 93, internal 4
+DEVICES %: mobile 70, desktop 23, tablet 7
+
+-----------------------------------------------------------
+3. Paul Bernardo Parole Hearing Set For Wednesday
+By Susan Clairmont in opinion
+
+VISITORS: 1.89 min/visitor, visitors: 3.3K, returning: 61%
+TRAFFIC %: social 42, search&other 4, internal 46
+DEVICES %: mobile 51, desktop 43, tablet 6
+
+-----------------------------------------------------------
+4. ‘My Own Door, My Own Bed, My Own Roof’
+By Susan Clairmont in news|local
+
+VISITORS: 1.33 min/visitor, visitors: 3.4K, returning: 68%
+TRAFFIC %: social 18, search&other 2, internal 74
+DEVICES %: mobile 40, desktop 50, tablet 11
+
+-----------------------------------------------------------
+5. Fall Beauty Brings Chaos To Greensville
+By Teviah Moro in news|local
+
+VISITORS: 0.86 min/visitor, visitors: 2.6K, returning: 72%
+TRAFFIC %: social 9, search&other 1, internal 79
+DEVICES %: mobile 26, desktop 60, tablet 13
+
+-----------------------------------------------------------
+Note: Google search accounts for nearly all 'Search' views.
+Google News and Google APIs account for most 'Other' views.

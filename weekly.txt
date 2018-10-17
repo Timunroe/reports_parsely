@@ -1,0 +1,84 @@
+Weekly report: thespec.com for 2018-10-07
+
+Based on *post* views, about 54% of total page views
+===========================================================
+SITE         Totals | Diff. | KPIs
+DETAILS:            | vs MA |
+-----------------------------------------------------------
+Post views    669K    -25.0   1.97 views/vis.
+Visitors      340K    --------------------------------------
+Minutes       570K    -26.4   1.68 minutes/vis.
+===========================================================
+TRAFFIC DETAILS:  % of views  |  VISITORS %:
+----------------------------- |  New 66, Returning 34
+*Search & Other      33       |  --------------------------
+Internal             37       |  DEVICES %:
+Direct               12       |  Mobile 51
+Facebook             15       |  Desktop 38
+Twitter               3       |  Tablet 11
+-----------------------------------------------------------
+Note: MA = 3-month moving average
+Due to rounding, numbers may not add up to 100%
+* Google search accounts for most 'Search' views.
+* Google News and Google APIs account for most 'Other' views.
+===========================================================
+
+===========================================================
+TOP POSTS: by Total Engaged Minutes
+-----------------------------------------------------------
+1. Daughter’s Last Text: ‘I’m Sorry, We Stole A Car And We’re In A High-Speed Chase’
+By Jeff Outhit in news|local
+
+VISITORS: 1.45 min/visitor, visitors: 12.2K, returning: 58%
+TRAFFIC %: social 46, search & other 0, internal 43
+DEVICES %: mobile 64, desktop 30, tablet 6
+
+-----------------------------------------------------------
+2. Terror In The Stairwell
+By Susan Clairmont in news|local
+
+VISITORS: 3.2 min/visitor, visitors: 5.3K, returning: 72%
+TRAFFIC %: social 22, search & other 4, internal 67
+DEVICES %: mobile 55, desktop 32, tablet 13
+
+-----------------------------------------------------------
+3. ‘This Isn’t The End Of Your Story’
+By Cheryl Clock in news|local
+
+VISITORS: 1.38 min/visitor, visitors: 8.7K, returning: 74%
+TRAFFIC %: social 34, search & other 0, internal 54
+DEVICES %: mobile 52, desktop 34, tablet 13
+
+-----------------------------------------------------------
+4. Mayor Race Information For Hamilton Voters
+By Staff in news|municipal election
+
+VISITORS: 2.97 min/visitor, visitors: 3.7K, returning: 58%
+TRAFFIC %: social 3, search & other 7, internal 82
+DEVICES %: mobile 46, desktop 42, tablet 12
+
+-----------------------------------------------------------
+5. ‘It’s Alarming’: Zero Grade Six Students Meet Provincial Standard At One Hamilton Public School
+By Joanna Frketich in news|local
+
+VISITORS: 1.41 min/visitor, visitors: 6.8K, returning: 66%
+TRAFFIC %: social 43, search & other 14, internal 30
+DEVICES %: mobile 67, desktop 22, tablet 11
+
+-----------------------------------------------------------
+6. Long Lost Plane Found 31 Years After It Vanished, Passenger’s Remains Still Missing
+By Staff in news|canada
+
+VISITORS: 0.6 min/visitor, visitors: 15.6K, returning: 29%
+TRAFFIC %: social 2, search & other 2, internal 36
+DEVICES %: mobile 68, desktop 26, tablet 6
+
+-----------------------------------------------------------
+7. While She Sits In Healing Lodge, There Is Little Sign Terri-Lynne Mcclintic Has Changed Her Ways
+By Rosie Dimanno in opinion
+
+VISITORS: 2.09 min/visitor, visitors: 3.8K, returning: 60%
+TRAFFIC %: social 42, search & other 20, internal 32
+DEVICES %: mobile 57, desktop 33, tablet 10
+
+-----------------------------------------------------------
