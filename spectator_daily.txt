@@ -1,0 +1,63 @@
+Daily report: thespec.com for 2018-10-17
+
+Based on *post* views, about 57% of total page views
+===========================================================
+SITE         Totals | Diff. | KPIs
+DETAILS:            | vs MA |
+-----------------------------------------------------------
+Post views    119K      2.4   1.57 views/vis.
+Visitors       76K    --------------------------------------
+Minutes       112K     11.2   1.48 minutes/vis.
+===========================================================
+TRAFFIC DETAILS:  % of views  |  VISITORS %:
+----------------------------- |  New 57, Returning 43
+Search + Others      33       |  --------------------------
+Internal             35       |  DEVICES %:
+Direct               12       |  Mobile 48
+Facebook             17       |  Desktop 41
+Twitter               3       |  Tablet 11
+-----------------------------------------------------------
+Note: MA = 3-month moving average
+Due to rounding, numbers may not add up to 100%
+===========================================================
+
+===========================================================
+TOP POSTS: by Total Engaged Minutes
+-----------------------------------------------------------
+1. Why Do We Love To Hate Eugenie And Beatrice?
+By Sarah Laing in living|style
+ VISITORS: 1.6 min/visitor, visitors: 8.5K, returning: 36%
+TRAFFIC %: social 0, search&other 64, internal 14
+DEVICES %: mobile 62, desktop 13, tablet 24
+
+-----------------------------------------------------------
+2. Bernardo Denied Parole
+By Susan Clairmont in news|local
+ VISITORS: 1.47 min/visitor, visitors: 7.5K, returning: 58%
+TRAFFIC %: social 56, search&other 5, internal 28
+DEVICES %: mobile 64, desktop 26, tablet 10
+
+-----------------------------------------------------------
+3. Bernardo Parole Hearing Set For Wednesday
+By Susan Clairmont in opinion
+ VISITORS: 1.85 min/visitor, visitors: 3.7K, returning: 44%
+TRAFFIC %: social 25, search&other 16, internal 34
+DEVICES %: mobile 56, desktop 35, tablet 9
+
+-----------------------------------------------------------
+4. Two Hamilton Men Charged In Weapons Call
+By Nicole O'Reilly in news|local
+ VISITORS: 0.62 min/visitor, visitors: 5.1K, returning: 72%
+TRAFFIC %: social 33, search&other 14, internal 46
+DEVICES %: mobile 60, desktop 34, tablet 6
+
+-----------------------------------------------------------
+5. Tory Mpp Formally Complains That Horwath ‘Pushed’ Her In The Legislature
+By Robert Benzie in news|ontario
+ VISITORS: 1.15 min/visitor, visitors: 2.2K, returning: 75%
+TRAFFIC %: social 24, search&other 11, internal 58
+DEVICES %: mobile 39, desktop 46, tablet 15
+
+-----------------------------------------------------------
+Note: Google search accounts for nearly all 'Search' views.
+Google News and Google APIs account for most 'Other' views.

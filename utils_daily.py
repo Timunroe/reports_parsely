@@ -25,14 +25,25 @@ def return_csv(file_path):
 
 
 def sum_csv_values(d, key):
-  # get and sum values from CSV (converted to dict) given a key
-  divisor = len(d)
-  # print("Divisor is: ", divisor)
-  # assume all values are string represenations of integers, though some end in '.0'
-  # values that are string reps of floats we aren't dealing with at moment
-  result = [int(item[key].replace('.0','')) for item in d]
-  theSum = sum(result)
-  return str(theSum)
+    # get and sum values from CSV (converted to dict) given a key
+    divisor = len(d)
+    # print("Divisor is: ", divisor)
+    # assume all values are string represenations of integers, though some end in '.0'
+    # values that are string reps of floats we aren't dealing with at moment
+    result = [int(item[key].replace('.0', '')) for item in d]
+    theSum = sum(result)
+    return str(theSum)
+
+
+def sum_safe(l):
+    #  handles if item is no value in list
+    new_list = []
+    for item in l:
+        if not item:
+            item = '0'
+        item = float(item)
+        new_list.append(item)
+    return sum(new_list)
 
 
 def vs_ma(new, avg, days):

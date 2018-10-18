@@ -1,11 +1,31 @@
 import pyperclip
+import sys
 import utils_weekly
 
+if len(sys.argv) > 1:
+    if str(sys.argv)[1] == "record":
+        site = 'record'
+else:
+    site = 'spectator'
+
 # DYNAMIC VALUES
-weekly_file_path = 'spec/weekly/' + 'Site-Stats-Over-Time-Oct-07-2018-Oct-13-2018-thespec-com.csv'
-ma_file_path = 'spec/3_month_avg/' + 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-thespec-com.csv'
-ma_days = 12
-posts_file_path = 'spec/weekly/' + 'Top-20-posts-by-total-engaged-minutes-Oct-07-2018-Oct-13-2018-thespec-com.csv'
+files = {
+    "spectator": {
+        "weekly": 'Site-Stats-Over-Time-Oct-17-2018-thespec-com.csv',
+        "posts": 'Top-10-posts-by-total-engaged-minutes-Oct-17-2018-thespec-com-post.csv',
+        "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-thespec-com.csv'
+    },
+    "record": {
+        "weekly": 'Site-Stats-Over-Time-Oct-17-2018-therecord-com.csv',
+        "posts": 'Top-10-posts-by-total-engaged-minutes-Oct-17-2018-therecord-com-post.csv',
+        "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-therecord-com.csv'
+    },
+}
+
+weekly_file_path = site + '/weekly/' + files[site]['weekly']
+posts_file_path = site + '/weekly/' + files[site]['posts']
+ma_file_path = site + '/3_month_avg/' + files[site]['ma']
+ma_days = 92/7
 
 # search daily folder, find latest 'stats over time', then look for matching 'top 10 posts'.
 # bob = utils_weekly.newest('spec/daily/')
@@ -52,7 +72,7 @@ s += f"{'Twitter'.ljust(16)} {(utils_weekly.percentage(data['traffic']['tco'], d
 s += f"       |  Tablet {data['devices']['tablet']}" + nl
 s += sngl_line
 s += f"Note: MA = 3-month moving average" + nl
-s += f"Due to rounding, numbers may not add up to 100%\n" 
+s += f"Due to rounding, numbers may not add up to 100%\n"
 s += f"* Google search accounts for most 'Search' views.\n* Google News and Google APIs account for most 'Other' views."
 s += nl + dbl_line
 s += nl + dbl_line
