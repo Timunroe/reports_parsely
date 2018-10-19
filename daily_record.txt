@@ -1,0 +1,68 @@
+Daily web report: Record for 2018-10-18
+
+===========================================================
+TOP POSTS: by Total Engaged Minutes
+-----------------------------------------------------------
+1. A Long, Strange Trip To The Checkout
+By Greg Mercer in news|local
+
+VISITORS: 1.36 min/visitor, visitors: 1.9K, returning: 74%
+TRAFFIC %: social 16, search&other 10, internal 68
+DEVICES %: mobile 31, desktop 61, tablet 8
+
+-----------------------------------------------------------
+2. Cannabis Quietly Comes To Waterloo Region
+By Laura Booth in news|local
+
+VISITORS: 1.0 min/visitor, visitors: 2.1K, returning: 66%
+TRAFFIC %: social 27, search&other 10, internal 57
+DEVICES %: mobile 46, desktop 46, tablet 7
+
+-----------------------------------------------------------
+3. Bernardo Denied Parole
+By Susan Clairmont in news|local
+
+VISITORS: 2.3 min/visitor, visitors: 900, returning: 70%
+TRAFFIC %: social 22, search&other 1, internal 73
+DEVICES %: mobile 32, desktop 55, tablet 13
+
+-----------------------------------------------------------
+4. Waterloo Woman Jailed Two Years For Defrauding Friends
+By Jeff Outhit in news|local
+
+VISITORS: 0.93 min/visitor, visitors: 1.8K, returning: 77%
+TRAFFIC %: social 1, search&other 3, internal 86
+DEVICES %: mobile 26, desktop 65, tablet 9
+
+-----------------------------------------------------------
+5. As Election Looms, The Challenge Is To Find Balance In A Growing Region
+By Brent Davis in news|local
+
+VISITORS: 1.33 min/visitor, visitors: 803, returning: 73%
+TRAFFIC %: social 12, search&other 7, internal 72
+DEVICES %: mobile 24, desktop 66, tablet 9
+
+-----------------------------------------------------------
+
+===========================================================
+SITE         Totals | Diff. | KPIs
+DETAILS:            | vs MA |
+-----------------------------------------------------------
+Post views     43K    -10.8   1.62 views/vis.
+Visitors       27K    --------------------------------------
+Minutes        33K    -16.1   1.25 minutes/vis.
+===========================================================
+TRAFFIC DETAILS:  % of views  |  VISITORS %:
+----------------------------- |  New 54, Returning 46
+Search + Others      31       |  --------------------------
+Internal             44       |  DEVICES %:
+Direct               11       |  Mobile 38
+Facebook             10       |  Desktop 53
+Twitter               2       |  Tablet 9
+-----------------------------------------------------------
+Notes: MA = 3-month moving average
+Due to rounding, numbers may not add up to 100%
+Google search accounts for nearly all 'Search' views.
+Google News and Google APIs account for most 'Other' views.
+Based on *post* views, about 43% of day's page views
+===========================================================

@@ -77,8 +77,12 @@ def humanize_number(value, fraction_point=1):
 
 
 def percentage(part, sum):
-    result = str(round((float(part)/float(sum)) * 100, 0)).replace('.0', '')
-    return result
+    # have to take into account part might be none (actually '')
+    if part is not '':
+        result = str(round((float(part)/float(sum)) * 100, 0)).replace('.0', '')
+        return result
+    else:
+        return '0'
 
 
 def site_stats(new, ma, days):
