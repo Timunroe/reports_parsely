@@ -1,0 +1,68 @@
+Daily web report: Star for 2018-10-19
+
+===========================================================
+TOP POSTS: by Total Engaged Minutes
+-----------------------------------------------------------
+1. Trump Official Called Trudeau ‘That Little Punk Kid Running Canada,’ The U.S. President’S Economic Adviser Says
+By Daniel Dale in World
+
+VISITORS: 0.72 min/visitor, visitors: 266.2K, returning: 39%
+TRAFFIC %: social 5, search&other 30, internal 5
+DEVICES %: mobile 83, desktop 6, tablet 11
+
+-----------------------------------------------------------
+2. ‘He Was Crying, Sweating’: A Boxer’S Daughter Stares Down His Killer
+By Peter Edwards in GTA
+
+VISITORS: 1.75 min/visitor, visitors: 49.2K, returning: 64%
+TRAFFIC %: social 2, search&other 2, internal 17
+DEVICES %: mobile 83, desktop 9, tablet 7
+
+-----------------------------------------------------------
+3. Letters To Shoplifters Threaten Legal Action If Hundreds In Damages Aren’T Paid — Even If The Goods Are Recovered
+By Patty Winsa,Atara Shields,Victoria Shariati,Daniela Sosa-Roque in Insight
+
+VISITORS: 2.85 min/visitor, visitors: 18K, returning: 58%
+TRAFFIC %: social 4, search&other 10, internal 75
+DEVICES %: mobile 44, desktop 46, tablet 10
+
+-----------------------------------------------------------
+4. William Nylander’S Bargaining Power With Leafs On Thin Ice, Rival Executives Say
+By Kevin Mcgran in Leafs
+
+VISITORS: 1.9 min/visitor, visitors: 18.6K, returning: 25%
+TRAFFIC %: social 5, search&other 69, internal 17
+DEVICES %: mobile 72, desktop 19, tablet 9
+
+-----------------------------------------------------------
+5. Here’S The Mayor Of Toronto That I Want
+By Edward Keenan in Star Columnists
+
+VISITORS: 0.85 min/visitor, visitors: 30.3K, returning: 65%
+TRAFFIC %: social 4, search&other 2, internal 11
+DEVICES %: mobile 81, desktop 8, tablet 10
+
+-----------------------------------------------------------
+
+===========================================================
+SITE         Totals | Diff. | KPIs
+DETAILS:            | vs MA |
+-----------------------------------------------------------
+Post views      1M      6.0   1.41 views/vis.
+Visitors      868K    --------------------------------------
+Minutes         1M      0.6   1.26 minutes/vis.
+===========================================================
+TRAFFIC DETAILS:  % of views  |  VISITORS %:
+----------------------------- |  New 35, Returning 37
+Search + Others      31       |  --------------------------
+Internal             24       |  DEVICES %:
+Direct               37       |  Mobile 69
+Facebook              5       |  Desktop 21
+Twitter               2       |  Tablet 10
+-----------------------------------------------------------
+Notes: MA = 3-month moving average
+Due to rounding, numbers may not add up to 100%
+Google search accounts for nearly all 'Search' views.
+Google News and Google APIs account for most 'Other' views.
+Based on *post* views, about 74% of day's page views
+===========================================================

@@ -1,0 +1,68 @@
+Daily web report: Spectator for 2018-10-19
+
+===========================================================
+TOP POSTS: by Total Engaged Minutes
+-----------------------------------------------------------
+1. Man Who Raped, Murdered Teacher Gets Life Term With No Parole For More Than 15 Years
+By Susan Clairmont in opinion
+
+VISITORS: 2.36 min/visitor, visitors: 3.4K, returning: 70%
+TRAFFIC %: social 26, search&other 9, internal 53
+DEVICES %: mobile 52, desktop 39, tablet 9
+
+-----------------------------------------------------------
+2. Why Do We Love To Hate Eugenie And Beatrice?
+By Sarah Laing in living|style
+
+VISITORS: 1.53 min/visitor, visitors: 2.8K, returning: 29%
+TRAFFIC %: social 0, search&other 70, internal 13
+DEVICES %: mobile 66, desktop 12, tablet 23
+
+-----------------------------------------------------------
+3. 88-Year-Old Hamilton Woman Dies After Trying To Get Into A Vehicle
+By Staff in news|local
+
+VISITORS: 0.42 min/visitor, visitors: 6K, returning: 75%
+TRAFFIC %: social 14, search&other 14, internal 66
+DEVICES %: mobile 40, desktop 48, tablet 11
+
+-----------------------------------------------------------
+4. Poll Shows Hamilton Mayoral Race A Dead Heat Over Lrt
+By Matthew Van Dongen in news|municipal election
+
+VISITORS: 0.8 min/visitor, visitors: 3K, returning: 64%
+TRAFFIC %: social 16, search&other 31, internal 42
+DEVICES %: mobile 45, desktop 47, tablet 8
+
+-----------------------------------------------------------
+5. Police Warn Of Attempted Child Abduction
+By Staff in news|local
+
+VISITORS: 0.46 min/visitor, visitors: 5K, returning: 66%
+TRAFFIC %: social 65, search&other 4, internal 24
+DEVICES %: mobile 79, desktop 13, tablet 8
+
+-----------------------------------------------------------
+
+===========================================================
+SITE         Totals | Diff. | KPIs
+DETAILS:            | vs MA |
+-----------------------------------------------------------
+Post views    102K    -12.4   1.7 views/vis.
+Visitors       60K    --------------------------------------
+Minutes        84K    -16.8   1.41 minutes/vis.
+===========================================================
+TRAFFIC DETAILS:  % of views  |  VISITORS %:
+----------------------------- |  New 51, Returning 49
+Search + Others      32       |  --------------------------
+Internal             38       |  DEVICES %:
+Direct               11       |  Mobile 48
+Facebook             16       |  Desktop 42
+Twitter               3       |  Tablet 10
+-----------------------------------------------------------
+Notes: MA = 3-month moving average
+Due to rounding, numbers may not add up to 100%
+Google search accounts for nearly all 'Search' views.
+Google News and Google APIs account for most 'Other' views.
+Based on *post* views, about 55% of day's page views
+===========================================================
