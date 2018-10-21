@@ -1,0 +1,68 @@
+Weekly web report: Standard for week starting 2018-10-14
+
+===========================================================
+TOP POSTS: by Total Engaged Minutes
+-----------------------------------------------------------
+1. ‘He Was Always Doing Things For Other People’
+By Bill Sawchuk in news|local
+
+VISITORS: 1.31 min/visitor, visitors: 15.9K, returning: 68%
+TRAFFIC %: social 69, search&other 7, internal 15, direct 8
+DEVICES %: mobile 68, desktop 20, tablet 12
+
+-----------------------------------------------------------
+2. Meet The St. Catharines Region Candidates
+By Staff in news|municipal election
+
+VISITORS: 5.16 min/visitor, visitors: 3.3K, returning: 78%
+TRAFFIC %: social 21, search&other 21, internal 50, direct 8
+DEVICES %: mobile 32, desktop 50, tablet 19
+
+-----------------------------------------------------------
+3. New “Major” Retailer Moving In To Niagara Square
+By Alison Langley in news|local
+
+VISITORS: 0.84 min/visitor, visitors: 13.1K, returning: 72%
+TRAFFIC %: social 50, search&other 14, internal 28, direct 7
+DEVICES %: mobile 65, desktop 19, tablet 16
+
+-----------------------------------------------------------
+4. Niagara Region Recognized As Canada’s Most Secretive Municipal Government
+By Grant Lafleche in news|local
+
+VISITORS: 0.99 min/visitor, visitors: 9K, returning: 68%
+TRAFFIC %: social 39, search&other 20, internal 29, direct 11
+DEVICES %: mobile 60, desktop 27, tablet 13
+
+-----------------------------------------------------------
+5. All The Chair’s Men: Caslin’s Policy Director Instructed Councillors On Budget
+By Grant Lafleche in news|local
+
+VISITORS: 1.82 min/visitor, visitors: 3.8K, returning: 81%
+TRAFFIC %: social 35, search&other 4, internal 55, direct 7
+DEVICES %: mobile 48, desktop 30, tablet 22
+
+-----------------------------------------------------------
+
+===========================================================
+SITE         Totals | Diff. | KPIs
+DETAILS:            | vs MA |
+-----------------------------------------------------------
+Post views    282K     -1.6   2.59 views/vis.
+Visitors      109K    --------------------------------------
+Minutes       262K      9.5   2.4 minutes/vis.
+===========================================================
+TRAFFIC DETAILS:  % of views  |  VISITORS %:
+----------------------------- |  New 52, Returning 48
+Search + Others      19       |  --------------------------
+Internal             44       |  DEVICES %:
+Direct                8       |  Mobile 48
+Facebook             28       |  Desktop 38
+Twitter               2       |  Tablet 14
+-----------------------------------------------------------
+Notes: MA = 3-month moving average
+Due to rounding, numbers may not add up to 100%
+Google search accounts for nearly all 'Search' views.
+Google News and Google APIs account for most 'Other' views.
+Based on *post* views, about 45% of day's page views
+===========================================================

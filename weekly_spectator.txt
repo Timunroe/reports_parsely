@@ -1,0 +1,68 @@
+Weekly web report: Spectator for week starting 2018-10-14
+
+===========================================================
+TOP POSTS: by Total Engaged Minutes
+-----------------------------------------------------------
+1. Why Do We Love To Hate Eugenie And Beatrice?
+By Sarah Laing in living|style
+
+VISITORS: 1.61 min/visitor, visitors: 16.3K, returning: 32%
+TRAFFIC %: social 0, search&other 66, internal 14 direct 20
+DEVICES %: mobile 63, desktop 13, tablet 24
+
+-----------------------------------------------------------
+2. Bernardo Denied Parole
+By Susan Clairmont in news|local
+
+VISITORS: 1.81 min/visitor, visitors: 11.2K, returning: 56%
+TRAFFIC %: social 49, search&other 9, internal 32 direct 10
+DEVICES %: mobile 59, desktop 30, tablet 11
+
+-----------------------------------------------------------
+3. Terror In The Stairwell
+By Susan Clairmont in news|local
+
+VISITORS: 3.22 min/visitor, visitors: 5.4K, returning: 69%
+TRAFFIC %: social 27, search&other 10, internal 53 direct 10
+DEVICES %: mobile 52, desktop 39, tablet 9
+
+-----------------------------------------------------------
+4. Bernardo Parole Hearing Set For Wednesday
+By Susan Clairmont in opinion
+
+VISITORS: 1.95 min/visitor, visitors: 7.4K, returning: 42%
+TRAFFIC %: social 31, search&other 13, internal 25 direct 30
+DEVICES %: mobile 64, desktop 26, tablet 10
+
+-----------------------------------------------------------
+5. Mayor Race Information For Hamilton Voters
+By Staff in news|municipal election
+
+VISITORS: 3.08 min/visitor, visitors: 4.6K, returning: 49%
+TRAFFIC %: social 2, search&other 15, internal 77 direct 6
+DEVICES %: mobile 39, desktop 43, tablet 18
+
+-----------------------------------------------------------
+
+===========================================================
+SITE         Totals | Diff. | KPIs
+DETAILS:            | vs MA |
+-----------------------------------------------------------
+Post views    715K    -12.3   2.0 views/vis.
+Visitors      357K    --------------------------------------
+Minutes       626K    -11.4   1.75 minutes/vis.
+===========================================================
+TRAFFIC DETAILS:  % of views  |  VISITORS %:
+----------------------------- |  New 66, Returning 34
+Search + Others      34       |  --------------------------
+Internal             36       |  DEVICES %:
+Direct               11       |  Mobile 49
+Facebook             16       |  Desktop 40
+Twitter               3       |  Tablet 11
+-----------------------------------------------------------
+Notes: MA = 3-month moving average
+Due to rounding, numbers may not add up to 100%
+Google search accounts for nearly all 'Search' views.
+Google News and Google APIs account for most 'Other' views.
+Based on *post* views, about 56% of day's page views
+===========================================================

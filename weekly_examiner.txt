@@ -1,0 +1,68 @@
+Weekly web report: Examiner for week starting 2018-10-14
+
+===========================================================
+TOP POSTS: by Total Engaged Minutes
+-----------------------------------------------------------
+1. Lineups For Opening Of New Shorelines Casino Peterborough
+By Joelle Kovach in news|local
+
+VISITORS: 1.62 min/visitor, visitors: 7.5K, returning: 67%
+TRAFFIC %: social 4, search&other 44, internal 40, direct 9
+DEVICES %: mobile 50, desktop 32, tablet 19
+
+-----------------------------------------------------------
+2. Ambitious Plan Brewing For Former United Canadian Malt Plant In Peterborough
+By Joelle Kovach in news|local
+
+VISITORS: 1.05 min/visitor, visitors: 4.6K, returning: 78%
+TRAFFIC %: social 24, search&other 18, internal 54, direct 4
+DEVICES %: mobile 45, desktop 37, tablet 18
+
+-----------------------------------------------------------
+3. Neighbours Plan To Gather Outside Shut-Down Peterborough Rooming House
+By Examiner Staff in news|local
+
+VISITORS: 0.93 min/visitor, visitors: 4.6K, returning: 76%
+TRAFFIC %: social 24, search&other 12, internal 58, direct 5
+DEVICES %: mobile 45, desktop 40, tablet 15
+
+-----------------------------------------------------------
+4. Peterborough Remembers Peter Adams: Husband, Father, Grandfather, Teacher, Community Leader
+By Jason Bain in news|local
+
+VISITORS: 1.17 min/visitor, visitors: 3K, returning: 64%
+TRAFFIC %: social 6, search&other 40, internal 41, direct 12
+DEVICES %: mobile 52, desktop 26, tablet 22
+
+-----------------------------------------------------------
+5. Thomas Chan Suffers From A Neurocognitive Disorder, Doctor Testifies
+By Todd Vandonk in news|crime
+
+VISITORS: 1.29 min/visitor, visitors: 2.7K, returning: 83%
+TRAFFIC %: social 21, search&other 3, internal 74, direct 2
+DEVICES %: mobile 37, desktop 42, tablet 21
+
+-----------------------------------------------------------
+
+===========================================================
+SITE         Totals | Diff. | KPIs
+DETAILS:            | vs MA |
+-----------------------------------------------------------
+Post views    188K     -1.4   2.6 views/vis.
+Visitors       72K    --------------------------------------
+Minutes       146K      7.4   2.01 minutes/vis.
+===========================================================
+TRAFFIC DETAILS:  % of views  |  VISITORS %:
+----------------------------- |  New 58, Returning 42
+Search + Others      24       |  --------------------------
+Internal             53       |  DEVICES %:
+Direct                8       |  Mobile 42
+Facebook             11       |  Desktop 43
+Twitter               3       |  Tablet 16
+-----------------------------------------------------------
+Notes: MA = 3-month moving average
+Due to rounding, numbers may not add up to 100%
+Google search accounts for nearly all 'Search' views.
+Google News and Google APIs account for most 'Other' views.
+Based on *post* views, about 45% of day's page views
+===========================================================

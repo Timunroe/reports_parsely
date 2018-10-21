@@ -1,0 +1,68 @@
+Weekly web report: Record for week starting 2018-10-14
+
+===========================================================
+TOP POSTS: by Total Engaged Minutes
+-----------------------------------------------------------
+1. Waterloo Grow-Your-Own Startup Ready To Bloom
+By Terry Pender in news|business
+
+VISITORS: 1.12 min/visitor, visitors: 5.3K, returning: 66%
+TRAFFIC %: social 12, search&other 33, internal 38, direct 17
+DEVICES %: mobile 56, desktop 36, tablet 8
+
+-----------------------------------------------------------
+2. Bernardo Denied Parole
+By Susan Clairmont in news|local
+
+VISITORS: 1.72 min/visitor, visitors: 3.2K, returning: 69%
+TRAFFIC %: social 51, search&other 0, internal 41, direct 7
+DEVICES %: mobile 53, desktop 36, tablet 11
+
+-----------------------------------------------------------
+3. Kitchener Development Includes Grocery Store, 60 Apartments
+By Catherine Thompson in news|local
+
+VISITORS: 0.67 min/visitor, visitors: 8K, returning: 75%
+TRAFFIC %: social 31, search&other 11, internal 48, direct 10
+DEVICES %: mobile 44, desktop 45, tablet 11
+
+-----------------------------------------------------------
+4. 9-Vehicle Crash Sends 4 To Hospital, 2 With Life-Threatening Injuries
+By Staff in news|local
+
+VISITORS: 0.49 min/visitor, visitors: 10.3K, returning: 63%
+TRAFFIC %: social 31, search&other 20, internal 43, direct 5
+DEVICES %: mobile 51, desktop 38, tablet 11
+
+-----------------------------------------------------------
+5. Public Buildings Targeted By Addicts As Sites To Inject Drugs
+By Liz Monteiro in news|local
+
+VISITORS: 1.42 min/visitor, visitors: 3.1K, returning: 71%
+TRAFFIC %: social 25, search&other 4, internal 65, direct 6
+DEVICES %: mobile 39, desktop 51, tablet 11
+
+-----------------------------------------------------------
+
+===========================================================
+SITE         Totals | Diff. | KPIs
+DETAILS:            | vs MA |
+-----------------------------------------------------------
+Post views    291K    -13.4   2.11 views/vis.
+Visitors      138K    --------------------------------------
+Minutes       218K    -20.8   1.58 minutes/vis.
+===========================================================
+TRAFFIC DETAILS:  % of views  |  VISITORS %:
+----------------------------- |  New 63, Returning 37
+Search + Others      30       |  --------------------------
+Internal             42       |  DEVICES %:
+Direct               11       |  Mobile 42
+Facebook             14       |  Desktop 49
+Twitter               3       |  Tablet 10
+-----------------------------------------------------------
+Notes: MA = 3-month moving average
+Due to rounding, numbers may not add up to 100%
+Google search accounts for nearly all 'Search' views.
+Google News and Google APIs account for most 'Other' views.
+Based on *post* views, about 46% of day's page views
+===========================================================

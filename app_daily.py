@@ -19,15 +19,16 @@ else:
 print("Site is: ", site)
 
 # DYNAMIC VALUES
+# produce only daily files for spectator, record for now
 files = {
     "spectator": {
-        "daily": 'Site-Stats-Over-Time-Oct-19-2018-thespec-com.csv',
-        "posts": 'Top-10-posts-by-total-engaged-minutes-Oct-19-2018-thespec-com-post.csv',
+        "daily": 'Site-Stats-Over-Time-Oct-20-2018-thespec-com.csv',
+        "posts": 'Top-10-posts-by-total-engaged-minutes-Oct-20-2018-thespec-com-post.csv',
         "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-thespec-com.csv'
     },
     "record": {
-        "daily": 'Site-Stats-Over-Time-Oct-19-2018-therecord-com.csv',
-        "posts": 'Top-10-posts-by-total-engaged-minutes-Oct-19-2018-therecord-com-post.csv',
+        "daily": 'Site-Stats-Over-Time-Oct-20-2018-therecord-com.csv',
+        "posts": 'Top-10-posts-by-total-engaged-minutes-Oct-20-2018-therecord-com-post.csv',
         "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-therecord-com.csv'
     },
     "standard": {
@@ -74,7 +75,7 @@ s += dbl_line
 s += "TOP POSTS: by Total Engaged Minutes" + nl + sngl_line
 
 for rank, item in enumerate(posts_values[:5], start=1):
-    s += f"{rank}. {item['Title'].title().replace('’T','’t').replace('’S', '’s').replace('’M','’m').replace('’R','’r')}\nBy {item['Authors'].title()} in {item['Section']}" + nl + nl
+    s += f'''{rank}. {item['Title'].title().replace('’T','’t').replace('’S', '’s').replace("'S","'s").replace('’M','’m').replace('’R','’r')}\nBy {item['Authors'].title()} in {item['Section']}''' + nl + nl
     s += f"VISITORS: {str(round(float(item['Sort (Engaged minutes)'])/float(item['Visitors']),2))} min/visitor, "
     s += f"visitors: {utils.humanize_number(item['Visitors'],1)}, returning: {(utils.percentage(item['Returning vis.'], item['Visitors']))}%" + nl
     s += f"TRAFFIC %: social {(utils.percentage(item['Social refs'], item['Views']))}, "

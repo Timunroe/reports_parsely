@@ -1,0 +1,68 @@
+Weekly web report: Star for week starting 2018-10-14
+
+===========================================================
+TOP POSTS: by Total Engaged Minutes
+-----------------------------------------------------------
+1. How A High School Brawl Exposed An Ugly Divide On Manitoulin Island
+By Jennifer Yang in Canada
+
+VISITORS: 2.37 min/visitor, visitors: 130.5K, returning: 60%
+TRAFFIC %: social 6, search&other 4, internal 16 direct 73
+DEVICES %: mobile 79, desktop 9, tablet 11
+
+-----------------------------------------------------------
+2. Trump Official Called Trudeau ‘That Little Punk Kid Running Canada,’ The U.S. President’s Economic Adviser Says
+By Daniel Dale in World
+
+VISITORS: 0.74 min/visitor, visitors: 362.6K, returning: 40%
+TRAFFIC %: social 5, search&other 29, internal 5 direct 61
+DEVICES %: mobile 83, desktop 6, tablet 11
+
+-----------------------------------------------------------
+3. How Much Will Cannabis Cost You? Here’s A Breakdown By Province
+By Jack Hauen in Cannabis
+
+VISITORS: 0.99 min/visitor, visitors: 250.4K, returning: 54%
+TRAFFIC %: social 4, search&other 8, internal 7 direct 81
+DEVICES %: mobile 85, desktop 7, tablet 8
+
+-----------------------------------------------------------
+4. I’m A Woman Who Imitated The Swagger Of An Entitled White Male — And It Got Results
+By Judith Taylor in Opinion
+
+VISITORS: 1.96 min/visitor, visitors: 112.6K, returning: 24%
+TRAFFIC %: social 51, search&other 7, internal 16 direct 27
+DEVICES %: mobile 69, desktop 22, tablet 9
+
+-----------------------------------------------------------
+5. He Had An Idea To Reduce Food Waste. It Helped Feed 2 Million People
+By Susan Semenak in Canada
+
+VISITORS: 1.12 min/visitor, visitors: 154K, returning: 62%
+TRAFFIC %: social 2, search&other 2, internal 6 direct 90
+DEVICES %: mobile 88, desktop 4, tablet 8
+
+-----------------------------------------------------------
+
+===========================================================
+SITE         Totals | Diff. | KPIs
+DETAILS:            | vs MA |
+-----------------------------------------------------------
+Post views      7M     -9.3   1.77 views/vis.
+Visitors        4M    --------------------------------------
+Minutes         7M     -6.2   1.71 minutes/vis.
+===========================================================
+TRAFFIC DETAILS:  % of views  |  VISITORS %:
+----------------------------- |  New 42, Returning 30
+Search + Others      31       |  --------------------------
+Internal             24       |  DEVICES %:
+Direct               37       |  Mobile 66
+Facebook              6       |  Desktop 24
+Twitter               2       |  Tablet 10
+-----------------------------------------------------------
+Notes: MA = 3-month moving average
+Due to rounding, numbers may not add up to 100%
+Google search accounts for nearly all 'Search' views.
+Google News and Google APIs account for most 'Other' views.
+Based on *post* views, about 71% of day's page views
+===========================================================

@@ -1,46 +1,46 @@
-Daily web report: Record for 2018-10-19
+Daily web report: Record for 2018-10-20
 
 ===========================================================
 TOP POSTS: by Total Engaged Minutes
 -----------------------------------------------------------
-1. Another Netflix Series Filming In Cambridge
-By Staff in news|local
+1. Creating A Home Away From Home
+By Josh Brown in sports|rangers
 
-VISITORS: 0.4 min/visitor, visitors: 4.9K, returning: 56%
-TRAFFIC %: social 18, search&other 41, internal 30
-DEVICES %: mobile 64, desktop 27, tablet 9
-
------------------------------------------------------------
-2. Are Free T-Shirts, Cheap Drinks And Free Admission Considered Bribes?
-By Luisa D’Amato in news|local
-
-VISITORS: 1.13 min/visitor, visitors: 1.6K, returning: 72%
-TRAFFIC %: social 21, search&other 9, internal 45
-DEVICES %: mobile 40, desktop 51, tablet 9
+VISITORS: 1.93 min/visitor, visitors: 1K, returning: 68%
+TRAFFIC %: social 28, search&other 3, internal 39
+DEVICES %: mobile 60, desktop 27, tablet 13
 
 -----------------------------------------------------------
-3. Cambridge Dog Owners Tell A Harrowing Tale Of Pet'S Abduction By Bird
+2. Meet The Candidates For The Next Regional Chair
+By Anam Latif in news|local
+
+VISITORS: 2.01 min/visitor, visitors: 925, returning: 76%
+TRAFFIC %: social 17, search&other 1, internal 78
+DEVICES %: mobile 34, desktop 51, tablet 15
+
+-----------------------------------------------------------
+3. Cambridge Dog Owners Tell A Harrowing Tale Of Pet's Abduction By Bird
 By Bill Doucet in community
 
-VISITORS: 1.54 min/visitor, visitors: 835, returning: 79%
-TRAFFIC %: social 24, search&other 1, internal 61
-DEVICES %: mobile 33, desktop 49, tablet 18
+VISITORS: 1.6 min/visitor, visitors: 1.1K, returning: 65%
+TRAFFIC %: social 20, search&other 1, internal 61
+DEVICES %: mobile 33, desktop 44, tablet 23
 
 -----------------------------------------------------------
-4. Man Sentenced To 3 Years In Prison On Child Porn Charges
-By Liz Monteiro in news|local
+4. Candidate Dismisses Concerns Over Immigration Comments
+By Greg Mercer in news|local
 
-VISITORS: 0.9 min/visitor, visitors: 1.3K, returning: 78%
-TRAFFIC %: social 45, search&other 2, internal 49
-DEVICES %: mobile 51, desktop 42, tablet 7
+VISITORS: 0.87 min/visitor, visitors: 906, returning: 62%
+TRAFFIC %: social 69, search&other 3, internal 18
+DEVICES %: mobile 69, desktop 24, tablet 7
 
 -----------------------------------------------------------
-5. Speeding A Major Concern For Residents Of The Townships
-By Laura Booth in news|local
+5. Rangers Roll Over Storm
+By Josh Brown in sports|rangers
 
-VISITORS: 1.07 min/visitor, visitors: 995, returning: 78%
-TRAFFIC %: social 17, search&other 3, internal 72
-DEVICES %: mobile 29, desktop 59, tablet 12
+VISITORS: 1.01 min/visitor, visitors: 630, returning: 75%
+TRAFFIC %: social 19, search&other 16, internal 51
+DEVICES %: mobile 46, desktop 38, tablet 16
 
 -----------------------------------------------------------
 
@@ -48,21 +48,21 @@ DEVICES %: mobile 29, desktop 59, tablet 12
 SITE         Totals | Diff. | KPIs
 DETAILS:            | vs MA |
 -----------------------------------------------------------
-Post views     41K    -14.1   1.59 views/vis.
-Visitors       26K    --------------------------------------
-Minutes        31K    -21.8   1.19 minutes/vis.
+Post views     26K    -46.3   1.46 views/vis.
+Visitors       18K    --------------------------------------
+Minutes        22K    -44.3   1.24 minutes/vis.
 ===========================================================
 TRAFFIC DETAILS:  % of views  |  VISITORS %:
------------------------------ |  New 52, Returning 48
-Search + Others      33       |  --------------------------
-Internal             42       |  DEVICES %:
-Direct               11       |  Mobile 41
-Facebook             11       |  Desktop 50
-Twitter               2       |  Tablet 9
+----------------------------- |  New 57, Returning 43
+Search + Others      38       |  --------------------------
+Internal             34       |  DEVICES %:
+Direct               12       |  Mobile 49
+Facebook             11       |  Desktop 38
+Twitter               4       |  Tablet 13
 -----------------------------------------------------------
 Notes: MA = 3-month moving average
 Due to rounding, numbers may not add up to 100%
 Google search accounts for nearly all 'Search' views.
 Google News and Google APIs account for most 'Other' views.
-Based on *post* views, about 47% of day's page views
+Based on *post* views, about 41% of day's page views
 ===========================================================
