@@ -1,46 +1,46 @@
-Daily web report: Spectator for 2018-10-20
+Daily web report: Spectator for 2018-10-31
 
 ===========================================================
 TOP POSTS: by Total Engaged Minutes
 -----------------------------------------------------------
-1. Woman Dead Following Police Involved Shooting Downtown Hamilton
-By Susan Clairmont in news|local
-
-VISITORS: 0.73 min/visitor, visitors: 14.9K, returning: 61%
-TRAFFIC %: social 33, search&other 32, internal 28
-DEVICES %: mobile 67, desktop 24, tablet 10
-
------------------------------------------------------------
-2. Balloon Knocks Out Power To 25,000 Hamilton Mountain Homes
+1. Lucky Hamiltonians Win Big In Lotteries
 By Staff in news|local
 
-VISITORS: 0.36 min/visitor, visitors: 6.8K, returning: 71%
-TRAFFIC %: social 39, search&other 22, internal 30
-DEVICES %: mobile 67, desktop 21, tablet 12
+VISITORS: 0.51 min/visitor, visitors: 28.2K, returning: 31%
+TRAFFIC %: social 2, search&other 62, internal 16, direct 19
+DEVICES %: mobile 75, desktop 14, tablet 11
 
 -----------------------------------------------------------
-3. Mayor Race Information For Hamilton Voters
-By Staff in news|municipal election
+2. Audrey Plans To Die On Thursday. She Says Ottawa Is Forcing Early Death On Her
+By Staff in news|canada
 
-VISITORS: 3.17 min/visitor, visitors: 733, returning: 51%
-TRAFFIC %: social 2, search&other 14, internal 79
-DEVICES %: mobile 48, desktop 37, tablet 15
-
------------------------------------------------------------
-4. Passengers Scramble As Swoop Cancels Flights From Hamilton To U.S.
-By Ross Marowits in news|canada
-
-VISITORS: 0.59 min/visitor, visitors: 3.9K, returning: 71%
-TRAFFIC %: social 29, search&other 11, internal 56
-DEVICES %: mobile 59, desktop 26, tablet 15
+VISITORS: 1.37 min/visitor, visitors: 5K, returning: 77%
+TRAFFIC %: social 21, search&other 8, internal 69, direct 2
+DEVICES %: mobile 41, desktop 47, tablet 12
 
 -----------------------------------------------------------
-5. Man Sentenced In Violent Home Invasion
-By Nicole O'Reilly in news|local
+3. Parole Board Releases Reasons For Denying Parole To Bernardo
+By Susan Clairmont in opinion
 
-VISITORS: 1.07 min/visitor, visitors: 2K, returning: 79%
-TRAFFIC %: social 48, search&other 0, internal 47
-DEVICES %: mobile 69, desktop 22, tablet 10
+VISITORS: 1.5 min/visitor, visitors: 3.1K, returning: 68%
+TRAFFIC %: social 42, search&other 8, internal 44, direct 5
+DEVICES %: mobile 58, desktop 33, tablet 10
+
+-----------------------------------------------------------
+4. Jada Pinkett Smith, Will Smith On Hitting Rock Bottom: We 'Had To Destroy Our Marriage'
+By Erin Jensen in whatson|celebrity
+
+VISITORS: 1.06 min/visitor, visitors: 3.9K, returning: 64%
+TRAFFIC %: social 18, search&other 19, internal 60, direct 3
+DEVICES %: mobile 49, desktop 42, tablet 8
+
+-----------------------------------------------------------
+5. Update Hwy. 6 Reopened; Two Dead In Hagersville Crash: Opp
+By Staff in news|ontario
+
+VISITORS: 0.6 min/visitor, visitors: 5.2K, returning: 63%
+TRAFFIC %: social 36, search&other 8, internal 44, direct 12
+DEVICES %: mobile 59, desktop 26, tablet 14
 
 -----------------------------------------------------------
 
@@ -48,21 +48,21 @@ DEVICES %: mobile 69, desktop 22, tablet 10
 SITE         Totals | Diff. | KPIs
 DETAILS:            | vs MA |
 -----------------------------------------------------------
-Post views     93K    -19.9   1.62 views/vis.
-Visitors       58K    --------------------------------------
-Minutes        71K    -29.6   1.24 minutes/vis.
+Post views    160K     39.5   1.61 views/vis.
+Visitors       99K    --------------------------------------
+Minutes       117K     19.3   1.18 minutes/vis.
 ===========================================================
 TRAFFIC DETAILS:  % of views  |  VISITORS %:
------------------------------ |  New 49, Returning 51
-Search + Others      33       |  --------------------------
-Internal             32       |  DEVICES %:
-Direct                9       |  Mobile 60
-Facebook             22       |  Desktop 28
-Twitter               4       |  Tablet 12
+----------------------------- |  New 58, Returning 42
+Search + Others      34       |  --------------------------
+Internal             36       |  DEVICES %:
+Direct               10       |  Mobile 56
+Facebook             17       |  Desktop 34
+Twitter               2       |  Tablet 10
 -----------------------------------------------------------
 Notes: MA = 3-month moving average
 Due to rounding, numbers may not add up to 100%
 Google search accounts for nearly all 'Search' views.
 Google News and Google APIs account for most 'Other' views.
-Based on *post* views, about 56% of day's page views
+Based on *post* views, about 64% of day's page views
 ===========================================================

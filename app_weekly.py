@@ -18,28 +18,28 @@ print("Site is: ", site)
 # DYNAMIC VALUES
 files = {
     "spectator": {
-        "weekly": 'Site-Stats-Over-Time-Oct-14-2018-Oct-20-2018-thespec-com.csv',
-        "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-14-2018-Oct-20-2018-thespec-com-post.csv',
-        "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-thespec-com.csv'
+        "weekly": 'Site-Stats-Over-Time-Oct-21-2018-Oct-27-2018-thespec-com.csv',
+        "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-21-2018-Oct-27-2018-thespec-com-post.csv',
+        "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thespec-com.csv'
     },
     "record": {
-        "weekly": 'Site-Stats-Over-Time-Oct-14-2018-Oct-20-2018-therecord-com.csv',
-        "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-14-2018-Oct-20-2018-therecord-com-post.csv',
-        "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-therecord-com.csv'
+        "weekly": 'Site-Stats-Over-Time-Oct-21-2018-Oct-27-2018-therecord-com.csv',
+        "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-21-2018-Oct-27-2018-therecord-com-post.csv',
+        "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-therecord-com.csv'
     },
     "standard": {
-        "weekly": 'Site-Stats-Over-Time-Oct-14-2018-Oct-20-2018-stcatharinesstandard-ca.csv',
-        "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-14-2018-Oct-20-2018-stcatharinesstandard-ca-post.csv',
+        "weekly": 'Site-Stats-Over-Time-Oct-21-2018-Oct-27-2018-stcatharinesstandard-ca.csv',
+        "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-21-2018-Oct-27-2018-stcatharinesstandard-ca-post.csv',
         "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-stcatharinesstandard-ca.csv'
     },
     "examiner": {
-        "weekly": 'Site-Stats-Over-Time-Oct-14-2018-Oct-20-2018-thepeterboroughexaminer-com.csv',
-        "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-14-2018-Oct-20-2018-thepeterboroughexaminer-com-post.csv',
-        "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-thepeterboroughexaminer-com.csv'
+        "weekly": 'Site-Stats-Over-Time-Oct-21-2018-Oct-27-2018-thepeterboroughexaminer-com.csv',
+        "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-21-2018-Oct-27-2018-thepeterboroughexaminer-com-post.csv',
+        "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thepeterboroughexaminer-com.csv'
     },
     "star": {
-        "weekly": 'Site-Stats-Over-Time-Oct-14-2018-Oct-20-2018-thestar-com.csv',
-        "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-14-2018-Oct-20-2018-thestar-com-post.csv',
+        "weekly": 'Site-Stats-Over-Time-Oct-21-2018-Oct-27-2018-thestar-com.csv',
+        "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-21-2018-Oct-27-2018-thestar-com-post.csv',
         "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-thestar-com.csv'
     },
 }
@@ -47,7 +47,7 @@ files = {
 weekly_file_path = 'reports/weekly/' + files[site]['weekly']
 posts_file_path = 'reports/weekly/' + files[site]['posts']
 ma_file_path = 'reports/3_month_avg/' + files[site]['ma']
-ma_days = 92/7
+ma_units = 92/7
 
 # search daily folder, find latest 'stats over time', then look for matching 'top 10 posts'.
 # bob = utils.newest('spec/daily/')
@@ -62,7 +62,7 @@ nl = '\n'
 weekly_values = utils.return_csv(weekly_file_path)
 ma_values = utils.return_csv(ma_file_path)
 posts_values = utils.return_csv(posts_file_path)
-data = utils.site_stats(weekly_values, ma_values, ma_days)
+data = utils.site_stats(weekly_values, ma_values, ma_units)
 
 # posts = utils.post_stats()
 s = ''
@@ -70,7 +70,7 @@ s += f'Weekly web report: {site.title()} for week starting {weekly_values["Date"
 s += dbl_line
 s += "TOP POSTS: by Total Engaged Minutes" + nl + sngl_line
 
-for rank, item in enumerate(posts_values[:5], start=1):
+for rank, item in enumerate(posts_values[:7], start=1):
     s += f'''{rank}. {item['Title'].title().replace('’T','’t').replace('’S', '’s').replace("'S","'s").replace('’M','’m').replace('’R','’r')}\nBy {item['Authors'].title()} in {item['Section']}''' + nl + nl
     s += f"VISITORS: {str(round(float(item['Sort (Engaged minutes)'])/float(item['Visitors']),2))} min/visitor, "
     s += f"visitors: {utils.humanize_number(item['Visitors'],1)}, returning: {(utils.percentage(item['Returning vis.'], item['Visitors']))}%" + nl

@@ -1,46 +1,62 @@
-Weekly web report: Examiner for week starting 2018-10-14
+Weekly web report: Examiner for week starting 2018-10-21
 
 ===========================================================
 TOP POSTS: by Total Engaged Minutes
 -----------------------------------------------------------
-1. Lineups For Opening Of New Shorelines Casino Peterborough
-By Joelle Kovach in news|local
+1. Therrien Unseats Bennett In Peterborough Mayoral Race With 68.98% Landslide
+By Joelle Kovach in news|municipal election
 
-VISITORS: 1.62 min/visitor, visitors: 7.5K, returning: 67%
-TRAFFIC %: social 4, search&other 44, internal 40, direct 9
-DEVICES %: mobile 50, desktop 32, tablet 19
-
------------------------------------------------------------
-2. Ambitious Plan Brewing For Former United Canadian Malt Plant In Peterborough
-By Joelle Kovach in news|local
-
-VISITORS: 1.05 min/visitor, visitors: 4.6K, returning: 78%
-TRAFFIC %: social 24, search&other 18, internal 54, direct 4
-DEVICES %: mobile 45, desktop 37, tablet 18
+VISITORS: 2.14 min/visitor, visitors: 10.3K, returning: 69%
+TRAFFIC %: social 14, search&other 19, internal 60, direct 7
+DEVICES %: mobile 44, desktop 38, tablet 18
 
 -----------------------------------------------------------
-3. Neighbours Plan To Gather Outside Shut-Down Peterborough Rooming House
-By Examiner Staff in news|local
+2. Andy Mitchell Elected Selwyn Mayor, Scott Mcfadden Re-Elected In Cavan Monaghan As County Townships Vote
+By Jason Bain in news|municipal election
 
-VISITORS: 0.93 min/visitor, visitors: 4.6K, returning: 76%
-TRAFFIC %: social 24, search&other 12, internal 58, direct 5
-DEVICES %: mobile 45, desktop 40, tablet 15
-
------------------------------------------------------------
-4. Peterborough Remembers Peter Adams: Husband, Father, Grandfather, Teacher, Community Leader
-By Jason Bain in news|local
-
-VISITORS: 1.17 min/visitor, visitors: 3K, returning: 64%
-TRAFFIC %: social 6, search&other 40, internal 41, direct 12
-DEVICES %: mobile 52, desktop 26, tablet 22
+VISITORS: 1.36 min/visitor, visitors: 7.3K, returning: 60%
+TRAFFIC %: social 9, search&other 51, internal 38, direct 3
+DEVICES %: mobile 51, desktop 30, tablet 19
 
 -----------------------------------------------------------
-5. Thomas Chan Suffers From A Neurocognitive Disorder, Doctor Testifies
+3. Rugby Life Took Its Toll: Hannah Darling Returns To Peterborough Area After Six Years With National Team
+By Mike Davies in sports|local
+
+VISITORS: 1.46 min/visitor, visitors: 6.2K, returning: 36%
+TRAFFIC %: social 69, search&other 4, internal 23, direct 3
+DEVICES %: mobile 75, desktop 18, tablet 8
+
+-----------------------------------------------------------
+4. New-Look Peterborough Council To Be Sworn In Dec. 3
+By Jessica Nyznik in news|local
+
+VISITORS: 1.84 min/visitor, visitors: 4.7K, returning: 76%
+TRAFFIC %: social 3, search&other 15, internal 77, direct 4
+DEVICES %: mobile 36, desktop 42, tablet 22
+
+-----------------------------------------------------------
+5. Emotional Day For Family As Lise Fredette Declared Legally Dead
+By Jessica Nyznik in news|local
+
+VISITORS: 0.81 min/visitor, visitors: 6.4K, returning: 69%
+TRAFFIC %: social 58, search&other 1, internal 39, direct 2
+DEVICES %: mobile 59, desktop 28, tablet 13
+
+-----------------------------------------------------------
+6. Chan Not Criminally Responsible For Killing Of His Father, Doctor Testifies In Peterborough Court
 By Todd Vandonk in news|crime
 
-VISITORS: 1.29 min/visitor, visitors: 2.7K, returning: 83%
-TRAFFIC %: social 21, search&other 3, internal 74, direct 2
-DEVICES %: mobile 37, desktop 42, tablet 21
+VISITORS: 1.25 min/visitor, visitors: 3.6K, returning: 74%
+TRAFFIC %: social 28, search&other 5, internal 59, direct 8
+DEVICES %: mobile 51, desktop 30, tablet 19
+
+-----------------------------------------------------------
+7. New Peterborough City Council Offers More Diversity
+By Joelle Kovach in news|municipal election
+
+VISITORS: 1.45 min/visitor, visitors: 2.9K, returning: 79%
+TRAFFIC %: social 9, search&other 17, internal 72, direct 3
+DEVICES %: mobile 35, desktop 48, tablet 18
 
 -----------------------------------------------------------
 
@@ -48,16 +64,16 @@ DEVICES %: mobile 37, desktop 42, tablet 21
 SITE         Totals | Diff. | KPIs
 DETAILS:            | vs MA |
 -----------------------------------------------------------
-Post views    188K     -1.4   2.6 views/vis.
-Visitors       72K    --------------------------------------
-Minutes       146K      7.4   2.01 minutes/vis.
+Post views    221K     16.1   2.61 views/vis.
+Visitors       85K    --------------------------------------
+Minutes       185K     35.8   2.17 minutes/vis.
 ===========================================================
 TRAFFIC DETAILS:  % of views  |  VISITORS %:
------------------------------ |  New 58, Returning 42
-Search + Others      24       |  --------------------------
-Internal             53       |  DEVICES %:
-Direct                8       |  Mobile 42
-Facebook             11       |  Desktop 43
+----------------------------- |  New 60, Returning 40
+Search + Others      23       |  --------------------------
+Internal             55       |  DEVICES %:
+Direct                6       |  Mobile 44
+Facebook             12       |  Desktop 41
 Twitter               3       |  Tablet 16
 -----------------------------------------------------------
 Notes: MA = 3-month moving average

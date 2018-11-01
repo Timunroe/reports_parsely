@@ -1,46 +1,46 @@
-Daily web report: Record for 2018-10-20
+Daily web report: Record for 2018-10-31
 
 ===========================================================
 TOP POSTS: by Total Engaged Minutes
 -----------------------------------------------------------
-1. Creating A Home Away From Home
-By Josh Brown in sports|rangers
-
-VISITORS: 1.93 min/visitor, visitors: 1K, returning: 68%
-TRAFFIC %: social 28, search&other 3, internal 39
-DEVICES %: mobile 60, desktop 27, tablet 13
-
------------------------------------------------------------
-2. Meet The Candidates For The Next Regional Chair
+1. Real-Life Witches Walk Among Us
 By Anam Latif in news|local
 
-VISITORS: 2.01 min/visitor, visitors: 925, returning: 76%
-TRAFFIC %: social 17, search&other 1, internal 78
-DEVICES %: mobile 34, desktop 51, tablet 15
+VISITORS: 1.05 min/visitor, visitors: 3.1K, returning: 58%
+TRAFFIC %: social 20, search&other 21, internal 52, direct 7
+DEVICES %: mobile 40, desktop 54, tablet 6
 
 -----------------------------------------------------------
-3. Cambridge Dog Owners Tell A Harrowing Tale Of Pet's Abduction By Bird
-By Bill Doucet in community
+2. Allow Demolition Of Kitchener’s Distinctive Sears Store, Heritage Planners Say
+By Catherine Thompson in news|local
 
-VISITORS: 1.6 min/visitor, visitors: 1.1K, returning: 65%
-TRAFFIC %: social 20, search&other 1, internal 61
-DEVICES %: mobile 33, desktop 44, tablet 23
-
------------------------------------------------------------
-4. Candidate Dismisses Concerns Over Immigration Comments
-By Greg Mercer in news|local
-
-VISITORS: 0.87 min/visitor, visitors: 906, returning: 62%
-TRAFFIC %: social 69, search&other 3, internal 18
-DEVICES %: mobile 69, desktop 24, tablet 7
+VISITORS: 0.94 min/visitor, visitors: 3.4K, returning: 74%
+TRAFFIC %: social 21, search&other 10, internal 58, direct 11
+DEVICES %: mobile 33, desktop 57, tablet 10
 
 -----------------------------------------------------------
-5. Rangers Roll Over Storm
-By Josh Brown in sports|rangers
+3. When Is Enough, Enough? Novice Hockey Game Ends In 41-0 Rout
+By Josh Brown in sports
 
-VISITORS: 1.01 min/visitor, visitors: 630, returning: 75%
-TRAFFIC %: social 19, search&other 16, internal 51
-DEVICES %: mobile 46, desktop 38, tablet 16
+VISITORS: 1.1 min/visitor, visitors: 2.1K, returning: 29%
+TRAFFIC %: social 50, search&other 13, internal 18, direct 18
+DEVICES %: mobile 65, desktop 28, tablet 7
+
+-----------------------------------------------------------
+4. Waterloo Regional Police Officer Charged With Sexual Assault
+By Staff in news|local
+
+VISITORS: 0.56 min/visitor, visitors: 2.6K, returning: 79%
+TRAFFIC %: social 26, search&other 3, internal 64, direct 7
+DEVICES %: mobile 41, desktop 46, tablet 13
+
+-----------------------------------------------------------
+5. School Board Faces Heat Over French Immersion Review
+By Jeff Outhit in news|local
+
+VISITORS: 1.07 min/visitor, visitors: 1.4K, returning: 67%
+TRAFFIC %: social 24, search&other 11, internal 55, direct 10
+DEVICES %: mobile 36, desktop 53, tablet 11
 
 -----------------------------------------------------------
 
@@ -48,21 +48,21 @@ DEVICES %: mobile 46, desktop 38, tablet 16
 SITE         Totals | Diff. | KPIs
 DETAILS:            | vs MA |
 -----------------------------------------------------------
-Post views     26K    -46.3   1.46 views/vis.
-Visitors       18K    --------------------------------------
-Minutes        22K    -44.3   1.24 minutes/vis.
+Post views     48K      4.7   1.64 views/vis.
+Visitors       29K    --------------------------------------
+Minutes        37K     -0.7   1.25 minutes/vis.
 ===========================================================
 TRAFFIC DETAILS:  % of views  |  VISITORS %:
------------------------------ |  New 57, Returning 43
-Search + Others      38       |  --------------------------
-Internal             34       |  DEVICES %:
-Direct               12       |  Mobile 49
-Facebook             11       |  Desktop 38
-Twitter               4       |  Tablet 13
+----------------------------- |  New 54, Returning 46
+Search + Others      28       |  --------------------------
+Internal             44       |  DEVICES %:
+Direct               10       |  Mobile 40
+Facebook             14       |  Desktop 51
+Twitter               3       |  Tablet 9
 -----------------------------------------------------------
 Notes: MA = 3-month moving average
 Due to rounding, numbers may not add up to 100%
 Google search accounts for nearly all 'Search' views.
 Google News and Google APIs account for most 'Other' views.
-Based on *post* views, about 41% of day's page views
+Based on *post* views, about 47% of day's page views
 ===========================================================

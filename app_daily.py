@@ -22,14 +22,14 @@ print("Site is: ", site)
 # produce only daily files for spectator, record for now
 files = {
     "spectator": {
-        "daily": 'Site-Stats-Over-Time-Oct-20-2018-thespec-com.csv',
-        "posts": 'Top-10-posts-by-total-engaged-minutes-Oct-20-2018-thespec-com-post.csv',
-        "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-thespec-com.csv'
+        "daily": 'Site-Stats-Over-Time-Oct-31-2018-thespec-com.csv',
+        "posts": 'Top-10-posts-by-total-engaged-minutes-Oct-31-2018-thespec-com-post.csv',
+        "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thespec-com.csv'
     },
     "record": {
-        "daily": 'Site-Stats-Over-Time-Oct-20-2018-therecord-com.csv',
-        "posts": 'Top-10-posts-by-total-engaged-minutes-Oct-20-2018-therecord-com-post.csv',
-        "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-therecord-com.csv'
+        "daily": 'Site-Stats-Over-Time-Oct-31-2018-therecord-com.csv',
+        "posts": 'Top-10-posts-by-total-engaged-minutes-Oct-31-2018-therecord-com-post.csv',
+        "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-therecord-com.csv'
     },
     "standard": {
         "daily": 'Site-Stats-Over-Time-Oct-19-2018-stcatharinesstandard-ca.csv',
@@ -39,7 +39,7 @@ files = {
     "examiner": {
         "daily": 'Site-Stats-Over-Time-Oct-19-2018-thepeterboroughexaminer-com.csv',
         "posts": 'Top-10-posts-by-total-engaged-minutes-Oct-19-2018-thepeterboroughexaminer-com-post.csv',
-        "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-thepeterboroughexaminer-com.csv'
+        "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thepeterboroughexaminer-com.csv'
     },
     "star": {
         "daily": 'Site-Stats-Over-Time-Oct-19-2018-thestar-com.csv',
@@ -51,7 +51,7 @@ files = {
 daily_file_path = 'reports/daily/' + files[site]['daily']
 posts_file_path = 'reports/daily/' + files[site]['posts']
 ma_file_path = 'reports/3_month_avg/' + files[site]['ma']
-ma_days = 92
+ma_units = 92
 
 # search daily folder, find latest 'stats over time', then look for matching 'top 10 posts'.
 # bob = utils.newest('spec/daily/')
@@ -66,7 +66,7 @@ nl = '\n'
 daily_values = utils.return_csv(daily_file_path)
 ma_values = utils.return_csv(ma_file_path)
 posts_values = utils.return_csv(posts_file_path)
-data = utils.site_stats(daily_values, ma_values, ma_days)
+data = utils.site_stats(daily_values, ma_values, ma_units)
 
 # posts = utils.post_stats()
 s = ''
@@ -80,7 +80,7 @@ for rank, item in enumerate(posts_values[:5], start=1):
     s += f"visitors: {utils.humanize_number(item['Visitors'],1)}, returning: {(utils.percentage(item['Returning vis.'], item['Visitors']))}%" + nl
     s += f"TRAFFIC %: social {(utils.percentage(item['Social refs'], item['Views']))}, "
     s += f"search&other {utils.percentage(utils.sum_safe([ item['Search refs'], item['Other refs'] ]), item['Views'])}, "
-    s += f"internal {(utils.percentage(item['Internal refs'], item['Views']))}" + nl
+    s += f"internal {(utils.percentage(item['Internal refs'], item['Views']))}, direct {(utils.percentage(item['Direct refs'], item['Views']))}" + nl
     s += f"DEVICES %: mobile {(utils.percentage(item['Mobile views'], item['Views']))}, desktop {(utils.percentage(item['Desktop views'], item['Views']))}, "
     s += f"tablet {(utils.percentage(item['Tablet views'], item['Views']))}"
     s += nl + nl + sngl_line
