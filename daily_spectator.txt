@@ -1,46 +1,46 @@
-Daily web report: Spectator for 2018-10-31
+Daily web report: Spectator for 2018-11-02
 
 ===========================================================
 TOP POSTS: by Total Engaged Minutes
 -----------------------------------------------------------
-1. Lucky Hamiltonians Win Big In Lotteries
-By Staff in news|local
+1. Vacation Resorts In Jamaica Are Facing A 'Historic' Sexual Assault Problem
+By Tresa Baldas in living|travel
 
-VISITORS: 0.51 min/visitor, visitors: 28.2K, returning: 31%
-TRAFFIC %: social 2, search&other 62, internal 16, direct 19
-DEVICES %: mobile 75, desktop 14, tablet 11
-
------------------------------------------------------------
-2. Audrey Plans To Die On Thursday. She Says Ottawa Is Forcing Early Death On Her
-By Staff in news|canada
-
-VISITORS: 1.37 min/visitor, visitors: 5K, returning: 77%
-TRAFFIC %: social 21, search&other 8, internal 69, direct 2
-DEVICES %: mobile 41, desktop 47, tablet 12
+VISITORS: 3.41 min/visitor, visitors: 16.7K, returning: 50%
+TRAFFIC %: social 47, search&other 22, internal 21, direct 11
+DEVICES %: mobile 73, desktop 19, tablet 8
 
 -----------------------------------------------------------
-3. Parole Board Releases Reasons For Denying Parole To Bernardo
-By Susan Clairmont in opinion
+2. Pete Davidson Proposes To Maggie Rogers On 'snl' Promo, And Ariana Grande Is Not Laughing
+By Cydney Henderson in whatson|celebrity
 
-VISITORS: 1.5 min/visitor, visitors: 3.1K, returning: 68%
-TRAFFIC %: social 42, search&other 8, internal 44, direct 5
-DEVICES %: mobile 58, desktop 33, tablet 10
-
------------------------------------------------------------
-4. Jada Pinkett Smith, Will Smith On Hitting Rock Bottom: We 'Had To Destroy Our Marriage'
-By Erin Jensen in whatson|celebrity
-
-VISITORS: 1.06 min/visitor, visitors: 3.9K, returning: 64%
-TRAFFIC %: social 18, search&other 19, internal 60, direct 3
-DEVICES %: mobile 49, desktop 42, tablet 8
+VISITORS: 0.7 min/visitor, visitors: 6.9K, returning: 38%
+TRAFFIC %: social 5, search&other 70, internal 23, direct 2
+DEVICES %: mobile 38, desktop 57, tablet 5
 
 -----------------------------------------------------------
-5. Update Hwy. 6 Reopened; Two Dead In Hagersville Crash: Opp
+3. First Time Taking A Cruise? Here's What You Need To Know
+By Laura Daily in living|travel
+
+VISITORS: 2.1 min/visitor, visitors: 1.8K, returning: 44%
+TRAFFIC %: social 7, search&other 59, internal 20, direct 14
+DEVICES %: mobile 70, desktop 18, tablet 12
+
+-----------------------------------------------------------
+4. Man Touched Raw Shrimp After Hurricane Florence. It Left Him Fighting For His Life
+By Aaron Moody in news|world
+
+VISITORS: 1.11 min/visitor, visitors: 3.2K, returning: 64%
+TRAFFIC %: social 12, search&other 27, internal 57, direct 4
+DEVICES %: mobile 47, desktop 43, tablet 9
+
+-----------------------------------------------------------
+5. Football’s Don Edwards And Son Killed In Three-Vehicle Hagersville Crash
 By Staff in news|ontario
 
-VISITORS: 0.6 min/visitor, visitors: 5.2K, returning: 63%
-TRAFFIC %: social 36, search&other 8, internal 44, direct 12
-DEVICES %: mobile 59, desktop 26, tablet 14
+VISITORS: 0.88 min/visitor, visitors: 3.7K, returning: 43%
+TRAFFIC %: social 30, search&other 29, internal 26, direct 15
+DEVICES %: mobile 57, desktop 32, tablet 11
 
 -----------------------------------------------------------
 
@@ -48,21 +48,21 @@ DEVICES %: mobile 59, desktop 26, tablet 14
 SITE         Totals | Diff. | KPIs
 DETAILS:            | vs MA |
 -----------------------------------------------------------
-Post views    160K     39.5   1.61 views/vis.
-Visitors       99K    --------------------------------------
-Minutes       117K     19.3   1.18 minutes/vis.
+Post views    142K     24.0   1.54 views/vis.
+Visitors       92K    --------------------------------------
+Minutes       157K     60.3   1.7 minutes/vis.
 ===========================================================
 TRAFFIC DETAILS:  % of views  |  VISITORS %:
 ----------------------------- |  New 58, Returning 42
-Search + Others      34       |  --------------------------
-Internal             36       |  DEVICES %:
-Direct               10       |  Mobile 56
-Facebook             17       |  Desktop 34
-Twitter               2       |  Tablet 10
+Search + Others      33       |  --------------------------
+Internal             34       |  DEVICES %:
+Direct                9       |  Mobile 54
+Facebook             21       |  Desktop 37
+Twitter               2       |  Tablet 9
 -----------------------------------------------------------
 Notes: MA = 3-month moving average
 Due to rounding, numbers may not add up to 100%
 Google search accounts for nearly all 'Search' views.
 Google News and Google APIs account for most 'Other' views.
-Based on *post* views, about 64% of day's page views
+Based on *post* views, about 61% of day's page views
 ===========================================================

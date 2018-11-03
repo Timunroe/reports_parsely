@@ -22,13 +22,13 @@ print("Site is: ", site)
 # produce only daily files for spectator, record for now
 files = {
     "spectator": {
-        "daily": 'Site-Stats-Over-Time-Oct-31-2018-thespec-com.csv',
-        "posts": 'Top-10-posts-by-total-engaged-minutes-Oct-31-2018-thespec-com-post.csv',
+        "daily": 'Site-Stats-Over-Time-Nov-02-2018-thespec-com.csv',
+        "posts": 'Top-10-posts-by-total-engaged-minutes-Nov-02-2018-thespec-com-post.csv',
         "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thespec-com.csv'
     },
     "record": {
-        "daily": 'Site-Stats-Over-Time-Oct-31-2018-therecord-com.csv',
-        "posts": 'Top-10-posts-by-total-engaged-minutes-Oct-31-2018-therecord-com-post.csv',
+        "daily": 'Site-Stats-Over-Time-Nov-02-2018-therecord-com.csv',
+        "posts": 'Top-10-posts-by-total-engaged-minutes-Nov-02-2018-therecord-com-post.csv',
         "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-therecord-com.csv'
     },
     "standard": {
