@@ -1,57 +1,29 @@
 import pyperclip
 import sys
 import utils
+import config
 
-if len(sys.argv) > 1:
-    if (sys.argv)[1] == 'record':
-        site = 'record'
-    elif (sys.argv)[1] == 'standard':
-        site = 'standard'
-    elif (sys.argv)[1] == 'examiner':
-        site = 'examiner'
-    elif (sys.argv)[1] == 'star':
-        site = 'star'
+# print('Number of arguments:', len(sys.argv), 'arguments.')
+# print('Argument List:', str(sys.argv))
+
+if len(sys.argv) > 2 and (sys.argv)[1] in ['daily', 'weekly', 'monthly'] and (sys.argv)[2] in ['spectator', 'record', 'standard', 'examiner', 'tribune', 'review', 'star']:
+    freq = (sys.argv)[1]
+    site = (sys.argv)[2]
 else:
-    site = 'spectator'
-print("Site is: ", site)
+    print("Requires 2 parameters:\n[daily/weekly/monthly]\n[spectator/record/standard/examiner/star]")
+    sys.exit()
+
+# print('Frequency is: ', freq)
+# print("Site is: ", site)
 
 # DYNAMIC VALUES
-files = {
-    "spectator": {
-        "weekly": 'Site-Stats-Over-Time-Oct-21-2018-Oct-27-2018-thespec-com.csv',
-        "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-21-2018-Oct-27-2018-thespec-com-post.csv',
-        "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thespec-com.csv'
-    },
-    "record": {
-        "weekly": 'Site-Stats-Over-Time-Oct-21-2018-Oct-27-2018-therecord-com.csv',
-        "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-21-2018-Oct-27-2018-therecord-com-post.csv',
-        "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-therecord-com.csv'
-    },
-    "standard": {
-        "weekly": 'Site-Stats-Over-Time-Oct-21-2018-Oct-27-2018-stcatharinesstandard-ca.csv',
-        "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-21-2018-Oct-27-2018-stcatharinesstandard-ca-post.csv',
-        "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-stcatharinesstandard-ca.csv'
-    },
-    "examiner": {
-        "weekly": 'Site-Stats-Over-Time-Oct-21-2018-Oct-27-2018-thepeterboroughexaminer-com.csv',
-        "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-21-2018-Oct-27-2018-thepeterboroughexaminer-com-post.csv',
-        "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thepeterboroughexaminer-com.csv'
-    },
-    "star": {
-        "weekly": 'Site-Stats-Over-Time-Oct-21-2018-Oct-27-2018-thestar-com.csv',
-        "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-21-2018-Oct-27-2018-thestar-com-post.csv',
-        "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-thestar-com.csv'
-    },
-}
+# produce only daily files for spectator, record for now
 
-weekly_file_path = 'reports/weekly/' + files[site]['weekly']
-posts_file_path = 'reports/weekly/' + files[site]['posts']
-ma_file_path = 'reports/3_month_avg/' + files[site]['ma']
-ma_units = 92/7
 
-# search daily folder, find latest 'stats over time', then look for matching 'top 10 posts'.
-# bob = utils.newest('spec/daily/')
-# print(bob)
+stats_file_path = f'reports/{freq}/' + config.files[site][freq]['stats']
+posts_file_path = f'reports/{freq}/' + config.files[site][freq]['posts']
+ma_file_path = 'reports/3_month_avg/' + config.files[site][freq]['ma']
+ma_units = config.units[freq]
 
 # STATIC VALUES
 dbl_line = '===========================================================\n'
@@ -59,18 +31,18 @@ sngl_line = '-----------------------------------------------------------\n'
 nl = '\n'
 
 # MAIN
-weekly_values = utils.return_csv(weekly_file_path)
+stats_values = utils.return_csv(stats_file_path)
 ma_values = utils.return_csv(ma_file_path)
 posts_values = utils.return_csv(posts_file_path)
-data = utils.site_stats(weekly_values, ma_values, ma_units)
+data = utils.site_stats(stats_values, ma_values, ma_units)
 
 # posts = utils.post_stats()
 s = ''
-s += f'Weekly web report: {site.title()} for week starting {weekly_values["Date"]}' + nl + nl
+s += f'{freq.title()} web report: {site.title()} for {freq.replace("daily", "").replace("ly", "")} {stats_values["Date"]}' + nl + nl
 s += dbl_line
 s += "TOP POSTS: by Total Engaged Minutes" + nl + sngl_line
 
-for rank, item in enumerate(posts_values[:7], start=1):
+for rank, item in enumerate(posts_values[config.slice_var[freq]], start=1):
     s += f'''{rank}. {item['Title'].title().replace('’T','’t').replace('’S', '’s').replace("'S","'s").replace('’M','’m').replace('’R','’r')}\nBy {item['Authors'].title()} in {item['Section']}''' + nl + nl
     s += f"VISITORS: {str(round(float(item['Sort (Engaged minutes)'])/float(item['Visitors']),2))} min/visitor, "
     s += f"visitors: {utils.humanize_number(item['Visitors'],1)}, returning: {(utils.percentage(item['Returning vis.'], item['Visitors']))}%" + nl
@@ -117,5 +89,5 @@ s += f", about {utils.percentage(data['postv']['new'], data['pagev']['new'])}% o
 pyperclip.copy(s)
 
 # save as text file. Note, this overwrites the file.
-with open(f"weekly_{site}.txt", "w") as f:
+with open(f"{freq}_{site}.txt", "w") as f:
     f.write(s)

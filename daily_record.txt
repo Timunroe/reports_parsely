@@ -1,46 +1,46 @@
-Daily web report: Record for 2018-11-02
+Daily web report: Record for 2018-11-03
 
 ===========================================================
 TOP POSTS: by Total Engaged Minutes
 -----------------------------------------------------------
-1. Police Investigating Death Of Man Found In Donation Clothing Bin
-By Laura Booth in news|local
-
-VISITORS: 0.76 min/visitor, visitors: 4K, returning: 58%
-TRAFFIC %: social 5, search&other 32, internal 57, direct 6
-DEVICES %: mobile 40, desktop 51, tablet 9
-
------------------------------------------------------------
-2. Mennonite Farmer Sent To Jail For Setting Fires On Property, Shooting At House
+1. Mennonite Farmer Sent To Jail For Setting Fires On Property, Shooting At House
 By Gordon Paul in news|local
 
-VISITORS: 1.94 min/visitor, visitors: 1.3K, returning: 75%
-TRAFFIC %: social 40, search&other 3, internal 50, direct 7
-DEVICES %: mobile 53, desktop 32, tablet 16
+VISITORS: 1.88 min/visitor, visitors: 3K, returning: 63%
+TRAFFIC %: social 32, search&other 6, internal 52, direct 9
+DEVICES %: mobile 48, desktop 36, tablet 16
 
 -----------------------------------------------------------
-3. Vacation Resorts In Jamaica Are Facing A 'Historic' Sexual Assault Problem
-By Tresa Baldas in living|travel
+2. Police Investigating Death Of Man Found In Donation Clothing Bin
+By Laura Booth in news|local
 
-VISITORS: 3.94 min/visitor, visitors: 431, returning: 75%
-TRAFFIC %: social 35, search&other 10, internal 45, direct 11
-DEVICES %: mobile 38, desktop 52, tablet 10
+VISITORS: 0.7 min/visitor, visitors: 1.3K, returning: 48%
+TRAFFIC %: social 6, search&other 45, internal 36, direct 12
+DEVICES %: mobile 63, desktop 25, tablet 12
+
+-----------------------------------------------------------
+3. Sexual Assault Centre Overwhelmed In The #Metoo Era
+By Anam Latif in news|local
+
+VISITORS: 1.6 min/visitor, visitors: 468, returning: 51%
+TRAFFIC %: social 32, search&other 8, internal 54, direct 5
+DEVICES %: mobile 55, desktop 31, tablet 14
 
 -----------------------------------------------------------
 4. Beloved Organist Makes Incredible Recovery Following Devastating Stroke
 By Valerie Hill in whatson|artsentertainment
 
-VISITORS: 1.29 min/visitor, visitors: 1K, returning: 69%
-TRAFFIC %: social 24, search&other 3, internal 63, direct 10
-DEVICES %: mobile 26, desktop 61, tablet 13
+VISITORS: 1.38 min/visitor, visitors: 517, returning: 64%
+TRAFFIC %: social 24, search&other 5, internal 66, direct 4
+DEVICES %: mobile 32, desktop 45, tablet 23
 
 -----------------------------------------------------------
-5. My Hard-Learned Lesson About Hamilton’s Vaccination Policies
-By Emma Reilly in opinion
+5. Canada Post Workers In K-W Join Rotating Strikes
+By Staff in news|local
 
-VISITORS: 1.26 min/visitor, visitors: 982, returning: 10%
-TRAFFIC %: social 0, search&other 97, internal 1, direct 1
-DEVICES %: mobile 42, desktop 45, tablet 13
+VISITORS: 0.62 min/visitor, visitors: 1.1K, returning: 31%
+TRAFFIC %: social 7, search&other 66, internal 23, direct 4
+DEVICES %: mobile 58, desktop 31, tablet 11
 
 -----------------------------------------------------------
 
@@ -48,21 +48,21 @@ DEVICES %: mobile 42, desktop 45, tablet 13
 SITE         Totals | Diff. | KPIs
 DETAILS:            | vs MA |
 -----------------------------------------------------------
-Post views     45K     -1.4   1.62 views/vis.
-Visitors       28K    --------------------------------------
-Minutes        36K     -3.0   1.28 minutes/vis.
+Post views     30K    -34.3   1.5 views/vis.
+Visitors       20K    --------------------------------------
+Minutes        25K    -30.9   1.28 minutes/vis.
 ===========================================================
 TRAFFIC DETAILS:  % of views  |  VISITORS %:
------------------------------ |  New 54, Returning 46
-Search + Others      30       |  --------------------------
-Internal             43       |  DEVICES %:
-Direct               10       |  Mobile 41
-Facebook             13       |  Desktop 50
-Twitter               3       |  Tablet 9
+----------------------------- |  New 59, Returning 41
+Search + Others      34       |  --------------------------
+Internal             37       |  DEVICES %:
+Direct               11       |  Mobile 52
+Facebook             16       |  Desktop 35
+Twitter               2       |  Tablet 12
 -----------------------------------------------------------
 Notes: MA = 3-month moving average
 Due to rounding, numbers may not add up to 100%
 Google search accounts for nearly all 'Search' views.
 Google News and Google APIs account for most 'Other' views.
-Based on *post* views, about 48% of day's page views
+Based on *post* views, about 44% of day's page views
 ===========================================================

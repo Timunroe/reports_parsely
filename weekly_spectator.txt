@@ -1,62 +1,62 @@
-Weekly web report: Spectator for week starting 2018-10-21
+Weekly web report: Spectator for week starting 2018-10-28
 
 ===========================================================
 TOP POSTS: by Total Engaged Minutes
 -----------------------------------------------------------
-1. Live Municipal Election Results And Reaction
-By Staff in news|municipal election
+1. Vacation Resorts In Jamaica Are Facing A 'Historic' Sexual Assault Problem
+By Tresa Baldas in living|travel
 
-VISITORS: 1.96 min/visitor, visitors: 34.2K, returning: 48%
-TRAFFIC %: social 7, search&other 59, internal 25, direct 9
-DEVICES %: mobile 60, desktop 28, tablet 13
+VISITORS: 3.37 min/visitor, visitors: 28.4K, returning: 39%
+TRAFFIC %: social 44, search&other 27, internal 16, direct 13
+DEVICES %: mobile 77, desktop 15, tablet 8
 
 -----------------------------------------------------------
-2. Goldendoodle Killed By Coyote Pack On Nature Trail
+2. Police Searching For Caller Who Threatened To Bring Weapon To Bishop Ryan
+By Nicole O'Reilly in news|crime
+
+VISITORS: 0.94 min/visitor, visitors: 59.4K, returning: 52%
+TRAFFIC %: social 52, search&other 17, internal 21, direct 10
+DEVICES %: mobile 69, desktop 26, tablet 5
+
+-----------------------------------------------------------
+3. Football’s Don Edwards And Son Killed In Three-Vehicle Hagersville Crash
+By Staff in news|ontario
+
+VISITORS: 1.01 min/visitor, visitors: 22.6K, returning: 47%
+TRAFFIC %: social 30, search&other 25, internal 31, direct 13
+DEVICES %: mobile 58, desktop 32, tablet 10
+
+-----------------------------------------------------------
+4. Lucky Hamiltonians Win Big In Lotteries
+By Staff in news|local
+
+VISITORS: 0.51 min/visitor, visitors: 44.2K, returning: 29%
+TRAFFIC %: social 2, search&other 63, internal 15, direct 19
+DEVICES %: mobile 77, desktop 12, tablet 11
+
+-----------------------------------------------------------
+5. Coyote Jumps Boy In Second Hamilton-Area Incident In Just Over A Week
+By Staff in news|local
+
+VISITORS: 0.6 min/visitor, visitors: 30K, returning: 62%
+TRAFFIC %: social 66, search&other 6, internal 25, direct 4
+DEVICES %: mobile 65, desktop 26, tablet 9
+
+-----------------------------------------------------------
+6. A Woman Spent Her Final Hours In A Crowded Hamilton Er Hallway
 By Carmela Fragomeni in news|local
 
-VISITORS: 1.04 min/visitor, visitors: 30.6K, returning: 28%
-TRAFFIC %: social 81, search&other 2, internal 12, direct 5
-DEVICES %: mobile 70, desktop 20, tablet 10
+VISITORS: 1.14 min/visitor, visitors: 15K, returning: 68%
+TRAFFIC %: social 64, search&other 6, internal 25, direct 4
+DEVICES %: mobile 73, desktop 16, tablet 11
 
 -----------------------------------------------------------
-3. Mayor Race Information For Hamilton Voters
-By Staff in news|municipal election
+7. Parole Board Releases Reasons For Denying Parole To Bernardo
+By Susan Clairmont in opinion
 
-VISITORS: 3.24 min/visitor, visitors: 7.9K, returning: 47%
-TRAFFIC %: social 2, search&other 15, internal 75, direct 6
-DEVICES %: mobile 51, desktop 40, tablet 9
-
------------------------------------------------------------
-4. Ontario Moves To Hold Minimum Wage At $14 And End Paid Sick Days
-By Kristin Rushowy And Sara Mojtehedzadeh in news|ontario
-
-VISITORS: 1.25 min/visitor, visitors: 19.9K, returning: 35%
-TRAFFIC %: social 41, search&other 37, internal 17, direct 5
-DEVICES %: mobile 71, desktop 22, tablet 7
-
------------------------------------------------------------
-5. Pet Killed By Coyotes On Nature Trail
-By Carmela Fragomeni in news|local
-
-VISITORS: 1.16 min/visitor, visitors: 18.8K, returning: 50%
-TRAFFIC %: social 70, search&other 2, internal 23, direct 5
-DEVICES %: mobile 67, desktop 24, tablet 8
-
------------------------------------------------------------
-6. Arcelormittal Dofasco Hosting Job Fair To Hire Hundreds
-By Mark Mcneil in news|business
-
-VISITORS: 0.88 min/visitor, visitors: 17.6K, returning: 49%
-TRAFFIC %: social 51, search&other 16, internal 21, direct 11
-DEVICES %: mobile 68, desktop 25, tablet 7
-
------------------------------------------------------------
-7. More Than Two Dozen Hamilton Marijuana Dispensaries Voluntarily Shut Down
-By Nicole O'Reilly in news|cannabis and you
-
-VISITORS: 1.02 min/visitor, visitors: 14.3K, returning: 60%
-TRAFFIC %: social 42, search&other 22, internal 26, direct 9
-DEVICES %: mobile 72, desktop 23, tablet 5
+VISITORS: 1.38 min/visitor, visitors: 8.3K, returning: 68%
+TRAFFIC %: social 37, search&other 10, internal 48, direct 6
+DEVICES %: mobile 53, desktop 38, tablet 10
 
 -----------------------------------------------------------
 
@@ -64,21 +64,21 @@ DEVICES %: mobile 72, desktop 23, tablet 5
 SITE         Totals | Diff. | KPIs
 DETAILS:            | vs MA |
 -----------------------------------------------------------
-Post views    930K     14.0   2.04 views/vis.
-Visitors      457K    --------------------------------------
-Minutes       823K     16.4   1.8 minutes/vis.
+Post views    975K     21.3   1.94 views/vis.
+Visitors      502K    --------------------------------------
+Minutes       840K     22.4   1.67 minutes/vis.
 ===========================================================
 TRAFFIC DETAILS:  % of views  |  VISITORS %:
 ----------------------------- |  New 66, Returning 34
-Search + Others      35       |  --------------------------
-Internal             34       |  DEVICES %:
-Direct                9       |  Mobile 53
-Facebook             19       |  Desktop 37
-Twitter               3       |  Tablet 10
+Search + Others      32       |  --------------------------
+Internal             33       |  DEVICES %:
+Direct                9       |  Mobile 57
+Facebook             23       |  Desktop 34
+Twitter               3       |  Tablet 9
 -----------------------------------------------------------
 Notes: MA = 3-month moving average
 Due to rounding, numbers may not add up to 100%
 Google search accounts for nearly all 'Search' views.
 Google News and Google APIs account for most 'Other' views.
-Based on *post* views, about 60% of day's page views
+Based on *post* views, about 62% of day's page views
 ===========================================================
