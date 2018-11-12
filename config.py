@@ -1,7 +1,7 @@
-daily_date = '03'
+daily_date = '10'
 daily_month = 'Nov'
-weekly_start = 'Oct-28'
-weekly_end = 'Nov-03'
+weekly_start = 'Nov-04'
+weekly_end = 'Nov-10'
 
 units = {
     'daily': 92,
@@ -10,9 +10,9 @@ units = {
 }
 
 slice_var = {
-    'daily': slice(0, 5),
-    'weekly': slice(0, 7),
-    'monthly': slice(0, 10)
+    'daily': slice(0, 8),
+    'weekly': slice(0, 10),
+    'monthly': slice(0, 15)
 }
 
 files = {
@@ -60,6 +60,18 @@ files = {
             'stats': 'Site-Stats-Over-Time-Oct-01-2018-Oct-31-2018-stcatharinesstandard-ca.csv',
             "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-01-2018-Oct-31-2018-stcatharinesstandard-ca-post.csv',
             "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-stcatharinesstandard-ca.csv'
+        }
+    },
+    "niagara": {
+        "weekly": {
+            'stats': f'Site-Group-Stats-Over-Time-{weekly_start}-2018-{weekly_end}-2018-None-Niagara-Region-Dailies.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{weekly_start}-2018-{weekly_end}-2018-None-Niagara-Region-Dailies-post.csv',
+            "ma": 'Site-Group-Stats-Over-Time-Aug-01-2018-Oct-31-2018-None-Niagara-Region-Dailies.csv'
+        },
+        "monthly": {
+            'stats': 'Site-Stats-Over-Time-Oct-01-2018-Oct-31-2018-stcatharinesstandard-ca.csv',
+            "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-01-2018-Oct-31-2018-stcatharinesstandard-ca-post.csv',
+            "ma": 'Site-Group-Stats-Over-Time-Aug-01-2018-Oct-31-2018-None-Niagara-Region-Dailies.csv'
         }
     },
     "examiner": {

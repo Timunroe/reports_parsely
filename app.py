@@ -6,7 +6,7 @@ import config
 # print('Number of arguments:', len(sys.argv), 'arguments.')
 # print('Argument List:', str(sys.argv))
 
-if len(sys.argv) > 2 and (sys.argv)[1] in ['daily', 'weekly', 'monthly'] and (sys.argv)[2] in ['spectator', 'record', 'standard', 'examiner', 'tribune', 'review', 'star']:
+if len(sys.argv) > 2 and (sys.argv)[1] in ['daily', 'weekly', 'monthly'] and (sys.argv)[2] in ['spectator', 'record', 'niagara', 'standard', 'examiner', 'tribune', 'review', 'star']:
     freq = (sys.argv)[1]
     site = (sys.argv)[2]
 else:
@@ -82,7 +82,7 @@ s += f"Notes: MA = 3-month moving average" + nl
 s += f"Due to rounding, numbers may not add up to 100%" + nl
 s += f"Google search accounts for nearly all 'Search' views.\nGoogle News and Google APIs account for most 'Other' views." + nl
 s += f"Based on *post* views"
-s += f", about {utils.percentage(data['postv']['new'], data['pagev']['new'])}% of day's page views" + nl + dbl_line
+s += f", about {utils.percentage(data['postv']['new'], data['pagev']['new'])}% of {freq} page views" + nl + dbl_line
 
 # print(s)
 # pprint.pprint(posts_values)
