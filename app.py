@@ -10,7 +10,7 @@ if len(sys.argv) > 2 and (sys.argv)[1] in ['daily', 'weekly', 'monthly'] and (sy
     freq = (sys.argv)[1]
     site = (sys.argv)[2]
 else:
-    print("Requires 2 parameters:\n[daily/weekly/monthly]\n[spectator/record/standard/examiner/star]")
+    print("Requires 2 parameters:\n[daily/weekly/monthly]\n[spectator/record/niagara/examiner/star]")
     sys.exit()
 
 # print('Frequency is: ', freq)

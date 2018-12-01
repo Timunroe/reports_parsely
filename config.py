@@ -1,7 +1,9 @@
-daily_date = '10'
+daily_date = '30'
 daily_month = 'Nov'
-weekly_start = 'Nov-04'
-weekly_end = 'Nov-10'
+weekly_start = 'Nov-18'
+weekly_end = 'Nov-24'
+monthly_start = "Nov-01"
+monthly_end = "Nov-30"
 
 units = {
     'daily': 92,
@@ -28,8 +30,8 @@ files = {
             "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thespec-com.csv'
         },
         "monthly": {
-            'stats': 'Site-Stats-Over-Time-Oct-01-2018-Oct-31-2018-thespec-com.csv',
-            "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-01-2018-Oct-31-2018-thespec-com-post.csv',
+            'stats': f'Site-Stats-Over-Time-{monthly_start}-2018-{monthly_end}-2018-thespec-com.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start}-2018-{monthly_end}-2018-thespec-com-post.csv',
             "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thespec-com.csv'
         }
     },
@@ -45,9 +47,9 @@ files = {
             "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-therecord-com.csv'
         },
         "monthly": {
-            'stats': 'Site-Stats-Over-Time-Oct-01-2018-Oct-31-2018-therecord-com.csv',
-            "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-01-2018-Oct-31-2018-therecord-com-post.csv',
-            "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thespec-com.csv'
+            'stats': f'Site-Stats-Over-Time-{monthly_start}-2018-{monthly_end}-2018-therecord-com.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start}-2018-{monthly_end}-2018-therecord-com-post.csv',
+            "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-therecord-com.csv'
         }
     },
     "standard": {
@@ -69,8 +71,8 @@ files = {
             "ma": 'Site-Group-Stats-Over-Time-Aug-01-2018-Oct-31-2018-None-Niagara-Region-Dailies.csv'
         },
         "monthly": {
-            'stats': 'Site-Stats-Over-Time-Oct-01-2018-Oct-31-2018-stcatharinesstandard-ca.csv',
-            "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-01-2018-Oct-31-2018-stcatharinesstandard-ca-post.csv',
+            'stats': f'Site-Group-Stats-Over-Time-{monthly_start}-2018-{monthly_end}-2018-None-Niagara-Region-Dailies.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start}-2018-{monthly_end}-2018-None-Niagara-Region-Dailies-post.csv',
             "ma": 'Site-Group-Stats-Over-Time-Aug-01-2018-Oct-31-2018-None-Niagara-Region-Dailies.csv'
         }
     },
@@ -81,9 +83,9 @@ files = {
             "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thepeterboroughexaminer-com.csv'
         },
         "monthly": {
-            'stats': 'Site-Stats-Over-Time-Oct-01-2018-Oct-31-2018-thepeterboroughexaminer-com.csv',
-            "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-01-2018-Oct-31-2018-thepeterboroughexaminer-com-post.csv',
-            "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-thepeterboroughexaminer-com.csv'
+            'stats': f'Site-Stats-Over-Time-{monthly_start}-2018-{monthly_end}-2018-thepeterboroughexaminer-com.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start}-2018-{monthly_end}-2018-thepeterboroughexaminer-com-post.csv',
+            "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thepeterboroughexaminer-com.csv'
         }
     },
     "review": {
@@ -95,7 +97,7 @@ files = {
         "monthly": {
             'stats': 'Site-Stats-Over-Time-Oct-01-2018-Oct-31-2018-thepeterboroughexaminer-com.csv',
             "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-01-2018-Oct-31-2018-thepeterboroughexaminer-com-post.csv',
-            "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-thepeterboroughexaminer-com.csv'
+            "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thepeterboroughexaminer-com.csv'
         }
     },
     "tribune": {
@@ -105,21 +107,21 @@ files = {
             "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thepeterboroughexaminer-com.csv'
         },
         "monthly": {
-            'stats': 'Site-Stats-Over-Time-Oct-01-2018-Oct-31-2018-thepeterboroughexaminer-com.csv',
-            "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-01-2018-Oct-31-2018-thepeterboroughexaminer-com-post.csv',
-            "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-thepeterboroughexaminer-com.csv'
+            'stats': f'Site-Stats-Over-Time-{monthly_start}-2018-{monthly_end}-2018-thepeterboroughexaminer-com.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start}-2018-{monthly_end}-2018-thepeterboroughexaminer-com-post.csv',
+            "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thepeterboroughexaminer-com.csv'
         }
     },
     "star": {
         "weekly": {
             'stats': f'Site-Stats-Over-Time-{weekly_start}-2018-{weekly_end}-2018-thestar-com.csv',
             "posts": f'Top-20-posts-by-total-engaged-minutes-{weekly_start}-2018-{weekly_end}-2018-thestar-com-post.csv',
-            "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-thestar-com.csv'
+            "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thestar-com.csv'
         },
         "monthly": {
-            'stats': 'Site-Stats-Over-Time-Oct-01-2018-Oct-31-2018-thestar-com.csv',
-            "posts": 'Top-20-posts-by-total-engaged-minutes-Oct-21-2018-Oct-27-2018-thestar-com-post.csv',
-            "ma": 'Site-Stats-Over-Time-Jul-01-2018-Sep-30-2018-thestar-com.csv'
+            'stats': f'Site-Stats-Over-Time-{monthly_start}-2018-{monthly_end}-2018-thestar-com-Website.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start}-2018-{monthly_end}-2018-thestar-com-Website-post.csv',
+            "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thestar-com-Website.csv'
         }
     },
 }
