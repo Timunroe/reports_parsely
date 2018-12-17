@@ -118,9 +118,8 @@ files = {
     },
     "star": {
         "weekly": {
-            'stats': f'Site-Stats-Over-Time-{weekly_start_stats}-2018-{weekly_end}-2018-thestar-com.csv',
+            'stats': f'Site-Stats-Over-Time-{weekly_start_stats}-2018-{weekly_end}-2018-thestar-com-Website-post.csv',
             "posts": f'Top-20-posts-by-total-engaged-minutes-{weekly_start_top}-2018-{weekly_end}-2018-thestar-com-post.csv',
-            "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-thestar-com.csv'
         },
         "monthly": {
             'stats': f'Site-Stats-Over-Time-{monthly_start}-2018-{monthly_end}-2018-thestar-com-Website.csv',

@@ -43,12 +43,21 @@ DEVICES %: mobile {mo}, desktop {de}, tablet {ta}
 def format_site(data):
     # data is a dict
     text = ''
-    a = (utils_new.humanize_number(data['postv']['new'], 0)).rjust(4)
+    if len(data['postv']['new']) > 6:
+        a = (utils_new.humanize_number(data['postv']['new'], 1)).rjust(4)
+    else:
+        a = (utils_new.humanize_number(data['postv']['new'], 0)).rjust(4)
     b = (data['postv']['delta']).rjust(5)
     c = (data['postv']['kpi_new']).ljust(4)
-    d = (utils_new.humanize_number(data['visitors']['new'], 0)).rjust(4)
+    if len(data['visitors']['new']) > 6:
+        d = (utils_new.humanize_number(data['visitors']['new'], 1)).rjust(4)
+    else:
+        d = (utils_new.humanize_number(data['visitors']['new'], 0)).rjust(4)
     e = (data['visitors']['delta']).rjust(5)
-    f = (utils_new.humanize_number(data['minutes']['new'], 0)).rjust(4)
+    if len(data['minutes']['new']) > 6:
+        f = (utils_new.humanize_number(data['minutes']['new'], 1)).rjust(4)
+    else:
+        f = (utils_new.humanize_number(data['minutes']['new'], 0)).rjust(4)
     g = (data['minutes']['delta']).rjust(5)
     h = (data['minutes']['kpi_new']).ljust(4)
     i = utils_new.percentage(data['postv']['new'], data['pagev']['new'])
@@ -80,9 +89,15 @@ def format_site(data):
         ff = (utils_new.humanize_number(data['pagev']['new'], 0)).rjust(4)
     gg = (data['pagev']['delta']).rjust(5)
     hh = (data['pagev']['kpi_new']).ljust(4)
-    ii = (utils_new.humanize_number(data['visitors']['new_pages'], 0)).rjust(4)
+    if len(data['visitors']['new_pages']) > 6:
+        ii = (utils_new.humanize_number(data['visitors']['new_pages'], 1)).rjust(4)
+    else:
+        ii = (utils_new.humanize_number(data['visitors']['new_pages'], 0)).rjust(4)
     jj = (data['visitors']['total_delta']).rjust(5)
-    kk = (utils_new.humanize_number(data['minutes']['new_pages'], 0)).rjust(4)
+    if len(data['minutes']['new_pages']) > 6:
+        kk = (utils_new.humanize_number(data['minutes']['new_pages'], 1)).rjust(4)
+    else:
+        kk = (utils_new.humanize_number(data['minutes']['new_pages'], 0)).rjust(4)
     ll = (data['minutes']['total_delta']).rjust(5)
     mm = (data['minutes']['kpi_pages']).ljust(4)
     text += f'''
