@@ -43,14 +43,14 @@ DEVICES %: mobile {mo}, desktop {de}, tablet {ta}
 def format_site(data):
     # data is a dict
     text = ''
-    a = utils_new.humanize_number(data['postv']['new'],0)
-    b = data['postv']['delta']
-    c = data['postv']['kpi_new']
-    d = utils_new.humanize_number(data['visitors']['new'],0)
-    e = data['visitors']['delta']
-    f = utils_new.humanize_number(data['minutes']['new'],0)
-    g = data['minutes']['delta']
-    h = data['minutes']['kpi_new']
+    a = (utils_new.humanize_number(data['postv']['new'], 0)).rjust(4)
+    b = (data['postv']['delta']).rjust(5)
+    c = (data['postv']['kpi_new']).ljust(4)
+    d = (utils_new.humanize_number(data['visitors']['new'], 0)).rjust(4)
+    e = (data['visitors']['delta']).rjust(5)
+    f = (utils_new.humanize_number(data['minutes']['new'], 0)).rjust(4)
+    g = (data['minutes']['delta']).rjust(5)
+    h = (data['minutes']['kpi_new']).ljust(4)
     i = utils_new.percentage(data['postv']['new'], data['pagev']['new'])
     j = data['traffic']['fb%'].rjust(2)
     k = data['traffic']['fb_ma%'].rjust(2)
@@ -78,35 +78,35 @@ def format_site(data):
         ff = (utils_new.humanize_number(data['pagev']['new'], 1)).rjust(4)
     else:
         ff = (utils_new.humanize_number(data['pagev']['new'], 0)).rjust(4)
-    gg = (data['pagev']['delta']).rjust(4)
-    hh = data['pagev']['kpi_new']
+    gg = (data['pagev']['delta']).rjust(5)
+    hh = (data['pagev']['kpi_new']).ljust(4)
     ii = (utils_new.humanize_number(data['visitors']['new_pages'], 0)).rjust(4)
-    jj = (data['visitors']['total_delta']).rjust(4)
+    jj = (data['visitors']['total_delta']).rjust(5)
     kk = (utils_new.humanize_number(data['minutes']['new_pages'], 0)).rjust(4)
-    ll = (data['minutes']['total_delta']).rjust(4)
-    mm = data['minutes']['kpi_pages']
+    ll = (data['minutes']['total_delta']).rjust(5)
+    mm = (data['minutes']['kpi_pages']).ljust(4)
     text += f'''
 ===================================================
 SITE DETAILS    Last | vs Last  | KPIs
 [POST PAGES]    Week | 13 Weeks |
 ---------------------------------------------------
-Post views      {a}    {b}      {c} views/vis.
-Post visitors   {d}    {e}      -----------------
-Post minutes    {f}    {g}      {h} minutes/vis.
+Post views      {a}    {b}     {c} views/vis.
+Post visitors   {d}    {e}     -----------------
+Post minutes    {f}    {g}     {h} minutes/vis.
 ---------------------------------------------------
 * Post views were {i}% of period's total page views
 ---------------------------------------------------
-Page views      {ff}    {gg}      {hh} views/vis.
-Page visitors   {ii}    {jj}      -----------------
-Page minutes    {kk}    {ll}      {mm} minutes/vis.
+Page views      {ff}    {gg}     {hh} views/vis.
+Page visitors   {ii}    {jj}     -----------------
+Page minutes    {kk}    {ll}     {mm} minutes/vis.
 ===================================================
 POST       Last  Last 13 |  VISITOR   Last  Last 13
 TRAFFIC:   Week   Weeks  |  PROFILE:  Week   Weeks
 ---------------------------------------------------
 Facebook    {j}     {k}    |  New        {l}     {m}
-Twitter     {n}     {o}    |  Returning  {p}     {q} 
+Twitter     {n}     {o}    |  Returning  {p}     {q}
 Search      {r}     {s}    |  -----------------------
-Other       {t}     {u}    |  DEVICES:  
+Other       {t}     {u}    |  DEVICES:
 Direct      {v}     {w}    |  Mobile     {z}     {aa}
 Internal    {x}     {y}    |  Desktop    {bb}     {cc}
                          |  Tablet     {dd}     {ee}
@@ -114,7 +114,7 @@ Internal    {x}     {y}    |  Desktop    {bb}     {cc}
 Due to rounding, numbers may not add up to 100%
 Google search accounts for nearly all 'Search' views.
 Google News, APIs account for most 'Other' views.
-===================================================    
+===================================================
 '''
     return text
 
