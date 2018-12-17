@@ -34,7 +34,7 @@ print(results)
 
 # print(s)
 # pprint.pprint(posts_values)
-# --- pyperclip.copy(s)
+pyperclip.copy(results)
 
 # save as text file. Note, this overwrites the file.
 # ---with open(f"{freq}_{site}.txt", "w") as f:
