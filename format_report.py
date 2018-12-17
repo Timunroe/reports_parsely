@@ -8,8 +8,8 @@ nl = '\n'
 
 def format_posts(data):
     # data is a list of dicts
-    s = ''
-    s += dbl_line + "TOP POSTS: by Total Engaged Minutes" + sngl_line
+    text = ''
+    text += dbl_line + "TOP POSTS: by Total Engaged Minutes" + sngl_line
     for rank, item in enumerate(data, start=1):
         headline = item['Title'].title().replace('’T', '’t').replace('’S', '’s').replace("'S", "'s").replace('’M', '’m').replace('’R', '’r')
         author = item['Authors'].title()
@@ -29,7 +29,7 @@ def format_posts(data):
         tw = (utils_new.percentage(item['Tw refs'], item['Social refs']))
         inte = utils_new.humanize_number(item['Social interactions'], 1)
 
-        s += f'''{rank}. {headline}
+        text += f'''{rank}. {headline}
 By {author} in {section}
 VISITORS: {mv} min/visitor, visitors: {v}, returning: {r}%
 TRAFFIC %: social {so}, search {se}, other {o}, direct {di}, internal {i}
@@ -37,7 +37,7 @@ SOCIAL BREAKDOWN %: FB {fb}, Twitter {tw} | Interactions: {inte}
 DEVICES %: mobile {mo}, desktop {de}, tablet {ta}
 
 -----------------------------------------------------------\n'''
-    return s
+    return text
 
 
 def format_site(data):
@@ -112,7 +112,7 @@ Internal    {x}     {y}    |  Desktop    {bb}     {cc}
                          |  Tablet     {dd}     {ee}
 ---------------------------------------------------
 Due to rounding, numbers may not add up to 100%
-Google search accounts for nearly all 'Search' views.
+Google accounts for nearly all 'Search' views.
 Google News, APIs account for most 'Other' views.
 ===================================================
 '''
@@ -120,9 +120,9 @@ Google News, APIs account for most 'Other' views.
 
 
 def format_data(data):
-    s = ''
-    s += f'''{data["report"].title()} web report: {data["site"].title()} for {data["report"].replace("daily", "").replace("ly", "")} {data["site_stats"]["date"]}''' + nl + nl
-    s += dbl_line
-    # s += format_posts(data['posts_stats'])
-    s += format_site(data['site_stats'])
-    return s
+    text = ''
+    text += f'''{data["report"].title()} web report: {data["site"].title()} for {data["report"].replace("daily", "").replace("ly", "")} {data["site_stats"]["date"]}''' + nl + nl
+    text += dbl_line
+    text += format_posts(data['posts_stats'])
+    text += format_site(data['site_stats'])
+    return text
