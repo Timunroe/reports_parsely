@@ -15,6 +15,7 @@ def return_csv(file_path):
         else:
             return result
 
+
 file_path = 'spec/3_month_avg/Site-Stats-Over-Time-Jun-01-2018-Aug-31-2018-byMonth-thespec-com.csv'
 
 print(return_csv(file_path))

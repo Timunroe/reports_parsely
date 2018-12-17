@@ -19,7 +19,6 @@ else:
 # DYNAMIC VALUES
 # produce only daily files for spectator, record for now
 
-
 stats_file_path = f'reports/{freq}/' + config.files[site][freq]['stats']
 posts_file_path = f'reports/{freq}/' + config.files[site][freq]['posts']
 ma_file_path = 'reports/3_month_avg/' + config.files[site][freq]['ma']
