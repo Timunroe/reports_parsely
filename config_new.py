@@ -1,4 +1,5 @@
-daily_date = '06'
+daily_date = '21'
+daily_start_stats = "Sep-23"
 daily_month = 'Dec'
 weekly_start_stats = 'Sep-16'
 weekly_start_top = 'Dec-09'
@@ -28,9 +29,8 @@ slice_var = {
 files = {
     "spectator": {
         "daily": {
-            'stats': f'Site-Stats-Over-Time-{daily_month}-{daily_date}-2018-thespec-com.csv',
+            'stats': f'Site-Stats-Over-Time-{daily_start_stats}-2018-{daily_month}-{daily_date}-2018-thespec-com-Website-post.csv',
             "posts": f'Top-10-posts-by-total-engaged-minutes-{daily_month}-{daily_date}-2018-thespec-com-post.csv',
-            "ma": 'Site-Stats-Over-Time-Sep-01-2018-Nov-30-2018-thespec-com.csv'
         },
         "weekly": {
             'stats': f'Site-Stats-Over-Time-{weekly_start_stats}-2018-{weekly_end}-2018-thespec-com-Website-post.csv',

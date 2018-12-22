@@ -1,4 +1,4 @@
-daily_date = '13'
+daily_date = '20'
 daily_month = 'Dec'
 weekly_start = 'Dec-09'
 weekly_end = 'Dec-15'

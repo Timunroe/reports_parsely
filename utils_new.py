@@ -12,6 +12,8 @@ def process_csv(file_path, report_type, site):
     stats = {}
     stats['site_stats'] = site_stats(stats_target, stats_ref, units)
     stats['report'] = report_type
+    stats['unit'] = report_type.replace('ly', '').replace('dai', 'day')
+    stats['ma'] = f"{str(units)} {stats['unit']}s"
     stats['site'] = site
     return stats
 

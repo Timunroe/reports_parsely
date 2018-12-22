@@ -40,7 +40,7 @@ DEVICES %: mobile {mo}, desktop {de}, tablet {ta}
     return text
 
 
-def format_site(data):
+def format_site(data, unit, ma):
     # data is a dict
     text = ''
     if len(data['postv']['new']) > 6:
@@ -100,10 +100,13 @@ def format_site(data):
         kk = (utils_new.humanize_number(data['minutes']['new_pages'], 0)).rjust(4)
     ll = (data['minutes']['total_delta']).rjust(5)
     mm = (data['minutes']['kpi_pages']).ljust(4)
+    oo = unit.ljust(5)
+    pp = ma.ljust(8)
+    qq = ma.replace('weeks', 'wks').replace('months','mos').ljust(7)
     text += f'''
 ===================================================
-SITE DETAILS    Last | vs Last  | KPIs
-[POST PAGES]    Week | 13 Weeks |
+SITE DETAILS    Last  | vs Last  | KPIs
+[POST PAGES]    {oo} | {pp} |
 ---------------------------------------------------
 Post views      {a}    {b}     {c} views/vis.
 Post visitors   {d}    {e}     -----------------
@@ -115,8 +118,8 @@ Page views      {ff}    {gg}     {hh} views/vis.
 Page visitors   {ii}    {jj}     -----------------
 Page minutes    {kk}    {ll}     {mm} minutes/vis.
 ===================================================
-POST       Last  Last 13 |  VISITOR   Last  Last 13
-TRAFFIC:   Week   Weeks  |  PROFILE:  Week   Weeks
+POST       Last  Last    |  VISITOR   Last  Last 
+TRAFFIC:   {oo} {qq} |  PROFILE:  {oo} {qq}
 ---------------------------------------------------
 Facebook    {j}     {k}    |  New        {l}     {m}
 Twitter     {n}     {o}    |  Returning  {p}     {q}
@@ -139,5 +142,5 @@ def format_data(data):
     text += f'''{data["report"].title()} web report: {data["site"].title()} for {data["report"].replace("daily", "").replace("ly", "")} {data["site_stats"]["date"]}''' + nl + nl
     text += dbl_line
     text += format_posts(data['posts_stats'])
-    text += format_site(data['site_stats'])
+    text += format_site(data['site_stats'], data['unit'], data['ma'])
     return text
