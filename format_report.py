@@ -102,7 +102,7 @@ def format_site(data, unit, ma):
     mm = (data['minutes']['kpi_pages']).ljust(4)
     oo = unit.ljust(5)
     pp = ma.ljust(8)
-    qq = ma.replace('weeks', 'wks').replace('months','mos').ljust(7)
+    qq = ma.replace('weeks', 'wks').replace('months', 'mos').ljust(7)
     text += f'''
 ===================================================
 SITE DETAILS    Last  | vs Last  | KPIs
@@ -118,7 +118,7 @@ Page views      {ff}    {gg}     {hh} views/vis.
 Page visitors   {ii}    {jj}     -----------------
 Page minutes    {kk}    {ll}     {mm} minutes/vis.
 ===================================================
-POST       Last  Last    |  VISITOR   Last  Last 
+POST       Last  Last    |  VISITOR   Last  Last
 TRAFFIC:   {oo} {qq} |  PROFILE:  {oo} {qq}
 ---------------------------------------------------
 Facebook    {j}     {k}    |  New        {l}     {m}

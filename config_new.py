@@ -1,9 +1,9 @@
-daily_date = '21'
-daily_start_stats = "Sep-23"
+daily_date = '26'
+daily_start_stats = "Sep-28"
 daily_month = 'Dec'
-weekly_start_stats = 'Sep-16'
-weekly_start_top = 'Dec-09'
-weekly_end = 'Dec-15'
+weekly_start_stats = 'Sep-30'
+weekly_start_top = 'Dec-23'
+weekly_end = 'Dec-29'
 monthly_start = "Nov-01"
 monthly_end = "Nov-30"
 
