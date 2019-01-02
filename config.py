@@ -14,6 +14,12 @@ monthly_end = "Dec-31"
 # target period is always a[0:1]
 # MA is always a[1:]
 
+slice_var = {
+    "daily": slice(0, 8),
+    "weekly": slice(0, 10),
+    "monthly": slice(0, 15),
+}
+
 files = {
     "spectator": {
         "daily": {
@@ -71,7 +77,7 @@ files = {
         },
         "monthly": {
             'stats': f'Site-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2018-thestar-com-Website-post.csv',
-            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start_top}-2018-{monthly_end}-2018-thestar-com-Website-post.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start_top}-2018-{monthly_end}-2018-thestar-com-post.csv',
         }
     },
 }

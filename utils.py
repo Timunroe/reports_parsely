@@ -7,8 +7,9 @@ import re
 
 def process_csv(file_path, report_type, site):
     # get list of dicts representing rows in CSV file
-    stats_ref = return_csv(file_path)
-    stats_target = stats_ref[0]
+    stats_all = return_csv(file_path)
+    stats_ref = stats_all[1:]
+    stats_target = stats_all[0]
     units = len(stats_ref)
     stats = {}
     stats['site_stats'] = site_stats(stats_target, stats_ref, units)
@@ -209,7 +210,7 @@ def humanize_number(value, fraction_point=1):
         # remove pesky situation where xXX.0 occurs
         # return_value = return_value.replace('.0', '')
         return_value = re.sub(r'.0$', '', return_value)
-        return return_value
+        return return_value.replace('.0K','K')
     else:
         return '0'
 

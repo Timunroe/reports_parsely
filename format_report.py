@@ -43,21 +43,22 @@ DEVICES %: mobile {mo}, desktop {de}, tablet {ta}
 def format_site(data, unit, ma):
     # data is a dict
     text = ''
+    print(data['postv']['new'])
     if len(data['postv']['new']) > 6:
-        a = (utils.humanize_number(data['postv']['new'], 1)).rjust(4)
+        a = (utils.humanize_number(data['postv']['new'], 1)).rjust(5)
     else:
-        a = (utils.humanize_number(data['postv']['new'], 0)).rjust(4)
+        a = (utils.humanize_number(data['postv']['new'], 0)).rjust(5)
     b = (data['postv']['delta']).rjust(5)
     c = (data['postv']['kpi_new']).ljust(4)
     if len(data['visitors']['new']) > 6:
-        d = (utils.humanize_number(data['visitors']['new'], 1)).rjust(4)
+        d = (utils.humanize_number(data['visitors']['new'], 1)).rjust(5)
     else:
-        d = (utils.humanize_number(data['visitors']['new'], 0)).rjust(4)
+        d = (utils.humanize_number(data['visitors']['new'], 0)).rjust(5)
     e = (data['visitors']['delta']).rjust(5)
     if len(data['minutes']['new']) > 6:
-        f = (utils.humanize_number(data['minutes']['new'], 1)).rjust(4)
+        f = (utils.humanize_number(data['minutes']['new'], 1)).rjust(5)
     else:
-        f = (utils.humanize_number(data['minutes']['new'], 0)).rjust(4)
+        f = (utils.humanize_number(data['minutes']['new'], 0)).rjust(5)
     g = (data['minutes']['delta']).rjust(5)
     h = (data['minutes']['kpi_new']).ljust(4)
     i = utils.percentage(data['postv']['new'], data['pagev']['new'])
@@ -84,37 +85,37 @@ def format_site(data, unit, ma):
     dd = data['devices']['tablet%'].rjust(2)
     ee = data['devices']['tablet_ma%'].rjust(2)
     if len(data['pagev']['new']) > 6:
-        ff = (utils.humanize_number(data['pagev']['new'], 1)).rjust(4)
+        ff = (utils.humanize_number(data['pagev']['new'], 1)).rjust(5)
     else:
-        ff = (utils.humanize_number(data['pagev']['new'], 0)).rjust(4)
+        ff = (utils.humanize_number(data['pagev']['new'], 0)).rjust(5)
     gg = (data['pagev']['delta']).rjust(5)
     hh = (data['pagev']['kpi_new']).ljust(4)
     if len(data['visitors']['new_pages']) > 6:
-        ii = (utils.humanize_number(data['visitors']['new_pages'], 1)).rjust(4)
+        ii = (utils.humanize_number(data['visitors']['new_pages'], 1)).rjust(5)
     else:
-        ii = (utils.humanize_number(data['visitors']['new_pages'], 0)).rjust(4)
+        ii = (utils.humanize_number(data['visitors']['new_pages'], 0)).rjust(5)
     jj = (data['visitors']['total_delta']).rjust(5)
     if len(data['minutes']['new_pages']) > 6:
-        kk = (utils.humanize_number(data['minutes']['new_pages'], 1)).rjust(4)
+        kk = (utils.humanize_number(data['minutes']['new_pages'], 1)).rjust(5)
     else:
-        kk = (utils.humanize_number(data['minutes']['new_pages'], 0)).rjust(4)
+        kk = (utils.humanize_number(data['minutes']['new_pages'], 0)).rjust(5)
     ll = (data['minutes']['total_delta']).rjust(5)
     mm = (data['minutes']['kpi_pages']).ljust(4)
     oo = unit.ljust(5)
     text += f'''
 ===================================================
-SITE            Last  |  vs   |  KPIs
+SITE            Last  |  vs   | KPIs
 DETAILS:        {oo} |  MA   |
 ---------------------------------------------------
-Post views      {a}    {b}    {c} views/vis.
-Post visitors   {d}    {e}    -----------------
-Post minutes    {f}    {g}    {h} minutes/vis.
+Post views      {a}   {b}   {c} views/vis.
+Post visitors   {d}   {e}   -----------------
+Post minutes    {f}   {g}   {h} minutes/vis.
 ---------------------------------------------------
 * Post views were {i}% of period's total page views
 ---------------------------------------------------
-Page views      {ff}    {gg}    {hh} views/vis.
-Page visitors   {ii}    {jj}    -----------------
-Page minutes    {kk}    {ll}    {mm} minutes/vis.
+Page views      {ff}   {gg}   {hh} views/vis.
+Page visitors   {ii}   {jj}   -----------------
+Page minutes    {kk}   {ll}   {mm} minutes/vis.
 ===================================================
 POST       Last    M  |  VISITOR   Last    M
 TRAFFIC:   {oo}   A  |  PROFILE:  {oo}   A
