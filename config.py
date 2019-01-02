@@ -14,13 +14,13 @@ monthly_end = "Dec-31"
 # target period is always a[0:1]
 # MA is always a[1:]
 
-# timeanddate.com 
+# timeanddate.com
 # Subtract 91 days from today, to get yesterday and 90 more days in Parsely report - group by day!
 # subtract 14 weeks from last Saturday, to get last week and 13 more weesks
 #  in Parsely report - group by week!
 
 # CREATE PDF
-# enscript -p output.ps input.txt
+# enscript -B -M A5 -p output.ps input.txt
 # ps2pdf output.ps output.pdf
 
 # how many top posts do we want to show in report?

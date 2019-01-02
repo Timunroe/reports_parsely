@@ -1,6 +1,6 @@
 import csv
 import os
-from pprint import pprint
+# from pprint import pprint
 from decimal import Decimal, ROUND_UP
 import re
 
@@ -203,14 +203,14 @@ def humanize_number(value, fraction_point=1):
         for i, p in enumerate(powers):
             if value >= p:
                 return_value = str(round(value / (p / (10.0 ** fraction_point))) /
-                                (10 ** fraction_point)) + human_powers[i]
+                                  (10 ** fraction_point)) + human_powers[i]
                 break
         if is_negative:
             return_value = "-" + return_value
         # remove pesky situation where xXX.0 occurs
         # return_value = return_value.replace('.0', '')
         return_value = re.sub(r'.0$', '', return_value)
-        return return_value.replace('.0K','K')
+        return return_value.replace('.0K', 'K')
     else:
         return '0'
 
