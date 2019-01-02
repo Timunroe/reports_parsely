@@ -1,9 +1,9 @@
 import pyperclip
 import sys
-import utils_new as utl
-import config_new as cfg
+import utils as utl
+import config as cfg
 import format_report as fmt
-from pprint import pprint
+# from pprint import pprint
 
 # print('Number of arguments:', len(sys.argv), 'arguments.')
 # print('Argument List:', str(sys.argv))

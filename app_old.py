@@ -1,7 +1,7 @@
 import pyperclip
 import sys
 import utils
-import config
+import config_old
 
 # print('Number of arguments:', len(sys.argv), 'arguments.')
 # print('Argument List:', str(sys.argv))

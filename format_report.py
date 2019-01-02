@@ -1,4 +1,4 @@
-import utils_new
+import utils as utils
 
 # STATIC VALUES
 dbl_line = '\n===========================================================\n'
@@ -15,19 +15,19 @@ def format_posts(data):
         author = item['Authors'].title()
         section = item['Section']
         mv = str(round(float(item['Sort (Engaged minutes)']) / float(item['Visitors']), 2))
-        v = utils_new.humanize_number(item['Visitors'], 1)
-        r = (utils_new.percentage(item['Returning vis.'], item['Visitors']))
-        so = (utils_new.percentage(item['Social refs'], item['Views']))
-        se = (utils_new.percentage(item['Search refs'], item['Views']))
-        o = (utils_new.percentage(item['Other refs'], item['Views']))
-        i = (utils_new.percentage(item['Internal refs'], item['Views']))
-        di = (utils_new.percentage(item['Direct refs'], item['Views']))
-        mo = (utils_new.percentage(item['Mobile views'], item['Views']))
-        de = (utils_new.percentage(item['Desktop views'], item['Views']))
-        ta = (utils_new.percentage(item['Tablet views'], item['Views']))
-        fb = (utils_new.percentage(item['Fb refs'], item['Social refs']))
-        tw = (utils_new.percentage(item['Tw refs'], item['Social refs']))
-        inte = utils_new.humanize_number(item['Social interactions'], 1)
+        v = utils.humanize_number(item['Visitors'], 1)
+        r = (utils.percentage(item['Returning vis.'], item['Visitors']))
+        so = (utils.percentage(item['Social refs'], item['Views']))
+        se = (utils.percentage(item['Search refs'], item['Views']))
+        o = (utils.percentage(item['Other refs'], item['Views']))
+        i = (utils.percentage(item['Internal refs'], item['Views']))
+        di = (utils.percentage(item['Direct refs'], item['Views']))
+        mo = (utils.percentage(item['Mobile views'], item['Views']))
+        de = (utils.percentage(item['Desktop views'], item['Views']))
+        ta = (utils.percentage(item['Tablet views'], item['Views']))
+        fb = (utils.percentage(item['Fb refs'], item['Social refs']))
+        tw = (utils.percentage(item['Tw refs'], item['Social refs']))
+        inte = utils.humanize_number(item['Social interactions'], 1)
 
         text += f'''{rank}. {headline}
 By {author} in {section}
@@ -44,23 +44,23 @@ def format_site(data, unit, ma):
     # data is a dict
     text = ''
     if len(data['postv']['new']) > 6:
-        a = (utils_new.humanize_number(data['postv']['new'], 1)).rjust(4)
+        a = (utils.humanize_number(data['postv']['new'], 1)).rjust(4)
     else:
-        a = (utils_new.humanize_number(data['postv']['new'], 0)).rjust(4)
+        a = (utils.humanize_number(data['postv']['new'], 0)).rjust(4)
     b = (data['postv']['delta']).rjust(5)
     c = (data['postv']['kpi_new']).ljust(4)
     if len(data['visitors']['new']) > 6:
-        d = (utils_new.humanize_number(data['visitors']['new'], 1)).rjust(4)
+        d = (utils.humanize_number(data['visitors']['new'], 1)).rjust(4)
     else:
-        d = (utils_new.humanize_number(data['visitors']['new'], 0)).rjust(4)
+        d = (utils.humanize_number(data['visitors']['new'], 0)).rjust(4)
     e = (data['visitors']['delta']).rjust(5)
     if len(data['minutes']['new']) > 6:
-        f = (utils_new.humanize_number(data['minutes']['new'], 1)).rjust(4)
+        f = (utils.humanize_number(data['minutes']['new'], 1)).rjust(4)
     else:
-        f = (utils_new.humanize_number(data['minutes']['new'], 0)).rjust(4)
+        f = (utils.humanize_number(data['minutes']['new'], 0)).rjust(4)
     g = (data['minutes']['delta']).rjust(5)
     h = (data['minutes']['kpi_new']).ljust(4)
-    i = utils_new.percentage(data['postv']['new'], data['pagev']['new'])
+    i = utils.percentage(data['postv']['new'], data['pagev']['new'])
     j = data['traffic']['fb%'].rjust(2)
     k = data['traffic']['fb_ma%'].rjust(2)
     l = data['visitor_type']['new'].rjust(2)
@@ -84,51 +84,50 @@ def format_site(data, unit, ma):
     dd = data['devices']['tablet%'].rjust(2)
     ee = data['devices']['tablet_ma%'].rjust(2)
     if len(data['pagev']['new']) > 6:
-        ff = (utils_new.humanize_number(data['pagev']['new'], 1)).rjust(4)
+        ff = (utils.humanize_number(data['pagev']['new'], 1)).rjust(4)
     else:
-        ff = (utils_new.humanize_number(data['pagev']['new'], 0)).rjust(4)
+        ff = (utils.humanize_number(data['pagev']['new'], 0)).rjust(4)
     gg = (data['pagev']['delta']).rjust(5)
     hh = (data['pagev']['kpi_new']).ljust(4)
     if len(data['visitors']['new_pages']) > 6:
-        ii = (utils_new.humanize_number(data['visitors']['new_pages'], 1)).rjust(4)
+        ii = (utils.humanize_number(data['visitors']['new_pages'], 1)).rjust(4)
     else:
-        ii = (utils_new.humanize_number(data['visitors']['new_pages'], 0)).rjust(4)
+        ii = (utils.humanize_number(data['visitors']['new_pages'], 0)).rjust(4)
     jj = (data['visitors']['total_delta']).rjust(5)
     if len(data['minutes']['new_pages']) > 6:
-        kk = (utils_new.humanize_number(data['minutes']['new_pages'], 1)).rjust(4)
+        kk = (utils.humanize_number(data['minutes']['new_pages'], 1)).rjust(4)
     else:
-        kk = (utils_new.humanize_number(data['minutes']['new_pages'], 0)).rjust(4)
+        kk = (utils.humanize_number(data['minutes']['new_pages'], 0)).rjust(4)
     ll = (data['minutes']['total_delta']).rjust(5)
     mm = (data['minutes']['kpi_pages']).ljust(4)
     oo = unit.ljust(5)
-    pp = ma.ljust(8)
-    qq = ma.replace('weeks', 'wks').replace('months', 'mos').ljust(7)
     text += f'''
 ===================================================
-SITE DETAILS    Last  | vs Last  | KPIs
-[POST PAGES]    {oo} | {pp} |
+SITE            Last  |  vs   |  KPIs
+DETAILS:        {oo} |  MA   |
 ---------------------------------------------------
-Post views      {a}    {b}     {c} views/vis.
-Post visitors   {d}    {e}     -----------------
-Post minutes    {f}    {g}     {h} minutes/vis.
+Post views      {a}    {b}    {c} views/vis.
+Post visitors   {d}    {e}    -----------------
+Post minutes    {f}    {g}    {h} minutes/vis.
 ---------------------------------------------------
 * Post views were {i}% of period's total page views
 ---------------------------------------------------
-Page views      {ff}    {gg}     {hh} views/vis.
-Page visitors   {ii}    {jj}     -----------------
-Page minutes    {kk}    {ll}     {mm} minutes/vis.
+Page views      {ff}    {gg}    {hh} views/vis.
+Page visitors   {ii}    {jj}    -----------------
+Page minutes    {kk}    {ll}    {mm} minutes/vis.
 ===================================================
-POST       Last  Last    |  VISITOR   Last  Last
-TRAFFIC:   {oo} {qq} |  PROFILE:  {oo} {qq}
+POST       Last    M  |  VISITOR   Last    M
+TRAFFIC:   {oo}   A  |  PROFILE:  {oo}   A
+--------------------  |  -----------------------
+Facebook     {j}   {k}  |  New         {l}   {m}
+Twitter      {n}   {o}  |  Returning   {p}   {q}
+Search       {r}   {s}  |  -----------------------
+Other        {t}   {u}  |  DEVICES:
+Direct       {v}   {w}  |  Mobile      {z}   {aa}
+Internal     {x}   {y}  |  Desktop     {bb}   {cc}
+                      |  Tablet      {dd}   {ee}
 ---------------------------------------------------
-Facebook    {j}     {k}    |  New        {l}     {m}
-Twitter     {n}     {o}    |  Returning  {p}     {q}
-Search      {r}     {s}    |  -----------------------
-Other       {t}     {u}    |  DEVICES:
-Direct      {v}     {w}    |  Mobile     {z}     {aa}
-Internal    {x}     {y}    |  Desktop    {bb}     {cc}
-                         |  Tablet     {dd}     {ee}
----------------------------------------------------
+MA = moving average (prior 4 months)
 Due to rounding, numbers may not add up to 100%
 Google accounts for nearly all 'Search' views.
 Google News, APIs account for most 'Other' views.
