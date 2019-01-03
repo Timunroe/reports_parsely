@@ -3,6 +3,7 @@ import sys
 import utils as utl
 import config as cfg
 import format_report as fmt
+
 # from pprint import pprint
 
 # print('Number of arguments:', len(sys.argv), 'arguments.')
@@ -28,6 +29,7 @@ data['posts_stats'] = (utl.return_csv(posts_file_path))[cfg.slice_var[freq]]
 # -- data = utl.site_stats(stats_values, ma_values, ma_units)
 # pprint(data)
 results = fmt.format_data(data)
+fmt.create_pdf(data)
 print(results)
 
 # --- s = fmt.format_data(data)

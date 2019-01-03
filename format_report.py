@@ -1,4 +1,5 @@
 import utils as utils
+import subprocess
 
 # STATIC VALUES
 dbl_line = '\n===========================================================\n'
@@ -144,3 +145,20 @@ def format_data(data):
     text += format_posts(data['posts_stats'])
     text += format_site(data['site_stats'], data['unit'], data['ma'])
     return text
+
+
+def create_pdf(data):
+    results = format_site(data['site_stats'], data['unit'], data['ma'])
+    file_name = f'{data["report"]}_{data["site"].title()}_stats'
+
+    # CREATE PDF
+    # enscript -B -M A5 -p output.ps input.txt
+    # ps2pdf output.ps output.pdf
+
+    # subprocess.run(["ls", "-l"])  # doesn't capture output
+    # save as text file. Note, this overwrites the file.
+    with open(f'{file_name}.txt', "w") as f:
+        f.write(results)
+
+    subprocess.run(['/usr/local/bin/enscript', '-M', 'A5', '-p', f'{file_name}.ps', f'{file_name}.txt'])
+    subprocess.run(['/usr/local/bin/ps2pdf', f'{file_name}.ps', f'{file_name}.pdf'])

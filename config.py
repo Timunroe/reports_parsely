@@ -1,5 +1,5 @@
-daily_date = '01'
-daily_start_stats = "Oct-03"
+daily_date = '02'
+daily_start_stats = "Oct-04"
 daily_month = 'Jan'
 weekly_start_stats = 'Sep-30'
 weekly_start_top = 'Dec-23'
