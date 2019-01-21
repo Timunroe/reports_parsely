@@ -28,14 +28,18 @@ def site_stats(new, ma, units):
             "total": sum_csv_values(ma, 'Views (all pages)'),
             "avg": get_avg_values(ma, 'Views (all pages)'),
             "delta": '',
-            'kpi_new': ''
+            'kpi_new': '',
+            'kpi_ma': '',
+            'kpi_delta': '',
         },
         "postv": {
             "new": new['Views (posts)'],
             "total": sum_csv_values(ma, 'Views (posts)'),
             "avg": get_avg_values(ma, 'Views (posts)'),
             "delta": '',
-            "kpi_new": '',
+            'kpi_new': '',
+            'kpi_ma': '',
+            'kpi_delta': '',
         },
         "visitors": {
             "new": new['Visitors (posts)'],
@@ -55,7 +59,11 @@ def site_stats(new, ma, units):
             "avg": get_avg_values(ma, 'Engaged Minutes (posts)'),
             "delta": '',
             "kpi_new": '',
+            'kpi_new_ma': '',
+            'kpi_new_ma_delta': '',
             "kpi_pages": '',
+            "kpi_pages_ma": '',
+            "kpi_pages_ma_delta": '',
         },
         "visitor_type": {
             "new": percentage(new['New vis.'], new['Visitors (posts)']),
@@ -108,10 +116,17 @@ def site_stats(new, ma, units):
     result['devices']['desktop%'] = percentage(result['devices']['desktop'], result['postv']['new'])
     result['devices']['tablet%'] = percentage(result['devices']['tablet'], result['postv']['new'])
     result['postv']['kpi_new'] = str(round((float(result['postv']['new']) / float(result['visitors']['new'])), 2))
+    result['postv']['kpi_ma'] = str(round((float(result['postv']['total']) / float(result['visitors']['total'])), 2))
+    result['postv']['kpi_delta'] = vs_ma(result['postv']['kpi_new'], result['postv']['kpi_ma'])
     result['pagev']['kpi_new'] = str(round((float(result['pagev']['new']) / float(result['visitors']['new_pages'])), 2))
+    result['pagev']['kpi_ma'] = str(round((float(result['pagev']['total']) / float(result['visitors']['total_pages'])), 2))
+    result['pagev']['kpi_delta'] = vs_ma(result['pagev']['kpi_new'], result['pagev']['kpi_ma'])
     result['minutes']['kpi_pages'] = str(round((float(result['minutes']['new_pages']) / float(result['visitors']['new_pages'])), 2))
-
+    result['minutes']['kpi_pages_ma'] = str(round((float(result['minutes']['total_pages']) / float(result['visitors']['total_pages'])), 2))
+    result['minutes']['kpi_pages_ma_delta'] = vs_ma( result['minutes']['kpi_pages'], result['minutes']['kpi_pages_ma'])
     result['minutes']['kpi_new'] = str(round((float(result['minutes']['new']) / float(result['visitors']['new'])), 2))
+    result['minutes']['kpi_new_ma'] = str(round((float(result['minutes']['total']) / float(result['visitors']['total'])), 2))
+    result['minutes']['kpi_new_ma_delta'] = vs_ma(result['minutes']['kpi_new'], result['minutes']['kpi_new_ma']) 
     result['traffic']['search%'] = percentage(result['traffic']['search'], result['postv']['new'])
     result['traffic']['other%'] = percentage(result['traffic']['other'], result['postv']['new'])
     result['traffic']['internal%'] = percentage(result['traffic']['internal'], result['postv']['new'])

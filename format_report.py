@@ -50,6 +50,8 @@ def format_site(data, unit, ma):
     else:
         a = (utils.humanize_number(data['postv']['new'], 0)).rjust(5)
     b = (data['postv']['delta']).rjust(5)
+    b2 = (data['postv']['kpi_delta']).rjust(5)
+  
     c = (data['postv']['kpi_new']).ljust(4)
     if len(data['visitors']['new']) > 6:
         d = (utils.humanize_number(data['visitors']['new'], 1)).rjust(5)
@@ -61,6 +63,7 @@ def format_site(data, unit, ma):
     else:
         f = (utils.humanize_number(data['minutes']['new'], 0)).rjust(5)
     g = (data['minutes']['delta']).rjust(5)
+    g2 = (data['minutes']['kpi_new_ma_delta']).rjust(5)
     h = (data['minutes']['kpi_new']).ljust(4)
     i = utils.percentage(data['postv']['new'], data['pagev']['new'])
     j = data['traffic']['fb%'].rjust(2)
@@ -90,6 +93,7 @@ def format_site(data, unit, ma):
     else:
         ff = (utils.humanize_number(data['pagev']['new'], 0)).rjust(5)
     gg = (data['pagev']['delta']).rjust(5)
+    gg2 = (data['pagev']['kpi_delta']).rjust(5)
     hh = (data['pagev']['kpi_new']).ljust(4)
     if len(data['visitors']['new_pages']) > 6:
         ii = (utils.humanize_number(data['visitors']['new_pages'], 1)).rjust(5)
@@ -101,24 +105,25 @@ def format_site(data, unit, ma):
     else:
         kk = (utils.humanize_number(data['minutes']['new_pages'], 0)).rjust(5)
     ll = (data['minutes']['total_delta']).rjust(5)
+    ll2 = (data['minutes']['kpi_pages_ma_delta']).rjust(5)
     mm = (data['minutes']['kpi_pages']).ljust(4)
     oo = unit.ljust(5)
     text += f'''
 ===================================================
-SITE            Last  |  vs   | KPIs
-DETAILS:        {oo} |  MA   |
+SITE            Last  |  vs  |  KPIs           vs
+DETAILS:        {oo} |  MA% |                 MA%
 ---------------------------------------------------
-Post views      {a}   {b}   {c} views/vis.
-Post visitors   {d}   {e}   -----------------
-Post minutes    {f}   {g}   {h} minutes/vis.
+Post views     {a}   {b}    {c}  v/vis. {b2}
+Post visitors  {d}   {e}   -------------------
+Post minutes   {f}   {g}    {h}  m/vis. {g2}
 ---------------------------------------------------
 * Post views were {i}% of period's total page views
 ---------------------------------------------------
-Page views      {ff}   {gg}   {hh} views/vis.
-Page visitors   {ii}   {jj}   -----------------
-Page minutes    {kk}   {ll}   {mm} minutes/vis.
+Page views     {ff}   {gg}    {hh}  v/vis. {gg2}
+Page visitors  {ii}   {jj}   ------------------- 
+Page minutes   {kk}   {ll}    {mm}  m/vis. {ll2}
 ===================================================
-POST       Last    M  |  VISITOR   Last    M
+% POST     Last    M  |  VISITOR   Last    M
 TRAFFIC:   {oo}   A  |  PROFILE:  {oo}   A
 --------------------  |  -----------------------
 Facebook     {j}   {k}  |  New         {l}   {m}
@@ -129,7 +134,7 @@ Direct       {v}   {w}  |  Mobile      {z}   {aa}
 Internal     {x}   {y}  |  Desktop     {bb}   {cc}
                       |  Tablet      {dd}   {ee}
 ---------------------------------------------------
-MA = moving average (prior 4 months)
+MA = moving average (prior 13 weeks)
 Due to rounding, numbers may not add up to 100%
 Google accounts for nearly all 'Search' views.
 Google News, APIs account for most 'Other' views.
