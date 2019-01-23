@@ -23,6 +23,11 @@ def process_csv(file_path, report_type, site):
 def site_stats(new, ma, units):
     result = {
         "date": new['Date'],
+        'posts': {
+            "new": '',
+            "ma": '',
+            "kpi_delta": '',
+        }
         "pagev": {
             "new": new['Views (all pages)'],
             "total": sum_csv_values(ma, 'Views (all pages)'),

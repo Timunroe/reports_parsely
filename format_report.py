@@ -134,7 +134,7 @@ Direct       {v}   {w}  |  Mobile      {z}   {aa}
 Internal     {x}   {y}  |  Desktop     {bb}   {cc}
                       |  Tablet      {dd}   {ee}
 ---------------------------------------------------
-MA = moving average (prior 13 weeks)
+MA = moving average (prior 90 days)
 Due to rounding, numbers may not add up to 100%
 Google accounts for nearly all 'Search' views.
 Google News, APIs account for most 'Other' views.
