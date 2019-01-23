@@ -108,6 +108,8 @@ def format_site(data, unit, ma):
     ll2 = (data['minutes']['kpi_pages_ma_delta']).rjust(5)
     mm = (data['minutes']['kpi_pages']).ljust(4)
     oo = unit.ljust(5)
+    nn = data['']
+    pp = 
     text += f'''
 ===================================================
 SITE            Last  |  vs  |  KPIs           vs
@@ -122,6 +124,8 @@ Post minutes   {f}   {g}    {h}  m/vis. {g2}
 Page views     {ff}   {gg}    {hh}  v/vis. {gg2}
 Page visitors  {ii}   {jj}   ------------------- 
 Page minutes   {kk}   {ll}    {mm}  m/vis. {ll2}
+---------------------------------------------------
+New posts: {nn}  vs MA%: {pp} 
 ===================================================
 % POST     Last    M  |  VISITOR   Last    M
 TRAFFIC:   {oo}   A  |  PROFILE:  {oo}   A
