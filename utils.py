@@ -24,10 +24,10 @@ def site_stats(new, ma, units):
     result = {
         "date": new['Date'],
         'posts': {
-            "new": '',
-            "ma": '',
+            "new": new['New Posts'],
+            "ma": get_avg_values(ma, 'New Posts'),
             "kpi_delta": '',
-        }
+        },
         "pagev": {
             "new": new['Views (all pages)'],
             "total": sum_csv_values(ma, 'Views (all pages)'),
@@ -144,6 +144,7 @@ def site_stats(new, ma, units):
     result['traffic']['direct_ma%'] = percentage(result['traffic']['direct_ma'], result['postv']['total'])
     result['traffic']['fb_ma%'] = percentage(result['traffic']['fb_ma'], result['postv']['total'])
     result['traffic']['tco_ma%'] = percentage(result['traffic']['tco_ma'], result['postv']['total'])
+    result['posts']['kpi_delta'] = vs_ma(result['posts']['new'], result['posts']['ma'])
     return result
 
 

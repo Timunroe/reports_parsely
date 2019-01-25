@@ -51,7 +51,6 @@ def format_site(data, unit, ma):
         a = (utils.humanize_number(data['postv']['new'], 0)).rjust(5)
     b = (data['postv']['delta']).rjust(5)
     b2 = (data['postv']['kpi_delta']).rjust(5)
-  
     c = (data['postv']['kpi_new']).ljust(4)
     if len(data['visitors']['new']) > 6:
         d = (utils.humanize_number(data['visitors']['new'], 1)).rjust(5)
@@ -108,8 +107,8 @@ def format_site(data, unit, ma):
     ll2 = (data['minutes']['kpi_pages_ma_delta']).rjust(5)
     mm = (data['minutes']['kpi_pages']).ljust(4)
     oo = unit.ljust(5)
-    nn = data['']
-    pp = 
+    nn = data['posts']['new']
+    pp = data['posts']['kpi_delta']
     text += f'''
 ===================================================
 SITE            Last  |  vs  |  KPIs           vs
@@ -125,7 +124,7 @@ Page views     {ff}   {gg}    {hh}  v/vis. {gg2}
 Page visitors  {ii}   {jj}   ------------------- 
 Page minutes   {kk}   {ll}    {mm}  m/vis. {ll2}
 ---------------------------------------------------
-New posts: {nn}  vs MA%: {pp} 
+New posts: {nn}  vs MA%: {pp}
 ===================================================
 % POST     Last    M  |  VISITOR   Last    M
 TRAFFIC:   {oo}   A  |  PROFILE:  {oo}   A
