@@ -111,20 +111,18 @@ def format_site(data, unit, ma):
     pp = data['posts']['kpi_delta']
     text += f'''
 ===================================================
-SITE            Last  |  vs  |  KPIs           vs
-DETAILS:        {oo} |  MA% |                 MA%
+SITE       Posts   vs   |  Pages   vs
+DETAILS:    LW     MA%  |   LW     MA%
 ---------------------------------------------------
-Post views     {a}   {b}    {c}  v/vis. {b2}
-Post visitors  {d}   {e}   -------------------
-Post minutes   {f}   {g}    {h}  m/vis. {g2}
+Views     {a}  {b}    {ff}   {gg} 
+Visitors  {d}  {e}    {ii}   {jj}
+Minutes   {f}  {g}    {kk}   {ll}
 ---------------------------------------------------
-* Post views were {i}% of period's total page views
+PV/V daily avg. this month: X.X
 ---------------------------------------------------
-Page views     {ff}   {gg}    {hh}  v/vis. {gg2}
-Page visitors  {ii}   {jj}   ------------------- 
-Page minutes   {kk}   {ll}    {mm}  m/vis. {ll2}
+BOUNCE RATE: XX.X% home page, XX.X% site
 ---------------------------------------------------
-New posts: {nn}  vs MA%: {pp}
+New posts: {nn}, vs MA%: {pp}
 ===================================================
 % POST     Last    M  |  VISITOR   Last    M
 TRAFFIC:   {oo}   A  |  PROFILE:  {oo}   A
@@ -141,7 +139,19 @@ MA = moving average (prior 13 weeks)
 Due to rounding, numbers may not add up to 100%
 Google accounts for nearly all 'Search' views.
 Google News, APIs account for most 'Other' views.
+
 ===================================================
+RECENCY:
+-------------------------------------------
+   Return frequency      % of visits
+-------------------------------------------
+
+===================================================
+GEO LOCATION: ... as % of page views
+----------------------+--------------------
+   Cities             |    Regions
+----------------------+--------------------
+
 '''
     return text
 
