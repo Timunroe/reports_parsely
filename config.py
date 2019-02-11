@@ -1,12 +1,12 @@
-daily_date = '23'
-daily_start_stats = "Oct-25"
-daily_month = 'Jan'
-weekly_start_stats = 'Oct-14'
-weekly_start_top = 'Jan-13'
-weekly_end = 'Jan-19'
-monthly_start_top = "Dec-01"
-monthly_start_stats = "Sep-01"
-monthly_end = "Dec-31"
+daily_date = '08'
+daily_start_stats = "Nov-11"
+daily_month = 'Feb'
+weekly_start_stats = 'Nov-04'
+# weekly_start_top = 'Feb-09'
+weekly_end = 'Feb-09'
+monthly_start_top = "Jan-01"
+monthly_start_stats = "Oct-01"
+monthly_end = "Jan-31"
 
 # reference file, stats, will have target period plus 90 days' worth of MA.
 # example, daily stats will have previous 91 days - compare last day versus the other 90
@@ -42,7 +42,7 @@ files = {
         },
         "monthly": {
             'stats': f'Site-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2019-thespec-com-Website-post.csv',
-            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start_top}-2018-{monthly_end}-2019-thespec-com-post.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start_top}-2019-{monthly_end}-2019-thespec-com-post.csv',
         }
     },
     "record": {
@@ -56,8 +56,8 @@ files = {
             "posts": 'Rec-Top20-posts-by-minutes-last-week-therecord-com-post.csv',
         },
         "monthly": {
-            'stats': f'Site-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2018-therecord-com-Website-post.csv',
-            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start_top}-2018-{monthly_end}-2018-therecord-com-post.csv',
+            'stats': f'Site-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2019-therecord-com-Website-post.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start_top}-2019-{monthly_end}-2019-therecord-com-post.csv',
         }
     },
     "niagara": {
@@ -67,7 +67,7 @@ files = {
         },
         "monthly": {
             'stats': f'Site-Group-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2019-None-Niagara-Region-Dailies-Website-post.csv',
-            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start_top}-2018-{monthly_end}-2019-None-Niagara-Region-Dailies-post.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start_top}-2019-{monthly_end}-2019-None-Niagara-Region-Dailies-post.csv',
         }
     },
     "examiner": {
@@ -76,8 +76,8 @@ files = {
             "posts": 'Examiner-top20-posts-by-minutes-last-week-thepeterboroughexaminer-com-post.csv',
         },
         "monthly": {
-            'stats': f'Site-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2018-thepeterboroughexaminer-com-Website-post.csv',
-            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start_top}-2018-{monthly_end}-2018-thepeterboroughexaminer-com-post.csv',
+            'stats': f'Site-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2019-thepeterboroughexaminer-com-Website-post.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start_top}-2019-{monthly_end}-2019-thepeterboroughexaminer-com-post.csv',
         }
     },
     "star": {
@@ -87,7 +87,7 @@ files = {
         },
         "monthly": {
             'stats': f'Site-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2019-thestar-com-Website-post.csv',
-            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start_top}-2018-{monthly_end}-2019-thestar-com-post.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start_top}-2019-{monthly_end}-2019-thestar-com-post.csv',
         }
     },
 }
