@@ -10,7 +10,8 @@ nl = '\n'
 def format_posts(data):
     # data is a list of dicts
     text = ''
-    text += "TOP POSTS: by Total Engaged Minutes" + sngl_line
+    text += "TOP POSTS: by Total Engaged Minutes" 
+    text += "Limited to content with pubdate in last 2 days" + sngl_line
     for rank, item in enumerate(data, start=1):
         headline = item['Title'].title().replace('’T', '’t').replace('’S', '’s').replace("'S", "'s").replace('’M', '’m').replace('’R', '’r')
         author = item['Authors'].title()
