@@ -10,7 +10,8 @@ nl = '\n'
 def format_posts(data):
     # data is a list of dicts
     text = ''
-    text += dbl_line + "TOP POSTS: by Total Engaged Minutes" + sngl_line
+    text += "TOP POSTS: by Total Engaged Minutes" + sngl_line
+    text += "TOP POSTS: by Total Engaged Minutes" + sngl_line
     for rank, item in enumerate(data, start=1):
         headline = item['Title'].title().replace('’T', '’t').replace('’S', '’s').replace("'S", "'s").replace('’M', '’m').replace('’R', '’r')
         author = item['Authors'].title()
@@ -121,7 +122,7 @@ Post minutes   {f}   {g}    {h}  m/vis. {g2}
 * Post views were {i}% of period's total page views
 ---------------------------------------------------
 Page views     {ff}   {gg}    {hh}  v/vis. {gg2}
-Page visitors  {ii}   {jj}   ------------------- 
+Page visitors  {ii}   {jj}   -------------------
 Page minutes   {kk}   {ll}    {mm}  m/vis. {ll2}
 ---------------------------------------------------
 New posts: {nn}  vs MA%: {pp}
