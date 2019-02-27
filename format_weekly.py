@@ -118,7 +118,7 @@ Views     {a}  {b}    {ff}   {gg}
 Visitors  {d}  {e}    {ii}   {jj}
 Minutes   {f}  {g}    {kk}   {ll}
 ---------------------------------------------------
-PV/V daily avg. this month: X.X
+PV/V/Day average this month: X.X
 ---------------------------------------------------
 BOUNCE RATE: XX.X% home page, XX.X% site
 ---------------------------------------------------

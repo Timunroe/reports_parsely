@@ -1,9 +1,9 @@
 daily_date = '25'
 daily_start_stats = "Nov-27"
 daily_month = 'Feb'
-weekly_start_stats = 'Nov-11'
+weekly_start_stats = 'Nov-18'
 # weekly_start_top = 'Feb-09'
-weekly_end = 'Feb-16'
+weekly_end = 'Feb-23'
 monthly_start_top = "Jan-01"
 monthly_start_stats = "Oct-01"
 monthly_end = "Jan-31"
