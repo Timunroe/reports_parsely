@@ -10,8 +10,7 @@ nl = '\n'
 def format_posts(data):
     # data is a list of dicts
     text = ''
-    text += "TOP POSTS: by Total Engaged Minutes\n" 
-    text += "Limited to content with pubdate in last 2 days" + sngl_line
+    text += "TOP POSTS: by Total Engaged Minutes" + sngl_line
     for rank, item in enumerate(data, start=1):
         headline = item['Title'].title().replace('’T', '’t').replace('’S', '’s').replace("'S", "'s").replace('’M', '’m').replace('’R', '’r')
         author = item['Authors'].title()
@@ -93,6 +92,7 @@ def format_site(data, unit, ma):
     else:
         ff = (utils.humanize_number(data['pagev']['new'], 0)).rjust(5)
     gg = (data['pagev']['delta']).rjust(5)
+    gg2 = (data['pagev']['kpi_delta']).rjust(5)
     hh = (data['pagev']['kpi_new']).ljust(4)
     if len(data['visitors']['new_pages']) > 6:
         ii = (utils.humanize_number(data['visitors']['new_pages'], 1)).rjust(5)
@@ -112,18 +112,20 @@ def format_site(data, unit, ma):
     text += f'''
 ===================================================
 SITE       Posts   vs   |  Pages   vs
-DETAILS:    YS     MA%  |   YS     MA%
+DETAILS:    LW     MA%  |   LW     MA%
 ---------------------------------------------------
 Views     {a}  {b}    {ff}   {gg} 
 Visitors  {d}  {e}    {ii}   {jj}
 Minutes   {f}  {g}    {kk}   {ll}
 ---------------------------------------------------
-* Post views were {i}% of period's total page views
+PV/V/Day average this month: X.X
 ---------------------------------------------------
-New posts: {nn}  vs MA%: {pp}
+BOUNCE RATE: XX.X% home page, XX.X% site
+---------------------------------------------------
+New posts: {nn}, vs MA%: {pp}
 ===================================================
 % POST     Last    M  |  VISITOR   Last    M
-TRAFFIC:   day     A  |  PROFILE:  day     A
+TRAFFIC:   {oo}   A  |  PROFILE:  {oo}   A
 --------------------  |  -----------------------
 Facebook     {j}   {k}  |  New         {l}   {m}
 Twitter      {n}   {o}  |  Returning   {p}   {q}
@@ -133,11 +135,23 @@ Direct       {v}   {w}  |  Mobile      {z}   {aa}
 Internal     {x}   {y}  |  Desktop     {bb}   {cc}
                       |  Tablet      {dd}   {ee}
 ---------------------------------------------------
-MA = moving average (prior 90 days)
+MA = moving average (prior 13 weeks)
 Due to rounding, numbers may not add up to 100%
 Google accounts for nearly all 'Search' views.
 Google News, APIs account for most 'Other' views.
+
 ===================================================
+RECENCY:
+-------------------------------------------
+   Return frequency      % of visits
+-------------------------------------------
+
+===================================================
+GEO LOCATION: ... as % of page views
+----------------------+--------------------
+   Cities             |    Regions
+----------------------+--------------------
+
 '''
     return text
 

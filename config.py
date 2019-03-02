@@ -1,12 +1,12 @@
-daily_date = '25'
-daily_start_stats = "Nov-27"
+daily_date = '26'
+daily_start_stats = "Nov-28"
 daily_month = 'Feb'
 weekly_start_stats = 'Nov-18'
 # weekly_start_top = 'Feb-09'
 weekly_end = 'Feb-23'
-monthly_start_top = "Jan-01"
-monthly_start_stats = "Oct-01"
-monthly_end = "Jan-31"
+monthly_start_top = "Feb-01"
+monthly_start_stats = "Nov-01"
+monthly_end = "Feb-28"
 
 # reference file, stats, will have target period plus 90 days' worth of MA.
 # example, daily stats will have previous 91 days - compare last day versus the other 90

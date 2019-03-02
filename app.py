@@ -18,8 +18,10 @@ else:
 print('format is: ', freq)
 if freq == 'daily':
     import format_daily as fmt
-else:
+if freq == 'weekly':
     import format_weekly as fmt
+if freq == 'monthly':
+    import format_monthly as fmt
 
 # print('Frequency is: ', freq)
 # print("Site is: ", site)
