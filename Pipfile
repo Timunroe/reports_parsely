@@ -8,6 +8,9 @@ name = "pypi"
 pyperclip = "*"
 autopep8 = "*"
 pandas = "*"
+seaborn = "*"
+matplotlib = "*"
+plotly = "*"
 
 [dev-packages]
 "flake8" = "*"

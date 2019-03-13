@@ -16,7 +16,7 @@ def format_posts(data):
         headline = item['Title'].title().replace('’T', '’t').replace('’S', '’s').replace("'S", "'s").replace('’M', '’m').replace('’R', '’r')
         author = item['Authors'].title()
         section = item['Section']
-        mv = str(round(float(item['Sort (Engaged minutes)']) / float(item['Visitors']), 2))
+        mv = str(round(float(item['Engaged minutes']) / float(item['Visitors']), 2))
         v = utils.humanize_number(item['Visitors'], 1)
         r = (utils.percentage(item['Returning vis.'], item['Visitors']))
         so = (utils.percentage(item['Social refs'], item['Views']))
@@ -109,29 +109,41 @@ def format_site(data, unit, ma):
     oo = unit.ljust(5)
     nn = data['posts']['new']
     pp = data['posts']['kpi_delta']
+    qq = data['traffic']['fb_pv_ma%'].rjust(5)
+    rr = data['traffic']['tco_pv_ma%'].rjust(5)
+    ss = data['traffic']['search_pv_ma%'].rjust(5)
+    tt = data['traffic']['other_pv_ma%'].rjust(5)
+    uu = data['traffic']['direct_pv_ma%'].rjust(5)
+    vv = data['traffic']['internal_pv_ma%'].rjust(5)
+
     text += f'''
-===================================================
-SITE       Posts   vs   |  Pages   vs
-DETAILS:    YS     MA%  |   YS     MA%
----------------------------------------------------
-Views     {a}  {b}    {ff}   {gg} 
-Visitors  {d}  {e}    {ii}   {jj}
-Minutes   {f}  {g}    {kk}   {ll}
----------------------------------------------------
+=====================================
+SITE       Posts   vs  | Pages   vs
+DETAILS:    LD     MA% |  LD     MA%
+-----------------------+-------------
+Views     {a}  {b}  {ff}  {gg} 
+Visitors  {d}  {e}  {ii}  {jj}
+Minutes   {f}  {g}  {kk}  {ll}
+-------------------------------------
 * Post views were {i}% of period's total page views
----------------------------------------------------
-New posts: {nn}  vs MA%: {pp}
-===================================================
-% POST     Last    M  |  VISITOR   Last    M
-TRAFFIC:   day     A  |  PROFILE:  day     A
---------------------  |  -----------------------
-Facebook     {j}   {k}  |  New         {l}   {m}
-Twitter      {n}   {o}  |  Returning   {p}   {q}
-Search       {r}   {s}  |  -----------------------
-Other        {t}   {u}  |  DEVICES:
-Direct       {v}   {w}  |  Mobile      {z}   {aa}
-Internal     {x}   {y}  |  Desktop     {bb}   {cc}
-                      |  Tablet      {dd}   {ee}
+-------------------------------------
+New posts: {nn} vs MA%: {pp}
+=====================================
+POST TRAFFIC:
+As % :     LD   MA  | PV vs MA
+--------------------+---------------- 
+Facebook   {j}   {k}  |  {qq}
+Twitter    {n}   {o}  |  {rr}
+Search     {r}   {s}  |  {ss}
+Other      {t}   {u}  |  {tt}
+Direct     {v}   {w}  |  {uu}
+Internal   {x}   {y}  |  {vv}
+======================================
+VISITORS:  LD   MA  | DEVICES: LD  MA
+--------------------+---------------
+New        {l}   {m}  | Mobile   {z}  {aa}
+Returning  {p}   {q}  | Desktop  {bb}  {cc}
+                    | Tablet   {dd}  {ee}
 ---------------------------------------------------
 MA = moving average (prior 90 days)
 Due to rounding, numbers may not add up to 100%
@@ -161,8 +173,8 @@ def create_pdf(data):
 
     # subprocess.run(["ls", "-l"])  # doesn't capture output
     # save as text file. Note, this overwrites the file.
-    with open(f'{file_name}.txt', "w") as f:
+    with open(f'data_reports/{file_name}.txt', "w") as f:
         f.write(results)
 
-    subprocess.run(['/usr/local/bin/enscript', '-M', 'A5', '-p', f'{file_name}.ps', f'{file_name}.txt'])
-    subprocess.run(['/usr/local/bin/ps2pdf', f'{file_name}.ps', f'{file_name}.pdf'])
+    subprocess.run(['/usr/local/bin/enscript', '-M', 'A5', '-p', f'data_reports/{file_name}.ps', f'data_reports/{file_name}.txt'])
+    subprocess.run(['/usr/local/bin/ps2pdf', f'{file_name}.ps', f'data_reports/{file_name}.pdf'])

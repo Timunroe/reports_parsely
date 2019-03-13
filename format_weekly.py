@@ -15,7 +15,7 @@ def format_posts(data):
         headline = item['Title'].title().replace('’T', '’t').replace('’S', '’s').replace("'S", "'s").replace('’M', '’m').replace('’R', '’r')
         author = item['Authors'].title()
         section = item['Section']
-        mv = str(round(float(item['Sort (Engaged minutes)']) / float(item['Visitors']), 2))
+        mv = str(round(float(item['Engaged minutes']) / float(item['Visitors']), 2))
         v = utils.humanize_number(item['Visitors'], 1)
         r = (utils.percentage(item['Returning vis.'], item['Visitors']))
         so = (utils.percentage(item['Social refs'], item['Views']))
@@ -109,37 +109,47 @@ def format_site(data, unit, ma):
     oo = unit.ljust(5)
     nn = data['posts']['new']
     pp = data['posts']['kpi_delta']
+    qq = data['traffic']['fb_pv_ma%'].rjust(5)
+    rr = data['traffic']['tco_pv_ma%'].rjust(5)
+    ss = data['traffic']['search_pv_ma%'].rjust(5)
+    tt = data['traffic']['other_pv_ma%'].rjust(5)
+    uu = data['traffic']['direct_pv_ma%'].rjust(5)
+    vv = data['traffic']['internal_pv_ma%'].rjust(5)
     text += f'''
-===================================================
-SITE       Posts   vs   |  Pages   vs
-DETAILS:    LW     MA%  |   LW     MA%
----------------------------------------------------
-Views     {a}  {b}    {ff}   {gg} 
-Visitors  {d}  {e}    {ii}   {jj}
-Minutes   {f}  {g}    {kk}   {ll}
----------------------------------------------------
+=====================================
+SITE       Posts   vs  | Pages   vs
+DETAILS:    LD     MA% |  LD     MA%
+-----------------------+-------------
+Views     {a}  {b}   {ff}  {gg} 
+Visitors  {d}  {e}   {ii}  {jj}
+Minutes   {f}  {g}   {kk}  {ll}
+-------------------------------------
 PV/V/Day average this month: X.X
----------------------------------------------------
+-------------------------------------
 BOUNCE RATE: XX.X% home page, XX.X% site
----------------------------------------------------
+-------------------------------------
 New posts: {nn}, vs MA%: {pp}
-===================================================
-% POST     Last    M  |  VISITOR   Last    M
-TRAFFIC:   {oo}   A  |  PROFILE:  {oo}   A
---------------------  |  -----------------------
-Facebook     {j}   {k}  |  New         {l}   {m}
-Twitter      {n}   {o}  |  Returning   {p}   {q}
-Search       {r}   {s}  |  -----------------------
-Other        {t}   {u}  |  DEVICES:
-Direct       {v}   {w}  |  Mobile      {z}   {aa}
-Internal     {x}   {y}  |  Desktop     {bb}   {cc}
-                      |  Tablet      {dd}   {ee}
----------------------------------------------------
+====================================
+POST TRAFFIC:
+As % :     LD   MA  | PV vs MA
+--------------------+--------------- 
+Facebook   {j}   {k}  |  {qq}
+Twitter    {n}   {o}  |  {rr}
+Search     {r}   {s}  |  {ss}
+Other      {t}   {u}  |  {tt}
+Direct     {v}   {w}  |  {uu}
+Internal   {x}   {y}  |  {vv}
+====================================== 
+VISITORS:  LD   MA  | DEVICES: LD  MA
+--------------------+-----------------
+New        {l}   {m}  | Mobile   {z}  {aa}
+Returning  {p}   {q}  | Desktop  {bb}  {cc}
+                    | Tablet   {dd}  {ee}
+====================================== 
 MA = moving average (prior 13 weeks)
 Due to rounding, numbers may not add up to 100%
 Google accounts for nearly all 'Search' views.
 Google News, APIs account for most 'Other' views.
-
 ===================================================
 RECENCY:
 -------------------------------------------

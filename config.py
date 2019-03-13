@@ -1,6 +1,3 @@
-daily_date = '26'
-daily_start_stats = "Nov-28"
-daily_month = 'Feb'
 weekly_start_stats = 'Nov-18'
 # weekly_start_top = 'Feb-09'
 weekly_end = 'Feb-23'
@@ -33,12 +30,12 @@ slice_var = {
 files = {
     "spectator": {
         "daily": {
-            'stats': f'Site-Stats-Over-Time-{daily_start_stats}-2018-{daily_month}-{daily_date}-2019-thespec-com-Website-post.csv',
-            "posts": 'Daily-Spec-top-engaged-stories.csv',
+            'stats': 'Spec-site-stats-91-days.csv',
+            "posts": 'Spec-top-posts-byMinutes-yesterday.csv',
         },
         "weekly": {
-            'stats': f'Site-Stats-Over-Time-{weekly_start_stats}-2018-{weekly_end}-2019-thespec-com-Website-post.csv',
-            "posts": 'Spec-top20-posts-by-minutes-last-week-thespec-com-post.csv',
+            'stats': f'Spec-Site-Stats-Over-Time-14-weeks.csv',
+            "posts": 'Spec-top-posts-byMinutes-lastWeek.csv',
         },
         "monthly": {
             'stats': f'Site-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2019-thespec-com-Website-post.csv',
@@ -47,8 +44,8 @@ files = {
     },
     "record": {
         "daily": {
-            'stats': f'Site-Stats-Over-Time-{daily_month}-{daily_date}-2019-therecord-com.csv',
-            "posts": f'Top-10-posts-by-total-engaged-minutes-{daily_month}-{daily_date}-2019-therecord-com-post.csv',
+            'stats': f'Rec-site-stats-91-days.csv',
+            "posts": f'Rec-top-posts-byMinutes-yesterday.csv',
             "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-therecord-com.csv'
         },
         "weekly": {

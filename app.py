@@ -26,8 +26,8 @@ if freq == 'monthly':
 # print('Frequency is: ', freq)
 # print("Site is: ", site)
 
-stats_file_path = f'reports/{freq}/' + cfg.files[site][freq]['stats']
-posts_file_path = f'reports/{freq}/' + cfg.files[site][freq]['posts']
+stats_file_path = f'data_in/{freq}/' + cfg.files[site][freq]['stats']
+posts_file_path = f'data_in/{freq}/' + cfg.files[site][freq]['posts']
 
 # MAIN
 
@@ -46,5 +46,5 @@ print(results)
 pyperclip.copy(results)
 
 # save as text file. Note, this overwrites the file.
-with open(f"{freq}_{site}.txt", "w") as f:
+with open(f"data_reports/{freq}_{site}.txt", "w") as f:
     f.write(results)
