@@ -34,7 +34,7 @@ files = {
             "posts": 'Spec-top-posts-byMinutes-yesterday.csv',
         },
         "weekly": {
-            'stats': f'Spec-Site-Stats-Over-Time-14-weeks.csv',
+            'stats': f'Spec-Site-Stats-14-weeks.csv',
             "posts": 'Spec-top-posts-byMinutes-lastWeek.csv',
         },
         "monthly": {
@@ -46,11 +46,10 @@ files = {
         "daily": {
             'stats': f'Rec-site-stats-91-days.csv',
             "posts": f'Rec-top-posts-byMinutes-yesterday.csv',
-            "ma": 'Site-Stats-Over-Time-Aug-01-2018-Oct-31-2018-therecord-com.csv'
         },
         "weekly": {
-            'stats': f'Site-Stats-Over-Time-{weekly_start_stats}-2018-{weekly_end}-2019-therecord-com-Website-post.csv',
-            "posts": 'Rec-Top20-posts-by-minutes-last-week-therecord-com-post.csv',
+            'stats': f'Rec-Site-Stats-14-weeks.csv',
+            "posts": 'Rec-top-posts-byMinutes-lastWeek.csv',
         },
         "monthly": {
             'stats': f'Site-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2019-therecord-com-Website-post.csv',
@@ -59,8 +58,38 @@ files = {
     },
     "niagara": {
         "weekly": {
-            'stats': f'Site-Group-Stats-Over-Time-{weekly_start_stats}-2018-{weekly_end}-2019-None-Niagara-Region-Dailies-Website-post.csv',
+            'stats': f'Rec-site-stats-91-days.csv',
             "posts": 'Niagara-top20-by-minutes-last-week-None-Niagara-Region-Dailies-post.csv',
+        },
+        "monthly": {
+            'stats': f'Site-Group-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2019-None-Niagara-Region-Dailies-Website-post.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start_top}-2019-{monthly_end}-2019-None-Niagara-Region-Dailies-post.csv',
+        }
+    },
+    "standard": {
+        "weekly": {
+            'stats': f'Standard-Site-Stats-14-weeks.csv',
+            "posts": 'Standard-top-posts-byMinutes-lastWeek.csv',
+        },
+        "monthly": {
+            'stats': f'Site-Group-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2019-None-Niagara-Region-Dailies-Website-post.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start_top}-2019-{monthly_end}-2019-None-Niagara-Region-Dailies-post.csv',
+        }
+    },
+    "review": {
+        "weekly": {
+            'stats': f'Review-Site-Stats-14-weeks.csv',
+            "posts": 'Review-top-posts-byMinutes-lastWeek.csv',
+        },
+        "monthly": {
+            'stats': f'Site-Group-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2019-None-Niagara-Region-Dailies-Website-post.csv',
+            "posts": f'Top-20-posts-by-total-engaged-minutes-{monthly_start_top}-2019-{monthly_end}-2019-None-Niagara-Region-Dailies-post.csv',
+        }
+    },
+    "tribune": {
+        "weekly": {
+            'stats': f'Tribune-Site-Stats-14-weeks.csv',
+            "posts": 'Review-top-posts-byMinutes-lastWeek.csv',
         },
         "monthly": {
             'stats': f'Site-Group-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2019-None-Niagara-Region-Dailies-Website-post.csv',
@@ -69,8 +98,8 @@ files = {
     },
     "examiner": {
         "weekly": {
-            'stats': f'Site-Stats-Over-Time-{weekly_start_stats}-2018-{weekly_end}-2019-thepeterboroughexaminer-com-Website-post.csv',
-            "posts": 'Examiner-top20-posts-by-minutes-last-week-thepeterboroughexaminer-com-post.csv',
+            'stats': f'Examiner-Site-Stats-14-weeks.csv',
+            "posts": 'Examiner-top-posts-byMinutes-lastWeek.csv',
         },
         "monthly": {
             'stats': f'Site-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2019-thepeterboroughexaminer-com-Website-post.csv',
@@ -79,8 +108,8 @@ files = {
     },
     "star": {
         "weekly": {
-            'stats': f'Site-Stats-Over-Time-{weekly_start_stats}-2018-{weekly_end}-2019-thestar-com-Website-post.csv',
-            "posts": 'Star-top20-posts-by-minutes-last-week-thestar-com-Website-post.csv',
+            'stats': f'Star-Site-Stats-14-weeks.csv',
+            "posts": 'Star-top-posts-byMinutes-lastWeek.csv',
         },
         "monthly": {
             'stats': f'Site-Stats-Over-Time-{monthly_start_stats}-2018-{monthly_end}-2019-thestar-com-Website-post.csv',

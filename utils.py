@@ -90,31 +90,37 @@ def site_stats(new, ma, units):
             "search_ma": sum_csv_values(ma, 'Search refs'),
             "search_ma%": '',
             'search_pv_ma%': vs_ma(new['Search refs'], get_avg_values(ma, 'Search refs')),
+            'search_pv_diff': '',
             "other": new['Other refs'],
             "other%": '',
             "other_ma": sum_csv_values(ma, 'Other refs'),
             "other_ma%": '',
             'other_pv_ma%': vs_ma(new['Other refs'], get_avg_values(ma, 'Other refs')),
+            'other_pv_diff': '',
             "internal": new['Internal refs'],
             "internal%": '',
             "internal_ma": sum_csv_values(ma, 'Internal refs'),
             "internal_ma%": '',
             'internal_pv_ma%': vs_ma(new['Internal refs'], get_avg_values(ma, 'Internal refs')),
+            'internal_pv_diff': '',
             "direct": new['Direct refs'],
             "direct%": '',
             "direct_ma": sum_csv_values(ma, 'Direct refs'),
             "direct_ma%": '',
             'direct_pv_ma%': vs_ma(new['Direct refs'], get_avg_values(ma, 'Direct refs')),
+            'direct_pv_diff': '',
             "fb": new['Fb refs'],
             "fb%": '',
             "fb_ma": sum_csv_values(ma, 'Fb refs'),
             "fb_ma%": '',
+            'fb_pv_diff': '',
             'fb_pv_ma%': vs_ma(new['Fb refs'], get_avg_values(ma, 'Fb refs')),
             "tco": new['Tw refs'],
             "tco%": '',
             "tco_ma": sum_csv_values(ma, 'Tw refs'),
             "tco_ma%": '',
             'tco_pv_ma%': vs_ma(new['Tw refs'], get_avg_values(ma, 'Tw refs')),
+            'tco_pv_diff': ''
         }
     }
     result['pagev']['delta'] = vs_ma(result['pagev']['new'], result['pagev']['avg'])
@@ -150,6 +156,12 @@ def site_stats(new, ma, units):
     result['traffic']['direct_ma%'] = percentage(result['traffic']['direct_ma'], result['postv']['total'])
     result['traffic']['fb_ma%'] = percentage(result['traffic']['fb_ma'], result['postv']['total'])
     result['traffic']['tco_ma%'] = percentage(result['traffic']['tco_ma'], result['postv']['total'])
+    result['traffic']['fb_pv_diff'] = humanize_number(float(new['Fb refs']) - float(get_avg_values(ma, 'Fb refs')), 1)
+    result['traffic']['tco_pv_diff'] = humanize_number(float(new['Tw refs']) - float(get_avg_values(ma, 'Tw refs')), 1)
+    result['traffic']['direct_pv_diff'] = humanize_number(float(new['Direct refs']) - float(get_avg_values(ma, 'Direct refs')), 1)
+    result['traffic']['internal_pv_diff'] = humanize_number(float(new['Internal refs']) - float(get_avg_values(ma, 'Internal refs')), 1)
+    result['traffic']['other_pv_diff'] = humanize_number(float(new['Other refs']) - float(get_avg_values(ma, 'Other refs')), 1)
+    result['traffic']['search_pv_diff'] = humanize_number(float(new['Search refs']) - float(get_avg_values(ma, 'Search refs')), 1)
     result['posts']['kpi_delta'] = vs_ma(result['posts']['new'], result['posts']['ma'])
     return result
 

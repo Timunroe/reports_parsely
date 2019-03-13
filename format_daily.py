@@ -115,7 +115,12 @@ def format_site(data, unit, ma):
     tt = data['traffic']['other_pv_ma%'].rjust(5)
     uu = data['traffic']['direct_pv_ma%'].rjust(5)
     vv = data['traffic']['internal_pv_ma%'].rjust(5)
-
+    ww = data['traffic']['fb_pv_diff'].rjust(6)
+    xx = data['traffic']['tco_pv_diff'].rjust(6)
+    yy = data['traffic']['search_pv_diff'].rjust(6)
+    zz = data['traffic']['other_pv_diff'].rjust(6)
+    aaa = data['traffic']['direct_pv_diff'].rjust(6)
+    bbb = data['traffic']['internal_pv_diff'].rjust(6)
     text += f'''
 =====================================
 SITE       Posts   vs  | Pages   vs
@@ -127,24 +132,24 @@ Minutes   {f}  {g}  {kk}  {ll}
 -------------------------------------
 * Post views were {i}% of period's total page views
 -------------------------------------
-New posts: {nn} vs MA%: {pp}
+New posts: {nn}, vs MA%: {pp}
 =====================================
 POST TRAFFIC:
-As % :     LD   MA  | PV vs MA
---------------------+---------------- 
-Facebook   {j}   {k}  |  {qq}
-Twitter    {n}   {o}  |  {rr}
-Search     {r}   {s}  |  {ss}
-Other      {t}   {u}  |  {tt}
-Direct     {v}   {w}  |  {uu}
-Internal   {x}   {y}  |  {vv}
-======================================
-VISITORS:  LD   MA  | DEVICES: LD  MA
---------------------+---------------
-New        {l}   {m}  | Mobile   {z}  {aa}
-Returning  {p}   {q}  | Desktop  {bb}  {cc}
-                    | Tablet   {dd}  {ee}
----------------------------------------------------
+As % :     LW  MA  |   ΔPV   vs MA
+-------------------+---------------
+Facebook   {j}  {k}  |  {ww}  {qq}
+Twitter    {n}  {o}  |  {xx}  {rr}
+Search     {r}  {s}  |  {yy}  {ss}
+Other      {t}  {u}  |  {zz}  {tt}
+Direct     {v}  {w}  |  {aaa}  {uu}
+Internal   {x}  {y}  |  {bbb}  {vv}
+=====================================
+VISITORS:  LD  MA  | DEVICES: LD  MA
+-------------------+-----------------
+New        {l}  {m}  | Mobile   {z}  {aa}
+Returning  {p}  {q}  | Desktop  {bb}  {cc}
+                   | Tablet   {dd}  {ee}
+-------------------------------------
 MA = moving average (prior 90 days)
 Due to rounding, numbers may not add up to 100%
 Google accounts for nearly all 'Search' views.
