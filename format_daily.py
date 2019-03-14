@@ -122,6 +122,12 @@ def format_site(data, unit, ma):
     aaa = data['traffic']['direct_pv_diff'].rjust(6)
     bbb = data['traffic']['internal_pv_diff'].rjust(6)
     text += f'''
+HIGHLIGHTS:
+> Page view were {gg} %, minutes were {ll} %,
+and visitors were {jj} % yesterday versus average.
+> Page view gains above average came from: X (+1.8K), 
+> Page view loses below average came from:  Y (2.2K), 
+
 =====================================
 SITE       Posts   vs  | Pages   vs
 DETAILS:    LD     MA% |  LD     MA%

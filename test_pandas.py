@@ -17,10 +17,10 @@ article_csv = '/Users/timmunroe/Documents/PROJECTSLOCAL/reports_parsely/data_in/
 
 def article_stats(articles):
     s = ''
-    s += f'''===================================''' + newline
-    s += f'''TOP POSTS: by Total Engaged Minutes''' + newline
-    s += f'''Limited to content with pubdate in last 2 days''' + newline
-    s += f'''-----------------------------------''' + newline
+    s += f'''<p>===================================<br>''' + newline
+    s += f'''<b>TOP POSTS: by Total Engaged Minutes</b><br>''' + newline
+    s += f'''Limited to content with pubdate in last 2 days<br>''' + newline
+    s += f'''-----------------------------------</p>''' + newline
     for rank, item in enumerate(articles, start=1):
         tv = item['Visitors']
         tvu = item['Views']
@@ -29,14 +29,17 @@ def article_stats(articles):
         author = item['Authors'].title().replace(' And', ',')
         section = item['Section'].replace('and you', '').replace('news|', '').title()
         assetID = (re.search(r'.*(\d{7})-.*', item['URL'])).group(1)
-        s += f'''{rank}. {headline}''' + newline
-        s += f'''By {author} in {section}'''
-        s += f''' | {item['Publish date'][:-6]} | Asset# {assetID}''' + newline
-        s += f'''VISITORS: {str(round(item["Engaged minutes"] / tv, 2))} min/visitor, visitors: {u.humanize(tv)}, returning: {u.percentage(item['Returning vis.'], tv)}''' + newline
-        s += f'''TRAFFIC %: social {u.percentage(item['Social refs'], tvu)}, search {u.percentage(item['Search refs'], tvu)}, other {u.percentage(item['Other refs'], tvu)}, direct {u.percentage(item['Direct refs'], tvu)}, internal {u.percentage(item['Internal refs'], tvu)}''' + newline
+        s += f'''<p style="font-family: Arial, Helvetica, sans-serif;font-size: 16px;">{rank}. {headline}</p>''' + newline
+        s += f'''<p style="font-family: Arial, Helvetica, sans-serif;font-size: 14px;line-height: 1.4;">By {author} in {section}'''
+        s += f''' | {item['Publish date'][:-6]} | Asset# <a href="{item['URL']}">{assetID}</a><br>''' + newline
+        
+        s += f'''VISITORS: <b>{str(round(item["Engaged minutes"] / tv, 2))}</b> min/visitor, visitors: {u.humanize(tv)}, returning: {u.percentage(item['Returning vis.'], tv)}<br>''' + newline
+        # examine each stat, if < 10 don't bother showing it ...
+        s += f'''SOURCES %: social {u.percentage(item['Social refs'], tvu)}, search {u.percentage(item['Search refs'], tvu)}, other {u.percentage(item['Other refs'], tvu)}, direct {u.percentage(item['Direct refs'], tvu)}, internal {u.percentage(item['Internal refs'], tvu)}<br>''' + newline
         # if social is < 10, don't include next line
-        s += f'''SOCIAL BREAKDOWN %: FB {u.percentage(item['Fb refs'], ts)}, Twitter {u.percentage(item['Tw refs'], ts)} | Interactions: {u.humanize(item["Social interactions"])}''' + newline
-        s += f'''DEVICES %: mobile {u.percentage(item['Mobile views'], tvu)}, desktop {u.percentage(item['Desktop views'], tvu)}, tablet {u.percentage(item['Tablet views'], tvu)}''' + newline
+        if int(u.percentage(item['Social refs'], tvu)) > 10:
+            s += f'''SOCIAL BREAKDOWN %: FB {u.percentage(item['Fb refs'], ts)}, Twitter {u.percentage(item['Tw refs'], ts)} | Interactions: {u.humanize(item["Social interactions"])}<br>''' + newline
+        s += f'''DEVICES %: mobile {u.percentage(item['Mobile views'], tvu)}, desktop {u.percentage(item['Desktop views'], tvu)}, tablet {u.percentage(item['Tablet views'], tvu)}</p>''' + newline
         s += f'---------------------------' + newline
     return s
 
@@ -44,15 +47,18 @@ def article_stats(articles):
 def top_article_by_referrer(articles, total, name, col_name):
     s = ''
     # s += "======================\n"
-    s += f'{name.upper()}: Top articles by page views\n\n'
+    s += f'<p><b>{name.upper()}</b>: Top articles by page views</p>\n\n'
     for item in articles:
-        s += f'''{item['Title']}''' + newline
-        s += f'''By {item['Authors'].title().replace(' And', ',')} in {item['Section'].replace('and you', '').replace('news|', '').title()}'''
+        author = item['Authors'].title().replace(' And', ',')
         assetID = (re.search(r'.*(\d{7})-.*', item['URL'])).group(1)
-        s += f''' | {item['Publish date'][:-6]} | Asset# {assetID}''' + newline
-        s += f'''{u.percentage(item[col_name], total)}% of total -- {u.humanize(item[col_name])} clicks''' + newline
+        section = item['Section'].replace('and you', '').replace('news|', '').title()
+        s += f'''<p style="font-family: Arial, Helvetica, sans-serif;">{item['Title']}<br>''' + newline
+        s += f'''By {author} in {section}'''
+        
+        s += f''' | {item['Publish date'][:-6]} | Asset# <a href="{item['URL']}">{assetID}</a><br>''' + newline
+        s += f'''<b>{u.percentage(item[col_name], total)}%</b> of total -- <b>{u.humanize(item[col_name])}</b> clicks</p>''' + newline
         s += newline
-    s += "======================\n"
+    s += "======================<br>\n"
     return s
 
 
@@ -96,7 +102,7 @@ cols_to_fix = ["Search refs", "Internal refs", "Other refs", "Social refs", "Fb 
 df[cols_to_fix] = df[cols_to_fix].apply(pd.to_numeric)
 
 # intialize string
-report = ''
+report = '<head><meta charset="UTF-8"></head>'
 
 # get top articles by minutes
 # articles should be already sorted in CSV
@@ -113,9 +119,9 @@ referrers = [
     {'name': "Twitter", 'col_name': 'Tw refs', 'limit': 3},
     {'name': "LinkedIn", 'col_name': 'Li refs', 'limit': 3}
 ]
-report += '''===================================''' + newline
-report += '''TOP POSTS: by Referrers''' + newline
-report += '''-----------------------------------''' + newline
+report += '''<p>===================================<br>''' + newline
+report += '''<b>TOP POSTS: by Referrers</b><br>''' + newline
+report += '''-----------------------------------</p>''' + newline
 for item in referrers:
     articles = df.sort_values(by=[item['col_name']], ascending=False).head(
         item['limit']).to_dict(orient='records')
@@ -127,5 +133,5 @@ for item in referrers:
 
 print(report)
 
-with open(f'data_reports/test.txt', "w") as f:
+with open(f'data_reports/test.html', "w") as f:
     f.write(report)
