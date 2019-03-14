@@ -1,7 +1,9 @@
 import pandas as pd
 import utils_num as u
 
-file_name = "reports/monthly/Spec-top-posts-byMinute-lastMonth-Feb2019.csv"
+site_stats = "Spec-Site-Stats-14-weeks.csv"
+article_stats = 'Spec-top-posts-byMinutes-lastWeek.csv'
+
 # print(list(df.columns.values))
 cols_to_keep = [
     'URL',
@@ -56,8 +58,7 @@ def article_stats(data, kind=None, total=None):
     s += "======================\n"
     return s
 
-
-df = pd.read_csv(file_name,
+df = pd.read_csv(article_stats,
                  usecols=cols_to_keep,
                  keep_default_na=False,
                  na_values='0')
