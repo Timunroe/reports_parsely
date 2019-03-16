@@ -14,7 +14,7 @@ def t(n, min=None):
             return f'''<span style="color: red">**{re.sub('.0$','',str(n))}**</span>'''
     else:
         return re.sub('.0$', '', str(n))
-    
+
 
 # handy helpers
 # print(list(df.columns.values))
@@ -39,61 +39,48 @@ def articles_stats(articles):
     # articles is a dict as converted from pandas dataframe
     s = ''
     s += f'''### TOP POSTS: by Total Engaged Minutes''' + newline
-    s += f'''Limited to content with pubdate in last 2 days''' + newline
+    s += f'''###### Limited to content with pubdate in last 2 days''' + newline
     for rank, item in enumerate(articles, start=1):
         # data for report
         visitors_total = u.humanize(item['Visitors'])
         print(str(visitors_total))
-        min_per_visitor = round(item["Engaged minutes"] / item['Visitors'], 2)
-        returning_vis = u.percentage(item['Returning vis.'], item['Visitors'])
         headline = item['Title'].title().replace('’T', '’t').replace('’S', '’s').replace("'S", "'s").replace('’M', '’m').replace('’R', '’r')
         author = item['Authors'].title().replace(' And', ',')
         section = item['Section'].replace('and you', '').replace('news|', '').title()
-        source_social = u.percentage(item['Social refs'], item['Views'])
-        fb = u.percentage(item['Fb refs'], item['Social refs'])
-        tw = u.percentage(item['Tw refs'], item['Social refs'])
         buzz = u.humanize(item["Social interactions"])
         assetID = (re.search(r'.*(\d{7})-.*', item['URL'])).group(1)
         sources = [
-            {'text': 'social', 'value': item['Social refs']}, 
-            {'text': 'search', 'value': item['Search refs']}, 
-            {'text': 'other', 'value': item['Other refs']},
-            {'text': 'direct', 'value': item['Direct refs']},
-            {'text': 'internal', 'value': item['Internal refs']},
+            {'text': 'FB', 'value': item['Fb%']},
+            {'text': 'Tw', 'value': item['Tw%']},
+            {'text': 'search', 'value': item['Search%']},
+            {'text': 'other', 'value': item['Other%']},
+            {'text': 'direct', 'value': item['Direct%']},
+            {'text': 'internal', 'value': item['Internal%']},
         ]
         devices = [
-            {'text': 'mobile', 'value': item['Mobile views']}, 
-            {'text': 'desktop', 'value': item['Desktop views']}, 
-            {'text': 'tablet', 'value': item['Tablet views']}, 
+            {'text': 'mobile', 'value': item['Mobile%']},
+            {'text': 'desktop', 'value': item['Desktop%']},
+            {'text': 'tablet', 'value': item['Tablet%']},
         ]
         # generate report
         s += f'''{rank}. {headline}''' + newline
         s += f'''By {author} in {section}'''
         s += f''' | {item['Publish date'][:-6]} | Asset# [{assetID}]({item['URL']})''' + newline
-        s += f'''PV **{u.humanize(item['Views'])}** | visitors: **{visitors_total}**, {t(returning_vis)}% returning | {t(min_per_visitor, min=0.6)} min/visitor''' + newline
+        s += f'''PV **{u.humanize(item['Views'])}** | visitors: **{visitors_total}**, {t(item['Returning%'])}% returning | {t(item['time'], min=0.6)} min/visitor''' + newline
         # examine each stat, if < 10 don't bother showing it ...
-        s += f'''key sources %: '''
+        s += f'''Key sources %: '''
         for x in sorted(sources, key=lambda k: k['value'], reverse=True):
-            source_value = u.percentage(x['value'], item['Views'])
-            if source_value > 15:
-                s += f'''{x['text']} **{t(source_value)}**, '''
+            if x['value'] > 10:
+                s += f'''{x['text']} **{t(x['value'])}**, '''
         s += newline
-        # if social is < 10, don't include next line
-        if source_social > 15:
-            s += f'''social %: FB **{t(fb)}**'''
-            if tw > 10:
-                s += f''', Twitter **{t(tw)}**'''
-            s += f''' | Interactions: {buzz}''' + newline
-        s += f'''devices %: '''
+        s += f'''Social interactions: {buzz}''' + newline
+        s += f'''Devices %: '''
         for x in sorted(devices, key=lambda k: k['value'], reverse=True):
-            device_value = u.percentage(x['value'], item['Views'])
-            if device_value > 10:
-                s += f'''{x['text']} **{t(device_value)}**, '''
+            if x['value'] > 10:
+                s += f'''{x['text']} **{t(x['value'])}**, '''
         s += newline
         s += f'---' + newline
-    # return re.sub(', (<br>|</p>)', r'\1', s)
-    return s
-        
+    return re.sub(', \n', '\n', s)
 
 
 def top_article_by_referrer(articles, total, name, col_name):
@@ -142,19 +129,17 @@ article_cols_to_keep = [
     'Tw interactions',
 ]
 site_cols_to_keep = [
-    'URL',
-    'Title',
-    'Publish date',
-    'Authors',
-    'Section',
-    'Visitors',
-    'Views',
-    'Engaged minutes',
-    'New vis.',
-    'Returning vis.',
+    'Date',
+    'Visitors (all pages)',
+    'Visitors (posts)',
+    'Views (all pages)',
+    'Views (posts)',
     'Desktop views',
     'Mobile views',
     'Tablet views',
+    'Engaged Minutes (all pages)',
+    'Engaged Minutes (posts)',
+    'New Posts',
     'Search refs',
     'Internal refs',
     'Other refs',
@@ -167,7 +152,18 @@ site_cols_to_keep = [
     'Social interactions',
     'Fb interactions',
     'Tw interactions',
+    'New vis.',
+    'Views new vis.',
+    'Avg. views new vis.',
+    'Minutes New Vis.',
+    'Avg. minutes new vis.',
+    'Returning vis.',
+    'Views ret. vis.',
+    'Avg. views ret. vis.',
+    'Minutes Ret. Vis.',
+    'Avg. minutes ret. vis.',
 ]
+
 
 def process_csv(freq, site, file_name, cols_to_keep=None, parsely_fix=True):
     if parsely_fix:
@@ -200,17 +196,58 @@ else:
 
 
 # ARTICLES STATS
-
 df_article = process_csv(freq, site, articles_csv_test, article_cols_to_keep, True)
 # TEST POINT
 # print(df_article)
 # print(df_article.dtypes)
+# Add columns of calculations we'll need
+df_article['Social%'] = round((df_article['Social refs']/df_article['Views'])*100, 0)
+df_article['Search%'] = round((df_article['Search refs']/df_article['Views'])*100, 0)
+df_article['Other%'] = round((df_article['Other refs']/df_article['Views'])*100, 0)
+df_article['Direct%'] = round((df_article['Direct refs']/df_article['Views'])*100, 0)
+df_article['Internal%'] = round((df_article['Internal refs']/df_article['Views'])*100, 0)
+df_article['Fb%'] = round((df_article['Fb refs']/df_article['Views'])*100, 0)
+df_article['Tw%'] = round((df_article['Tw refs']/df_article['Views'])*100, 0)
+df_article['Mobile%'] = round((df_article['Mobile views']/df_article['Views'])*100, 0)
+df_article['Desktop%'] = round((df_article['Desktop views']/df_article['Views'])*100, 0)
+df_article['Tablet%'] = round((df_article['Tablet views']/df_article['Views'])*100, 0)
+df_article['time'] = round((df_article['Engaged minutes']/df_article['Visitors']), 2)
+df_article['Returning%'] = round((df_article['Returning vis.']/df_article['Visitors'])*100, 0)
+
+article_cols_to_keep = [
+    'URL',
+    'Title',
+    'Publish date',
+    'Authors',
+    'Section',
+    'Visitors',
+    'Views',
+    'Engaged minutes',
+    'New vis.',
+    'Returning vis.',
+    'Desktop views',
+    'Mobile views',
+    'Tablet views',
+    'Search refs',
+    'Internal refs',
+    'Other refs',
+    'Direct refs',
+    'Social refs',
+    'Fb refs',
+    'Tw refs',
+    'Li refs',
+    'Pi refs',
+    'Social interactions',
+    'Fb interactions',
+    'Tw interactions',
+]
 
 # intialize string
 report = '<head><meta charset="UTF-8"></head>'
 
 # GET TOP ARTICLES BY MINUTES
 # articles should be already sorted in CSV
+# TEST POINT
 # print(df_article.head(2).to_dict(orient='records'))
 report += articles_stats(df_article.head(10).to_dict(orient='records'))
 
@@ -237,9 +274,6 @@ for item in referrers:
                                       total, item['name'], item['col_name'])
 
 # END ARTICLES STATS
-
-
-
 print(report)
 with open(f'data_reports/test.html', "w") as f:
     f.write(report)
