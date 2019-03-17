@@ -73,12 +73,12 @@ def articles_stats(articles):
             if x['value'] > 10:
                 s += f'''{x['text']} **{t(x['value'])}**, '''
         s += newline
-        s += f'''Social interactions: {buzz}''' + newline
         s += f'''Devices %: '''
         for x in sorted(devices, key=lambda k: k['value'], reverse=True):
             if x['value'] > 10:
                 s += f'''{x['text']} **{t(x['value'])}**, '''
         s += newline
+        s += f'''Social interactions: {buzz}''' + newline
         s += f'---' + newline
     return re.sub(', \n', '\n', s)
 
@@ -86,17 +86,18 @@ def articles_stats(articles):
 def top_article_by_referrer(articles, total, name, col_name):
     s = ''
     # s += "======================\n"
-    s += f'''**{name.upper()}**: Top articles by page views''' + newline
+    s += f'''#### **{name.upper()}**: Top articles by page views''' + newline
     for item in articles:
         author = item['Authors'].title().replace(' And', ',')
         assetID = (re.search(r'.*(\d{7})-.*', item['URL'])).group(1)
         section = item['Section'].replace('and you', '').replace('news|', '').title()
         s += f'''{item['Title']}''' + newline
-        s += f'''By {author} in {section}'''
-        s += f''' | {item['Publish date'][:-6]} | Asset# [{assetID}]({item['URL']})''' + newline
-        s += f'''**{t(u.percentage(item[col_name], total))}**% of total -- **{u.humanize(item[col_name])}** clicks''' + newline
+        # s += f'''By {author} in {section}'''
+        # s += f''' | {item['Publish date'][:-6]} | Asset# [{assetID}]({item['URL']})''' + newline
+        s += f'''**{t(u.percentage(item[col_name], total))}**% of total -- **{u.humanize(item[col_name])}** clicks'''
+        s += f''' | asset [{assetID}]({item['URL']})''' + newline
         s += newline
-    s += "======================<br>\n"
+    s += "---\n"
     return s
 
 
@@ -262,9 +263,8 @@ referrers = [
     {'name': "Twitter", 'col_name': 'Tw refs', 'limit': 3},
     {'name': "LinkedIn", 'col_name': 'Li refs', 'limit': 3}
 ]
-report += '''===================================''' + newline
-report += '''TOP POSTS: by Referrers''' + newline
-report += '''-----------------------------------''' + newline
+report += '''---''' + newline
+report += '''### **TOP POSTS**: by Referrers''' + newline
 for item in referrers:
     articles = df_article.sort_values(by=[item['col_name']], ascending=False).head(
         item['limit']).to_dict(orient='records')
