@@ -9,6 +9,7 @@ pyperclip = "*"
 autopep8 = "*"
 pandas = "*"
 matplotlib = "*"
+markdown = "*"
 
 [dev-packages]
 "flake8" = "*"
