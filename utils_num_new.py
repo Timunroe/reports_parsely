@@ -38,6 +38,8 @@ def sum_safe(l):
 
 def humanize(value, fraction_point=1):
     if value != '':
+        if value == 0:
+            return '0'
         powers = [10 ** x for x in (12, 9, 6, 3, 0)]
         human_powers = ('T', 'B', 'M', 'K', '')
         is_negative = False
@@ -55,6 +57,7 @@ def humanize(value, fraction_point=1):
             return_value = "-" + return_value
         # remove pesky situation where xXX.0 occurs
         # return_value = return_value.replace('.0', '')
+        print("Return value is: ", return_value)
         return_value = re.sub(r'.0$', '', return_value)
         return return_value.replace('.0K', 'K')
     else:

@@ -5,6 +5,7 @@ import pathlib
 import sys
 import utils_num_new as u
 
+# requires  stats over time by ALL PAGES report.
 
 def t(n, mn=None, sign=False):
     # convert number to text for formatting
@@ -24,9 +25,11 @@ def t(n, mn=None, sign=False):
         return re.sub('.0$', '', symbol + str(n))
 
 
-def sign():
+def sign(text):
+    if not text.startswith('-'):
+        text = '+' + text
     # convert number to text with plus/minus sign
-    pass
+    return text
 
 
 # handy helpers
@@ -34,16 +37,9 @@ def sign():
 newline = '\n'
 dbline = '\n\n'
 
-# FILES TO PROCESS
-spec_site_csv = "Spec-Site-Stats-Over-Time-14-weeks.csv"
-spec_articles_csv = 'Spec-top-posts-byMinutes-lastWeek.csv'
-rec_site_csv = "Rec-Site-Stats-Over-Time-14-weeks.csv"
-rec_articles_csv = 'Rec-top-posts-byMinutes-lastWeek.csv'
-
 # ==================
 # ARTICLES
 # ==================
-
 
 # HOW DO WE PRESENT SOURCES, SOCIAL, DEVICES
 # in order from largest to smallest?
@@ -59,7 +55,8 @@ def articles_stats(articles):
         # data for report
         visitors_total = u.humanize(item['Visitors'])
         # print(str(visitors_total))
-        headline = item['Title'].title().replace('’T', '’t').replace('’S', '’s').replace("'S", "'s").replace('’M', '’m').replace('’R', '’r')
+        headline = item['Title'].title().replace('’T', '’t').replace('’S', '’s').replace("'S", "'s")\
+            .replace('’M', '’m').replace('’R', '’r')
         author = item['Authors'].title().replace(' And', ',')
         section = item['Section'].replace('and you', '').replace('news|', '').title()
         buzz = u.humanize(item["Social interactions"])
@@ -81,7 +78,8 @@ def articles_stats(articles):
         s += f'''{rank}. {headline}''' + newline
         s += f'''By {author} in {section}'''
         s += f''' | {item['Publish date'][:-6]} | Asset# [{assetID}]({item['URL']})''' + newline
-        s += f'''PV **{u.humanize(item['Views'])}** | visitors: **{visitors_total}**, {t(item['Returning%'])}% returning | {t(item['time'], mn=0.6)} min/visitor''' + newline
+        s += f'''PV **{u.humanize(item['Views'])}** | visitors: **{visitors_total}**, '''
+        s += f'''{t(item['Returning%'])}% returning | {t(item['time'], mn=0.6)} min/visitor''' + newline
         # examine each stat, if < 10 don't bother showing it ...
         s += f'''Key sources %: '''
         for x in sorted(sources, key=lambda k: k['value'], reverse=True):
@@ -94,7 +92,7 @@ def articles_stats(articles):
                 s += f'''{x['text']} **{t(x['value'])}**, '''
         s += newline
         s += f'''Social interactions: {buzz}''' + newline
-    return re.sub(', \n', '\n', s)
+    return s
 
 
 def top_article_by_referrer(articles, total, name, col_name):
@@ -202,14 +200,117 @@ def process_csv(freq, site, file_name, cols_to_keep=None, parsely_fix=True):
 
 
 # MAIN
-if len(sys.argv) > 2 and (sys.argv)[1] in ['daily', 'weekly', 'monthly'] and (sys.argv)[2] in ['spectator', 'record', 'niagara', 'standard', 'examiner', 'tribune', 'review', 'star']:
+if len(sys.argv) > 2 and (sys.argv)[1] in ['daily', 'weekly', 'monthly'] and (sys.argv)[2] \
+    in ['spectator', 'record', 'niagara', 'standard', 'examiner', 'tribune', 'review', 'star']:
     freq = (sys.argv)[1]
     site = (sys.argv)[2]
 else:
     print("Requires 2 parameters:\n[daily/weekly/monthly]\n[spectator/record/niagara/examiner/star]")
     sys.exit()
 
-articles_csv = rec_articles_csv
+# FILES TO PROCESS
+if site == 'spectator':
+    site_csv = "Spec-Site-Stats-14-weeks-pages.csv"
+    articles_csv = 'Spec-top-posts-byMinutes-lastWeek.csv'
+elif site == 'record':
+    site_csv = "Rec-Site-Stats-Over-Time.csv"
+    articles_csv = 'Rec-top-posts-byMinutes-lastWeek.csv'
+elif site == 'standard':
+    site_csv = "Standard-Site-Stats-14-weeks-pages.csv"
+    articles_csv = 'Standard-top-posts-byMinutes-lastWeek.csv'
+
+# intialize string
+report = ''
+
+# SITE STATS
+site_cols_to_keep = [
+    'Date',
+    'Visitors',
+    'Views',
+    'Engaged minutes',
+    'New Posts',
+    'Social interactions',
+    'Fb interactions',
+    'Tw interactions',
+    'Li interactions',
+    'Desktop views',
+    'Mobile views',
+    'Tablet views',
+    'Search refs',
+    'Internal refs',
+    'Other refs',
+    'Direct refs',
+    'Social refs',
+    'Fb refs',
+    'Tw refs',
+    'Li refs',
+    'New vis.',
+    'Views new vis.',
+    'Avg. views new vis.',
+    'Minutes New Vis.',
+    'Avg. minutes new vis.',
+    'Returning vis.',
+    'Views ret. vis.',
+    'Avg. views ret. vis.',
+    'Minutes Ret. Vis.',
+    'Avg. minutes ret. vis.',
+]
+
+df_site = process_csv(freq, site, site_csv, site_cols_to_keep, True)
+
+# Add columns of calculations we'll need
+df_site['Social%'] = round((df_site['Social refs'] / df_site['Views']) * 100, 0)
+df_site['Search%'] = round((df_site['Search refs'] / df_site['Views']) * 100, 0)
+df_site['Other%'] = round((df_site['Other refs'] / df_site['Views']) * 100, 0)
+df_site['Direct%'] = round((df_site['Direct refs'] / df_site['Views']) * 100, 0)
+df_site['Internal%'] = round((df_site['Internal refs'] / df_site['Views']) * 100, 0)
+df_site['Fb%'] = round((df_site['Fb refs'] / df_site['Views']) * 100, 0)
+df_site['Tw%'] = round((df_site['Tw refs'] / df_site['Views']) * 100, 0)
+df_site['Mobile%'] = round((df_site['Mobile views'] / df_site['Views']) * 100, 0)
+df_site['Desktop%'] = round((df_site['Desktop views'] / df_site['Views']) * 100, 0)
+df_site['Tablet%'] = round((df_site['Tablet views'] / df_site['Views']) * 100, 0)
+df_site['time'] = round((df_site['Engaged minutes'] / df_site['Views']), 2)
+df_site['Returning%'] = round((df_site['Returning vis.'] / df_site['Views']) * 100, 0)
+# this period data = df_site.head(1)
+# rolling average data = df_site.tail(len(df_site.index) - 1)
+# print(df_site)
+
+pv = df_site.head(1)['Views'].item()
+pv_vs_ma = u.vs_ma(df_site.head(1)['Views'].item(), df_site.tail(len(df_site.index) - 1)['Views'].mean())
+v = df_site.head(1)['Visitors'].item()
+v_vs_ma = u.vs_ma(df_site.head(1)['Visitors'].item(), df_site.tail(len(df_site.index) - 1)['Visitors'].mean())
+m = df_site.head(1)['Engaged minutes'].item()
+m_vs_ma = u.vs_ma(df_site.head(1)['Engaged minutes'].item(), df_site.tail(len(df_site.index) - 1)['Engaged minutes'].mean())
+fb_delta = df_site.head(1)['Fb refs'].item() - df_site.tail(len(df_site.index) - 1)['Fb refs'].mean()
+tw_delta = df_site.head(1)['Tw refs'].item() - df_site.tail(len(df_site.index) - 1)['Tw refs'].mean()
+other_delta = df_site.head(1)['Other refs'].item() - df_site.tail(len(df_site.index) - 1)['Other refs'].mean()
+search_delta = df_site.head(1)['Search refs'].item() - df_site.tail(len(df_site.index) - 1)['Search refs'].mean()
+direct_delta = df_site.head(1)['Direct refs'].item() - df_site.tail(len(df_site.index) - 1)['Direct refs'].mean()
+internal_delta = df_site.head(1)['Internal refs'].item() - df_site.tail(len(df_site.index) - 1)['Internal refs'].mean()
+mobile = df_site.head(1)['Mobile%'].item()
+desktop = df_site.head(1)['Desktop%'].item()
+tablet = df_site.head(1)['Tablet%'].item()
+shifts = [
+    {'text': 'FB', 'value': fb_delta},
+    {'text': 'Tw', 'value': tw_delta},
+    {'text': 'Search', 'value': search_delta},
+    {'text': 'Other', 'value': other_delta},
+    {'text': 'Direct', 'value': direct_delta},
+    {'text': 'Internal', 'value': internal_delta},
+]
+report += f'''\n## Weekly report {site.title()}\n'''
+report += f'''### HIGHLIGHTS:\n'''
+report += f'''Page views: {u.humanize(pv)}, **{pv_vs_ma:+}%** vs average.\n'''
+report += f'''Changes: '''
+for x in sorted(shifts, key=lambda k: k['value'], reverse=True):
+    if abs(x['value']) > 500:
+        report += f'''{x['text']} **{u.humanize(x['value'])}**, '''
+report += '\n'
+report += f'''Visitors: {u.humanize(v)}, **{v_vs_ma:+}%** vs average.\n'''
+report += f'''Minutes: {u.humanize(m)}, **{m_vs_ma:+}%** vs average.\n'''
+report += f'''Devices %: {mobile} mobile, {desktop} desktop, {tablet} tablet\n\n'''
+# END SITE STATS
+
 # ARTICLES STATS
 df_article = process_csv(freq, site, articles_csv, article_cols_to_keep, True)
 # TEST POINT
@@ -257,9 +358,6 @@ article_cols_to_keep = [
     'Tw interactions',
 ]
 
-# intialize string
-report = ''
-
 # GET TOP ARTICLES BY MINUTES
 # articles should be already sorted in CSV
 # TEST POINT
@@ -269,13 +367,14 @@ report += articles_stats(df_article.head(10).to_dict(orient='records'))
 # GET TOP ARTICLES BY REFERRERS
 referrers = [
     {'name': "Search", 'col_name': 'Search refs', 'limit': 3},
+    {'name': "Other", 'col_name': 'Other refs', 'limit': 3},
     {'name': "Social", 'col_name': 'Social refs', 'limit': 3},
     {'name': "Facebook", 'col_name': 'Fb refs', 'limit': 3},
     {'name': "Twitter", 'col_name': 'Tw refs', 'limit': 3},
     {'name': "LinkedIn", 'col_name': 'Li refs', 'limit': 3},
     {'name': "Internal", 'col_name': 'Internal refs', 'limit': 3},
-    {'name': "Other", 'col_name': 'Other refs', 'limit': 3},
-    {'name': "Direct", 'col_name': 'Direct refs', 'limit': 3},
+
+    # {'name': "Direct", 'col_name': 'Direct refs', 'limit': 3},
 ]
 report += '''---''' + newline
 report += '''### **TOP POSTS**: by Referrers''' + newline
@@ -283,116 +382,25 @@ for item in referrers:
     articles = df_article.sort_values(by=[item['col_name']], ascending=False).head(
         item['limit']).to_dict(orient='records')
     total = df_article[item['col_name']].sum()
-
-    report += top_article_by_referrer(articles,
-                                      total, item['name'], item['col_name'])
+    report += top_article_by_referrer(articles, total, item['name'], item['col_name'])
 
 # END ARTICLES STATS
-# SITE STATS
-site_cols_to_keep = [
-    'Date',
-    'Visitors',
-    'Views',
-    'Engaged minutes',
-    'New Posts',
-    'Social interactions',
-    'Fb interactions',
-    'Tw interactions',
-    'Li interactions',
-    'Desktop views',
-    'Mobile views',
-    'Tablet views',
-    'Search refs',
-    'Internal refs',
-    'Other refs',
-    'Direct refs',
-    'Social refs',
-    'Fb refs',
-    'Tw refs',
-    'Li refs',
-    'New vis.',
-    'Views new vis.',
-    'Avg. views new vis.',
-    'Minutes New Vis.',
-    'Avg. minutes new vis.',
-    'Returning vis.',
-    'Views ret. vis.',
-    'Avg. views ret. vis.',
-    'Minutes Ret. Vis.',
-    'Avg. minutes ret. vis.',
-]
-
-site_csv = rec_site_csv
-df_site = process_csv(freq, site, site_csv, site_cols_to_keep, True)
-
-# Add columns of calculations we'll need
-df_site['Social%'] = round((df_site['Social refs'] / df_site['Views']) * 100, 0)
-df_site['Search%'] = round((df_site['Search refs'] / df_site['Views']) * 100, 0)
-df_site['Other%'] = round((df_site['Other refs'] / df_site['Views']) * 100, 0)
-df_site['Direct%'] = round((df_site['Direct refs'] / df_site['Views']) * 100, 0)
-df_site['Internal%'] = round((df_site['Internal refs'] / df_site['Views']) * 100, 0)
-df_site['Fb%'] = round((df_site['Fb refs'] / df_site['Views']) * 100, 0)
-df_site['Tw%'] = round((df_site['Tw refs'] / df_site['Views']) * 100, 0)
-df_site['Mobile%'] = round((df_site['Mobile views'] / df_site['Views']) * 100, 0)
-df_site['Desktop%'] = round((df_site['Desktop views'] / df_site['Views']) * 100, 0)
-df_site['Tablet%'] = round((df_site['Tablet views'] / df_site['Views']) * 100, 0)
-df_site['time'] = round((df_site['Engaged minutes'] / df_site['Views']), 2)
-df_site['Returning%'] = round((df_site['Returning vis.'] / df_site['Views']) * 100, 0)
-# this period data = df_site.head(1)
-# rolling average data = df_site.tail(len(df_site.index) - 1)
-# print(df_site)
-
-pv = df_site.head(1)['Views'].item()
-pv_vs_ma = u.vs_ma(df_site.head(1)['Views'].item(), df_site.tail(len(df_site.index) - 1)['Views'].mean())
-v = df_site.head(1)['Visitors'].item()
-v_vs_ma = u.vs_ma(df_site.head(1)['Visitors'].item(), df_site.tail(len(df_site.index) - 1)['Visitors'].mean())
-m = df_site.head(1)['Engaged minutes'].item()
-m_vs_ma = u.vs_ma(df_site.head(1)['Engaged minutes'].item(), df_site.tail(len(df_site.index) - 1)['Engaged minutes'].mean())
-fb_delta = df_site.head(1)['Fb refs'].item() - df_site.tail(len(df_site.index) - 1)['Fb refs'].mean()
-tw_delta = df_site.head(1)['Tw refs'].item() - df_site.tail(len(df_site.index) - 1)['Tw refs'].mean()
-other_delta = df_site.head(1)['Other refs'].item() - df_site.tail(len(df_site.index) - 1)['Other refs'].mean()
-search_delta = df_site.head(1)['Search refs'].item() - df_site.tail(len(df_site.index) - 1)['Search refs'].mean()
-direct_delta = df_site.head(1)['Direct refs'].item() - df_site.tail(len(df_site.index) - 1)['Direct refs'].mean()
-internal_delta = df_site.head(1)['Internal refs'].item() - df_site.tail(len(df_site.index) - 1)['Internal refs'].mean()
-shifts = [
-    {'text': 'FB', 'value': fb_delta},
-    {'text': 'Tw', 'value': tw_delta},
-    {'text': 'Search', 'value': search_delta},
-    {'text': 'Other', 'value': other_delta},
-    {'text': 'Direct', 'value': direct_delta},
-    {'text': 'Internal', 'value': internal_delta},
-]
-report += f'''\n## Weekly report TheRecord.com\n'''
-report += f'''#### HIGLIGHTS:\n'''
-report += f'''Page views: {u.humanize(pv)}, {pv_vs_ma}% vs average.\n'''
-report += f'''Referral shifts: '''
-for x in sorted(shifts, key=lambda k: abs(k['value']), reverse=True):
-    if abs(x['value']) > 100:
-        report += f'''{x['text']} **{u.humanize(x['value'])}**, '''
-report += '\n'
-report += f'''Visitors: {u.humanize(v)}, {v_vs_ma}% vs average.\n'''
-report += f'''Minutes: {u.humanize(m)}, {m_vs_ma}% vs average.\n'''
-
-
-
 print(report)
 # print(len(df_site.index))
 # print(df_site.dtypes)
-
-# END SITE STATS
-
-# print(report)
 head = '''<html><head><meta charset="UTF-8"><style>html{font-family:sans-serif;line-height:1.15;\
 -webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;\
 -webkit-tap-highlight-color:transparent}@-ms-viewport{width:device-width}\
 article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}\
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;\
 font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;\
-background-color:#fff}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}\
-dl,ol,ul{margin-top:0;margin-bottom:1rem}li{margin-bottom: 1rem;}p{}</style></head><body>'''
+background-color:#fff}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:16px;}p{margin-top:0;margin-bottom:16px;}\
+dl,ol,ul{margin-top:0;margin-bottom:14px;}li{margin-bottom:16px;}\
+table{display:table;border-collapse:collapse;border-spacing:0;width:100%;}th{text-align: inherit;}p{}</style></head><body>\
+'''
 tail = '</body></html>'
 
-html = markdown.markdown(report, extensions=['nl2br'])
+html = markdown.markdown(re.sub(', \n', '\n', report.replace('.0', '')), extensions=['extra', 'nl2br'])
 report = head + html + tail
 
 with open(f'data_reports/test.html', "w") as f:

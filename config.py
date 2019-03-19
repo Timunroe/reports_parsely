@@ -34,7 +34,7 @@ files = {
             "posts": 'Spec-top-posts-byMinutes-yesterday.csv',
         },
         "weekly": {
-            'stats': f'Spec-Site-Stats-14-weeks.csv',
+            'stats': f'Spec-Site-Stats-14-weeks-posts.csv',
             "posts": 'Spec-top-posts-byMinutes-lastWeek.csv',
         },
         "monthly": {
