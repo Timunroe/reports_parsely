@@ -1,94 +1,94 @@
 import pandas as pd
-import utils_num as u
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import rcParams
+import seaborn as sns
+import pathlib
+sns.set()
 
-site_stats = "Spec-Site-Stats-14-weeks.csv"
-article_stats = 'Spec-top-posts-byMinutes-lastWeek.csv'
+rcParams.update({'figure.autolayout': True})
 
-# print(list(df.columns.values))
-cols_to_keep = [
-    'URL',
-    'Title',
-    'Publish date',
-    'Authors',
-    'Section',
-    'Visitors',
-    'Views',
-    'Engaged minutes',
-    'New vis.',
-    'Returning vis.',
-    'Desktop views',
-    'Mobile views',
-    'Tablet views',
-    'Search refs',
-    'Internal refs',
-    'Other refs',
-    'Direct refs',
-    'Social refs',
-    'Fb refs',
-    'Tw refs',
-    'Li refs',
-    'Pi refs',
-    'Social interactions',
-    'Fb interactions',
-    'Tw interactions',
-]
+# close
+plt.close('all')
+
+file_name = "Spectator_home_page_weekly.csv"
+tw_file_name = 'spec_monthly_sm_posts.csv'
+freq = 'weekly'
+
+def process_csv(file_name, freq):
+        path = pathlib.Path.cwd() / 'data_in' / f'{freq}' / file_name
+        fixed_csv = path.read_text().replace('.0', '').replace('\xa0', ' ').replace(',,,,', ',0,0,0,').replace(',,,', ',0,0,').replace(',,', ',0,').replace(',\n', ',0\n')
+        # TEST POINT
+        # print(fixed_csv)
+        return pd.read_csv(pd.compat.StringIO(fixed_csv))
 
 
-def article_stats(data, kind=None, total=None):
-    s = ''
-    newline = '\n'
-    for item in data:
-        tv = item['Visitors']
-        tvu = item['Views']
-        ts = item['Social refs']
-        s += f'''{item['Title']}''' + newline
-        s += f'''By {item['Authors'].title()} in {item['Section'].replace('and you', '')} | {item['Publish date'][:-6]}''' + newline
-        s += f'''VISITORS: {str(round(item["Engaged minutes"] / tv, 2))} min/visitor, visitors: {u.humanize(tv)}, returning: {u.percentage(item['Returning vis.'], tv)}''' + newline
-        if kind == 'fb':
-            s+= f'''% of views from Facebook: {u.percentage(item['Fb refs'], total)}''' + newline
-        elif kind == 'tw':
-            s+= f'''% of views from Twitter: {u.percentage(item['Tw refs'], total)}''' + newline
-        elif kind == 'li':
-            s+= f'''% of views from LinkedIn: {u.percentage(item['Li refs'], total)}''' + newline
-        else:
-            s += f'''TRAFFIC %: social {u.percentage(item['Social refs'], tvu)}, search {u.percentage(item['Search refs'], tvu)}, other {u.percentage(item['Other refs'], tvu)}, direct {u.percentage(item['Direct refs'], tvu)}, internal {u.percentage(item['Internal refs'], tvu)}''' + newline
-            s += f'''SOCIAL BREAKDOWN %: FB {u.percentage(item['Fb refs'], ts)}, Twitter {u.percentage(item['Tw refs'], ts)} | Interactions: {u.humanize(item["Social interactions"])}''' + newline
-            s += f'''DEVICES %: mobile {u.percentage(item['Mobile views'], tvu)}, desktop {u.percentage(item['Desktop views'], tvu)}, tablet {u.percentage(item['Tablet views'], tvu)}''' + newline
-        s += f'---------------------------' + newline
-    s += "======================\n"
-    return s
+df = process_csv(file_name, freq)
 
-df = pd.read_csv(article_stats,
-                 usecols=cols_to_keep,
-                 keep_default_na=False,
-                 na_values='0')
-
-df.columns = df.columns.str.replace('\xa0', ' ')
-
-cols_to_fix = ["Search refs", "Internal refs", "Other refs", "Social refs", "Fb refs", "Tw refs", "Li refs", "Pi refs", "Social interactions", "Fb interactions", "Tw interactions"]
-
-df[cols_to_fix] = df[cols_to_fix].apply(pd.to_numeric)
-
-# TOP FB ARTICLES
-articles_top_FB = df.sort_values(by=['Fb refs'], ascending=False).head(3).to_dict(orient='records')
-FB_views = df['Fb refs'].sum()
-# print(articles_top_FB)
-report = 'Top articles by PV from Facebook\n================\n'
-report += article_stats(articles_top_FB, 'fb', FB_views)
-
-# TOP Twitter ARTICLES
-articles_top_TW = df.sort_values(by=['Tw refs'], ascending=False).head(3).to_dict(orient='records')
-TW_views = df['Tw refs'].sum()
-# print(articles_top_FB)
-report += 'Top articles by PV from Twitter\n================\n'
-report += article_stats(articles_top_TW, 'tw', TW_views)
-
-# TOP Twitter ARTICLES
-articles_top_LI = df.sort_values(by=['Li refs'], ascending=False).head(3).to_dict(orient='records')
-LI_views = df['Li refs'].sum()
-# print(articles_top_FB)
-report += 'Top articles by PV from LinkedIn\n================\n'
-report += article_stats(articles_top_LI, 'li', LI_views)
-
-print(report)
+df['Week Starting'] = pd.to_datetime(df['Week Starting'])
+# df['Avg'] = df['Articles'].expanding().mean()
+# df.set_index('Week', inplace=True)
 # print(df.dtypes)
+# print(df.columns.values)
+# print(df.head(3))
+
+plt.figure()
+df.plot(x='Week Starting', y=['Direct PV', 'HP PV', 'Visitors'], kind='line')
+# plt.tight_layout()
+plt.grid(b=True, which='major', axis='y')
+plt.xlabel('Week')
+plt.ylabel('Page Views')
+plt.savefig('shp_pv.png')
+
+# close
+plt.close('all')
+
+plt.figure()
+df.iloc[0:14].plot(x='Week Starting', y=['Bounce Rate', 'PV Trend', 'Direct PV % of Site PV'], kind='line')
+# plt.tight_layout()
+plt.grid(b=True, which='major', axis='y')
+plt.xlabel('Week')
+plt.ylabel('Trends')
+plt.savefig('shp_trend.png')
+
+# close
+plt.close('all')
+
+plt.figure()
+df.iloc[0:26].plot(x='Week Starting', y=['HP PV', 'Direct PV', 'Internal PV'], kind='line')
+# plt.tight_layout()
+plt.grid(b=True, which='major', axis='y')
+plt.xlabel('Week')
+plt.ylabel('Source PV')
+plt.savefig('shp_bounce.png')
+
+# close
+plt.close('all')
+
+df_tw = process_csv(tw_file_name, 'monthly')
+df_tw['Month'] = pd.to_datetime(df_tw['Month'])
+
+# df_tw.plot(x='Month', y=['Twitter Posts', 'Views'], kind='line')
+# plt.grid(b=True, which='major', axis='y')
+# plt.ylabel('PV Thousands')
+# plt.savefig('tw_traffic.png')
+
+ax = df_tw.plot(x="Month", y=["Tw posts", "Fb posts"], legend=False)
+ax2 = ax.twinx()
+df_tw.plot(x="Month", y=["Tw posts", "Fb posts"], ax=ax2, legend=False, color="r")
+ax.figure.legend()
+plt.savefig('tw_traffic.png')
+
+# close
+plt.close('all')
+
+plt.figure()
+df_tw.plot(x='Month', y=['Tw refs', 'Fb refs'], kind='line')
+plt.grid(b=True, which='major', axis='y')
+plt.xlabel('Month')
+plt.ylabel('Page Views')
+plt.savefig('social_traffic.png')
+
+# close
+plt.close('all')
+
