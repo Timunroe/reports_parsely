@@ -57,7 +57,7 @@ def humanize(value, fraction_point=1):
             return_value = "-" + return_value
         # remove pesky situation where xXX.0 occurs
         # return_value = return_value.replace('.0', '')
-        print("Return value is: ", return_value)
+        # print("Return value is: ", return_value)
         return_value = re.sub(r'.0$', '', return_value)
         return return_value.replace('.0K', 'K')
     else:
