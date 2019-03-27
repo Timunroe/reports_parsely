@@ -211,15 +211,8 @@ else:
     sys.exit()
 
 # FILES TO PROCESS
-if site == 'spectator':
-    site_csv = "spec_site.csv"
-    pages_csv = 'spec_pages.csv'
-elif site == 'record':
-    site_csv = "rec_site.csv"
-    pages_csv = 'rec_pages.csv'
-elif site == 'standard':
-    site_csv = "standard_site.csv"
-    pages_csv = 'standard_pages.csv'
+site_csv = f'''{site}_site.csv'''
+pages_csv = f'''{site}_pages.csv'''
 
 # intialize string
 report = ''
@@ -322,7 +315,8 @@ shifts = [
 ]
 report += f'''\n## {freq.title()} report {site.title()}\n'''
 report += f'''### HIGHLIGHTS:\n'''
-report += f'''Page views: {u.humanize(pv, 2)}, **{pv_vs_ra:+}%** vs average.\n'''
+# need test here: if number 6 digits, fraction point = 0, but if 7, fraction point = 2
+report += f'''Page views: {u.humanize(pv, 0)}, **{pv_vs_ra:+}%** vs average.\n'''
 report += f'''Breakdown %: {df_site.tail(1)['Social%'].item():.0f} social, {df_site.tail(1)['Search%'].item():.0f} search, '''
 report += f'''{df_site.tail(1)['Internal%'].item():.0f} internal, {df_site.tail(1)['Direct%'].item():.0f} direct, '''
 report += f'''{df_site.tail(1)['Other%'].item():.0f} other\n'''
@@ -341,7 +335,7 @@ report += f'''##### *Average is 13-week rolling mean.'''
 
 # PLOT rolling averages of key metrics
 plt.figure()
-df_site[df_site['Views rm'].notnull()].plot(x='Date', y=['Direct rm', 'Search rm', 'Fb rm', 'Other rm'], kind='line')
+df_site[df_site['Views rm'].notnull()].plot(x='Date', y=['Internal rm', 'Direct rm', 'Search rm', 'Fb rm', 'Other rm'], kind='line')
 # plt.tight_layout()
 plt.grid(b=True, which='major', axis='y')
 plt.xlabel('Weeks')
@@ -386,6 +380,7 @@ df = process_csv(freq, site, pages_csv, pages_cols_keep, True)
 # filter out non articles, convert pub date to time object
 df_article = df.copy()
 df_article = df_article[df_article['URL'].str.contains('story')]
+print(df_article['Publish date'].tail(5))
 df_article['Publish date'] = pd.to_datetime(df_article['Publish date'])
 
 # TEST POINT
