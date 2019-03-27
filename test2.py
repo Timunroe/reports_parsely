@@ -380,7 +380,8 @@ df = process_csv(freq, site, pages_csv, pages_cols_keep, True)
 # filter out non articles, convert pub date to time object
 df_article = df.copy()
 df_article = df_article[df_article['URL'].str.contains('story')]
-print(df_article['Publish date'].tail(5))
+# Need to filter out empty timestamp.
+# print(df_article['Publish date'].tail(5))
 df_article['Publish date'] = pd.to_datetime(df_article['Publish date'])
 
 # TEST POINT
