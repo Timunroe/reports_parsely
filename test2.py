@@ -295,13 +295,13 @@ df_site['time'] = round((df_site['Engaged minutes'] / df_site['Views']), 2)
 # Actual data needed in text report
 pv = df_site.tail(1)['Views'].item()
 pv_vs_ra = round(
-    ((pv - df_site.tail(1)['Views rm'].item())/df_site.tail(1)['Views rm'].item())*100, 0)
+    ((pv - df_site.tail(1)['Views rm'].item()) / df_site.tail(1)['Views rm'].item()) * 100, 0)
 v = df_site.tail(1)['Visitors'].item()
 v_vs_ra = round(
-    ((v - df_site.tail(1)['Visitors rm'].item())/df_site.tail(1)['Visitors rm'].item())*100, 0)
+    ((v - df_site.tail(1)['Visitors rm'].item()) / df_site.tail(1)['Visitors rm'].item()) * 100, 0)
 m = df_site.tail(1)['Engaged minutes'].item()
 m_vs_ra = round(
-    ((m - df_site.tail(1)['Minutes rm'].item())/df_site.tail(1)['Minutes rm'].item())*100, 0)
+    ((m - df_site.tail(1)['Minutes rm'].item()) / df_site.tail(1)['Minutes rm'].item()) * 100, 0)
 fb_delta = df_site.tail(1)['Fb refs'].item() - df_site.tail(1)['Fb rm'].item()
 tw_delta = df_site.tail(1)['Tw refs'].item() - df_site.tail(1)['Tw rm'].item()
 other_delta = df_site.tail(1)['Other refs'].item() - \
@@ -325,8 +325,8 @@ shifts = [
 ]
 report += f'''\n## {freq.title()} report {site.title()}\n'''
 report += f'''### HIGHLIGHTS:\n'''
-# need test here: if number 6 digits, fraction point = 0, but if 7, fraction point = 2
-report += f'''Page views: {u.humanize(pv, 0)}, **{pv_vs_ra:+}%** vs average.\n'''
+# need test here: if pv number 6 digits, fraction point = 0, but if 7, fraction point = 2
+report += f'''Page views: {u.humanize(pv, 2) if pv > 1000000 else u.humanize(pv, 0)}, **{pv_vs_ra:+}%** vs average.\n'''
 report += f'''Breakdown %: {df_site.tail(1)['Social%'].item():.0f} social, '''
 report += f'''{df_site.tail(1)['Search%'].item():.0f} search, '''
 report += f'''{df_site.tail(1)['Internal%'].item():.0f} internal, '''
@@ -353,7 +353,8 @@ df_site[df_site['Views rm'].notnull()].plot(x='Date', y=['Internal rm',
 # plt.tight_layout()
 plt.grid(b=True, which='major', axis='y')
 plt.xlabel('Weeks')
-plt.ylabel('Page Views')
+plt.ylabel('Page Views (13-week rolling means)')
+plt.legend(loc='upper left')
 plt.savefig('data_out/s_weekly_ra.png')
 
 # close
@@ -425,6 +426,7 @@ report += articles_stats(df_article.head(10).to_dict(orient='records'))
 referrers = [
     {'name': "Search", 'col_name': 'Search refs', 'limit': 3},
     {'name': "Other", 'col_name': 'Other refs', 'limit': 3},
+    {'name': "Social interactions", 'col_name': 'Social interactions', 'limit': 3},
     {'name': "Social", 'col_name': 'Social refs', 'limit': 3},
     {'name': "Facebook", 'col_name': 'Fb refs', 'limit': 3},
     {'name': "Twitter", 'col_name': 'Tw refs', 'limit': 3},
@@ -448,7 +450,7 @@ print(report)
 head = '''<html><head><meta charset="UTF-8"><style>\
 html{font-family:sans-serif;line-height:1.15;\
 -webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;\
--webkit-tap-highlight-color:transparent}@-ms-viewport{width:device-width}\
+-webkit-tap-highlight-color:transparent}\
 article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}\
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,\
 "Helvetica Neue",Arial,sans-serif;\
@@ -461,8 +463,7 @@ th{text-align: inherit;}p{}</style></head><body>\
 '''
 tail = '</body></html>'
 
-html = markdown.markdown(re.sub(', \n', '\n', report.replace(
-    '.0', '')), extensions=['extra', 'nl2br'])
+html = markdown.markdown(re.sub(', \n', '\n', report), extensions=['extra', 'nl2br'])
 report = head + html + tail
 
 with open(f'data_reports/test.html', "w") as f:
