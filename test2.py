@@ -146,7 +146,10 @@ def top_article_by_referrer(articles, total, name, col_name):
         s += f'''{item['Title']}''' + newline
         # s += f'''By {author} in {section}'''
         # s += f''' | {item['Publish date'][:-6]} | Asset# [{assetID}]({item['URL']})''' + newline
-        s += f'''**{t(u.percentage(item[col_name], total))}**% of total -- **{u.humanize(item[col_name])}** clicks'''
+        if col_name == 'Social interactions':
+            s += f'''**{t(u.percentage(item[col_name], total))}**% of total -- **{u.humanize(item[col_name])}** interactions'''
+        else:
+            s += f'''**{t(u.percentage(item[col_name], total))}**% of total -- **{u.humanize(item[col_name])}** clicks'''
         s += f''' | asset [{assetID}]({item['URL']})''' + newline
         s += newline
     if name == 'Other':
@@ -247,23 +250,32 @@ df_site = df.sort_values(by=['Date'])
 
 # Add columns of calculations we'll need
 # rolling means
-df_site['Views rm'] = df_site['Views'].rolling(window=13, center=False).mean()
+if freq == 'weekly':
+    r_units = 13
+if freq == 'daily':
+    r_units = 90
+if freq == 'monthly':
+    r_units = 3
+
+df_site['Views rm'] = df_site['Views'].rolling(window=r_units, center=False).mean()
 # print(df_site.tail(1))
 # print(df_site[['Views','Views rm']])
+
+
 df_site['Visitors rm'] = df_site['Visitors'].rolling(
-    window=13, center=False).mean()
+    window=r_units, center=False).mean()
 df_site['Minutes rm'] = df_site['Engaged minutes'].rolling(
-    window=13, center=False).mean()
-df_site['Fb rm'] = df_site['Fb refs'].rolling(window=13, center=False).mean()
-df_site['Tw rm'] = df_site['Tw refs'].rolling(window=13, center=False).mean()
+    window=r_units, center=False).mean()
+df_site['Fb rm'] = df_site['Fb refs'].rolling(window=r_units, center=False).mean()
+df_site['Tw rm'] = df_site['Tw refs'].rolling(window=r_units, center=False).mean()
 df_site['Search rm'] = df_site['Search refs'].rolling(
-    window=13, center=False).mean()
+    window=r_units, center=False).mean()
 df_site['Other rm'] = df_site['Other refs'].rolling(
-    window=13, center=False).mean()
+    window=r_units, center=False).mean()
 df_site['Direct rm'] = df_site['Direct refs'].rolling(
-    window=13, center=False).mean()
+    window=r_units, center=False).mean()
 df_site['Internal rm'] = df_site['Internal refs'].rolling(
-    window=13, center=False).mean()
+    window=r_units, center=False).mean()
 
 # Percentages
 df_site['Social%'] = round(
@@ -324,7 +336,7 @@ shifts = [
     {'text': 'Internal', 'value': internal_delta},
 ]
 report += f'''\n## {freq.title()} report {site.title()}\n'''
-report += f'''### HIGHLIGHTS:\n'''
+report += f'''### SITE HIGHLIGHTS:\n'''
 # need test here: if pv number 6 digits, fraction point = 0, but if 7, fraction point = 2
 report += f'''Page views: {u.humanize(pv, 2) if pv > 1000000 else u.humanize(pv, 0)}, **{pv_vs_ra:+}%** vs average.\n'''
 report += f'''Breakdown %: {df_site.tail(1)['Social%'].item():.0f} social, '''
@@ -339,10 +351,14 @@ for x in sorted(shifts, key=lambda k: k['value'], reverse=True):
     if abs(x['value']) > 999:
         report += f'''{x['text']} **{u.humanize(x['value'])}**, '''
 report += '\n\n'
-report += f'''Visitors: {u.humanize(v, 0)}, **{v_vs_ra:+}%** vs average.\n'''
-report += f'''Minutes: {u.humanize(m, 0)}, **{m_vs_ra:+}%** vs average.\n'''
-
-report += f'''##### *Average is 13-week rolling mean.'''
+report += f'''Visitors: {u.humanize(v, 2) if v > 1000000 else u.humanize(v, 0)}, **{v_vs_ra:+}%** vs average.\n'''
+report += f'''Minutes: {u.humanize(m, 2) if m > 1000000 else u.humanize(m, 0)}, **{m_vs_ra:+}%** vs average.\n'''
+if freq == 'weekly':
+    report += f'''##### *Average is 13-week rolling mean.'''
+if freq == 'daily':
+    report += f'''##### *Average is 90-day rolling mean.'''
+if freq == 'monthly':
+    report += f'''##### *Average is 3-month rolling mean.'''
 # TEST POINT
 # print(report)
 
@@ -353,7 +369,12 @@ df_site[df_site['Views rm'].notnull()].plot(x='Date', y=['Internal rm',
 # plt.tight_layout()
 plt.grid(b=True, which='major', axis='y')
 plt.xlabel('Weeks')
-plt.ylabel('Page Views (13-week rolling means)')
+if freq == 'monthly':
+    plt.ylabel('Page Views (3-month rolling means)')
+if freq == 'weekly':
+    plt.ylabel('Page Views (13-week rolling means)')
+if freq == 'daily':
+    plt.ylabel('Page Views (90-day rolling means)')
 plt.legend(loc='upper left')
 plt.savefig('data_out/s_weekly_ra.png')
 
