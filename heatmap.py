@@ -15,6 +15,15 @@ filename2 = 'record_heat_publish.csv'
 filename3 = 'examiner_heat_publish.csv'
 filename4 = 'niagara_heat_publish.csv'
 
+# VISITOR/PAGE VIEWS TIMES
+
+
+
+
+
+
+# PUBLISHING TIMES
+
 # print(list(df.columns.values))
 cols_to_keep = [
     'Publish date',

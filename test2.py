@@ -364,17 +364,17 @@ if freq == 'monthly':
 
 # PLOT rolling averages of key metrics
 plt.figure()
-df_site[df_site['Views rm'].notnull()].plot(x='Date', y=['Internal rm',
-                                                         'Direct rm', 'Search rm', 'Fb rm', 'Other rm'], kind='line')
+# df_site.plot(x='Date', y=['Tw rm', 'Fb rm'], kind='line')
+df_site[df_site['Views rm'].notnull()].plot(x='Date', y=['Views rm', 'Minutes rm', 'Tw rm', 'Fb rm'], kind='line')
 # plt.tight_layout()
 plt.grid(b=True, which='major', axis='y')
-plt.xlabel('Weeks')
+# plt.xlabel('Weeks')
 if freq == 'monthly':
-    plt.ylabel('Page Views (3-month rolling means)')
+    plt.ylabel('3-month rolling means')
 if freq == 'weekly':
-    plt.ylabel('Page Views (13-week rolling means)')
+    plt.ylabel('13-week rolling means')
 if freq == 'daily':
-    plt.ylabel('Page Views (90-day rolling means)')
+    plt.ylabel('90-day rolling means')
 plt.legend(loc='upper left')
 plt.savefig('data_out/s_weekly_ra.png')
 
@@ -445,6 +445,7 @@ report += articles_stats(df_article.head(10).to_dict(orient='records'))
 
 # GET TOP ARTICLES BY REFERRERS
 referrers = [
+    {'name': "Internal", 'col_name': 'Internal refs', 'limit': 3},
     {'name': "Search", 'col_name': 'Search refs', 'limit': 3},
     {'name': "Other", 'col_name': 'Other refs', 'limit': 3},
     {'name': "Social interactions", 'col_name': 'Social interactions', 'limit': 3},
@@ -452,7 +453,6 @@ referrers = [
     {'name': "Facebook", 'col_name': 'Fb refs', 'limit': 3},
     {'name': "Twitter", 'col_name': 'Tw refs', 'limit': 3},
     {'name': "LinkedIn", 'col_name': 'Li refs', 'limit': 3},
-    {'name': "Internal", 'col_name': 'Internal refs', 'limit': 3},
     # {'name': "Direct", 'col_name': 'Direct refs', 'limit': 3},
 ]
 report += '''---''' + newline

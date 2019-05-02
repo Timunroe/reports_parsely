@@ -11,6 +11,10 @@ pandas = "*"
 matplotlib = "*"
 markdown = "*"
 seaborn = "*"
+requests-html = "*"
+bullet = "*"
+requests = "*"
+beautifulsoup4 = "*"
 
 [dev-packages]
 "flake8" = "*"

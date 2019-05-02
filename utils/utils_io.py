@@ -7,7 +7,7 @@ import sys
 # import boto3
 
 
-def get_file(filename, folders=None):
+def get_file(file_name, folders=None):
     # folders = list of subdirectory names
     #           in tree from cwd
     # print(f'''Retrieving {filename} in {folder}''')
@@ -18,7 +18,7 @@ def get_file(filename, folders=None):
         p = pathlib.Path.cwd().joinpath(*folders)
     else:
         p = pathlib.Path.cwd()
-    path = p.joinpath(filename)
+    path = p.joinpath(file_name)
     return path.read_text()
 
 
