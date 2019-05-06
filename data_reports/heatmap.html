@@ -1,0 +1,563 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Heat maps</title>
+    <style>
+        table {
+            table-layout: fixed;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+    <h2>Heat maps</h2>
+    <p>Select site(s) to view:
+        <button type="button" class="btn btn-sm btn-light" data-target="#A" data-toggle="collapse">A</button>
+        <button type="button" class="btn btn-sm btn-primary" data-target="#B" data-toggle="collapse">B</button>
+        <button type="button" class="btn btn-sm btn-primary" data-target="#C" data-toggle="collapse">C</button>
+    </p>
+    <p></p>
+
+    <div class="collapse" id="A">
+        <h4>Site A</h4>
+        <button type="button" class="btn btn-sm btn-danger">Views</button>
+        <button type="button" class="btn btn-sm btn-warning">Visitors</button>
+        <button type="button" class="btn btn-sm btn-success">Articles</button>
+        <p></p>
+        <table class="table table-sm table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Hour</th>
+                    <th colspan="2" scope="col" class="text-center">Monday</th>
+                    <th colspan="2" scope="col" class="text-center">Tuesday</th>
+                    <th colspan="2" scope="col" class="text-center">Wednesday</th>
+                    <th colspan="2" scope="col" class="text-center">Thursday</th>
+                    <th colspan="2" scope="col" class="text-center">Friday</th>
+                    <th colspan="2" scope="col" class="text-center">Saturday</th>
+                    <th colspan="2" scope="col" class="text-center">Sunday</th>
+                </tr>
+            </thead>
+            <tbody>
+                    
+                        <tr style="border-bottom: 4px solid white;">
+                        <th class="align-middle">total</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.41)">92875</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">41651</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">151087</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">70634</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.4)">91814</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">37879</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.42)">93984</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">40924</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.44)">95921</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">42746</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.21)">73274</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">32128</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">52404</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">25886</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">12 AM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">1047</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">536</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">2171</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1301</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.05)">1104</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">574</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.33)">1418</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">661</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.28)">1358</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">752</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.43)">1530</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">862</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.28)">1358</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">716</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">1 AM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">645</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">358</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">1727</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">996</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.09)">740</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">412</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.2)">865</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">486</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.22)">880</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">513</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.3)">966</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">582</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.13)">791</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">472</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">2 AM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">504</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">265</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">1281</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">739</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.16)">629</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">322</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.26)">706</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">355</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.36)">781</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">420</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.42)">828</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">432</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.24)">691</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">345</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">3 AM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.15)">506</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">268</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">947</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">556</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.16)">509</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">285</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.03)">445</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">285</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.5)">687</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">394</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.3)">582</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">304</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">427</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">248</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">4 AM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.2)">553</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">256</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">1069</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">590</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.17)">533</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">280</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.31)">625</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">326</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.69)">872</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">465</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.26)">595</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">318</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">425</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">230</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">5 AM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.49)">1221</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">510</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">1836</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">855</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.47)">1193</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">477</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.57)">1319</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">535</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.72)">1495</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">635</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.15)">813</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">390</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">627</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">307</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">6 AM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.69)">3356</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1169</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">4366</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1727</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.59)">3027</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">954</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.51)">2770</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1061</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.74)">3537</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1238</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.38)">2343</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">800</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">1129</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">509</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">7 AM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.51)">5110</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1851</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">8148</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2806</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.57)">5520</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1644</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.49)">4981</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1862</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.69)">6258</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2227</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.38)">4298</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1474</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">1975</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">823</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">8 AM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.43)">6749</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2444</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">11078</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">4111</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.47)">7069</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2409</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.46)">6974</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2470</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.72)">8944</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">3285</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.38)">6363</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2198</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">3486</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1369</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">9 AM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.4)">6758</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2623</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">11200</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">4477</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.52)">7621</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2671</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.5)">7484</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2865</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.67)">8764</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">3670</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.31)">6058</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2350</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">3748</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1595</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">10 AM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.36)">5434</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2340</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">9720</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">4283</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.57)">6828</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2544</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.51)">6460</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2622</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.56)">6785</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">3003</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.37)">5487</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2040</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">3027</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1509</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">11 AM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.45)">6213</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2773</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">9870</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">4611</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.46)">6300</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2626</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.5)">6561</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2971</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.53)">6743</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2950</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.27)">5037</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2122</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">3252</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1646</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">12 PM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.52)">6585</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2771</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">9989</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">4562</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.51)">6513</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2620</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.51)">6497</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2738</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.42)">5905</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2566</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.16)">4045</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1861</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">2903</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1421</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">1 PM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.69)">6244</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2685</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">7940</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">3824</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.51)">5282</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2236</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.44)">4883</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2346</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.52)">5320</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2268</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.19)">3524</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1588</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">2504</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1371</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">2 PM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.56)">5245</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2475</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">7438</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">3610</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.49)">4871</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2130</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.5)">4926</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2191</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.4)">4440</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2075</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.18)">3317</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1582</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">2420</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1351</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">3 PM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.62)">5624</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2452</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">7696</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">3729</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.47)">4824</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2068</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.58)">5411</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2357</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.43)">4621</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2156</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.19)">3353</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1543</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">2308</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1278</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">4 PM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.46)">4690</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2226</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">7420</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">3743</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.39)">4342</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2051</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.5)">4905</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2144</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.38)">4307</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2028</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.13)">3044</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1536</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">2373</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1320</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">5 PM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.38)">4581</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2304</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">7615</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">3958</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.34)">4381</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1985</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.39)">4615</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2211</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.24)">3878</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1954</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.13)">3316</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1605</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">2695</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1458</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">6 PM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.31)">4436</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2183</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">7878</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">4084</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.2)">3898</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1846</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.27)">4234</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2004</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.18)">3809</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1822</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.06)">3207</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1557</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">2890</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1406</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">7 PM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.22)">4032</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2170</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">7436</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">3825</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.17)">3814</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1792</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.26)">4213</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1900</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.15)">3730</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1795</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">3075</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1501</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">3066</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1493</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">8 PM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.25)">4358</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2256</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">7771</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">3766</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.19)">4097</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1887</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.23)">4260</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1886</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.07)">3561</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1808</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.01)">3277</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1558</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">3224</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1499</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">9 PM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.26)">3931</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2009</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">6773</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">3511</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.18)">3614</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1694</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.21)">3748</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1865</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.14)">3463</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1764</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.09)">3286</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1534</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">2939</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1444</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">10 PM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.11)">2953</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1657</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">5714</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2907</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.19)">3184</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1413</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.24)">3334</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1585</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.2)">3214</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1637</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.08)">2852</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1327</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">2598</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1227</td>
+                    </tr>
+
+
+                    
+                        <tr>
+                        <th class="align-middle">11 PM</th>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.22)">2100</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1070</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,1.0)">4004</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">2063</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.15)">1921</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">959</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.33)">2350</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1198</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.42)">2569</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1321</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.22)">2078</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">1064</td>
+                            <td class="text-center" style="background-color:rgba(255,193,7,0.0)">1548</td>
+                            <td class="text-center" style="background-color: rgba(220,53,69,1)">849</td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

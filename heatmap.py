@@ -17,11 +17,6 @@ filename4 = 'niagara_heat_publish.csv'
 
 # VISITOR/PAGE VIEWS TIMES
 
-
-
-
-
-
 # PUBLISHING TIMES
 
 # print(list(df.columns.values))
