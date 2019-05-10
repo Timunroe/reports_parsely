@@ -10,10 +10,10 @@ sns.set()
 rcParams.update({'figure.autolayout': True})
 plt.rcParams['axes.labelweight'] = 'bold'
 
-filename1 = 'spectator_heat_publish.csv'
-filename2 = 'record_heat_publish.csv'
-filename3 = 'examiner_heat_publish.csv'
-filename4 = 'niagara_heat_publish.csv'
+filename1 = 'spectator_publish.csv'
+filename2 = 'record_publish.csv'
+filename3 = 'examiner_publish.csv'
+filename4 = 'standard_publish.csv'
 
 # VISITOR/PAGE VIEWS TIMES
 
@@ -85,7 +85,7 @@ def plot_it(filename):
 
 
 # [MAIN]--------------------------------
-df = process_csv(filename1, ['data_in', 'heatmap'], cols_to_keep)
+df = process_csv(filename4, ['data_in', 'heatmap'], cols_to_keep)
 
 # SOME COLUMNS HAVE NUMBERS IN STRING TYPE
 # df[cols_to_fix] = df[cols_to_fix].apply(pd.to_numeric)
@@ -118,16 +118,16 @@ for x in range(24):
     for y in range(7):
         # Add filters here
         # all content, page views greater than 19
-        posts = df[(df['weekday'] == y) & (df['time'] == x) & (df['Views'] > 19)]
+        # posts = df[(df['weekday'] == y) & (df['time'] == x) & (df['Views'] > 19)]
         # primary pub
-        # posts = df[(df['weekday'] == y) & (df['time'] == x) & (df['Tags'].str.contains("primary_publication:hamiltonspectator"))]
+        posts = df[(df['weekday'] == y) & (df['time'] == x) & (df['Tags'].str.contains("primary_publication:stcatharinesstandard"))]
         # primary pub AND news local
         # posts = df[(df['weekday'] == y) & (df['time'] == x) & (df['Tags'].str.contains("primary_publication:hamiltonspectator", regex=False)) & (df['Tags'].str.contains("news|local", regex=False))]
         s += f''',{posts.shape[0]}'''
 
-utils_io.put_file(s, filename1, ['data_out'])
+utils_io.put_file(s, filename4, ['data_out'])
 
-plot_it(filename1)
+plot_it(filename4)
 
 """ def blah():
     new_records = new.to_dict(orient='records')

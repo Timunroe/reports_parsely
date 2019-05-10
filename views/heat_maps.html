@@ -1,9 +1,29 @@
 <%
-def get_opacity(v, l):
+def get_opacity(v, max_min):
     # returns percentage that value is of range
-    # between min, max given a list of numbers
-    result = (v - min(l)) / (max(l) - min(l))
-    return round(result, 2)
+    # given object of {'max': 234, 'min': 123, 'median_point': xxx}
+    the_max = max_min['max']
+    the_min = max_min['min']
+    median_point = max_min['median_point']
+    print('v', v)
+    print('median', median_point)
+    if v > median_point:
+        if v == the_max:
+            opacity = 1.0
+        else:
+            opacity = round((v - median_point) / (the_max - median_point), 2)
+        end
+        return f'rgba(0,100,0,{str(opacity)})'
+    elif v < median_point:
+        if v == the_min:
+            opacity = 1.0
+        else:
+            opacity = 1.0 - (round((v - the_min) / (median_point - the_min), 2))
+        end
+        return f'rgba(220,53,69,{str(opacity)})'
+    else:
+        return 'rgb(255,255,255)'
+    end
 end
 %>
 
@@ -40,36 +60,65 @@ end
         <button type="button" class="btn btn-sm btn-danger">Views</button>
         <button type="button" class="btn btn-sm btn-warning">Visitors</button>
         <button type="button" class="btn btn-sm btn-success">Articles</button>
+        <p>Based on whole week:</p>
         <p></p>
         <table class="table table-sm table-bordered">
             <thead>
                 <tr>
                     <th scope="col">Hour</th>
-                    <th colspan="2" scope="col" class="text-center">Monday</th>
-                    <th colspan="2" scope="col" class="text-center">Tuesday</th>
-                    <th colspan="2" scope="col" class="text-center">Wednesday</th>
-                    <th colspan="2" scope="col" class="text-center">Thursday</th>
-                    <th colspan="2" scope="col" class="text-center">Friday</th>
-                    <th colspan="2" scope="col" class="text-center">Saturday</th>
-                    <th colspan="2" scope="col" class="text-center">Sunday</th>
+                    % for day in days: 
+                    <th colspan="2" scope="col" class="text-center">{{day}}</th>
+                    % end
                 </tr>
             </thead>
             <tbody>
-                % for k, v in data.items(): 
-                    
-                    % if k == 'total':
-                        <tr style="border-bottom: 4px solid white;">
-                    % else:
-                        <tr>
+                <tr style="border-bottom: 8px solid white;">
+                    <th class="text-center">Total</td>
+                    % for i in range(7):
+                        <td class="text-center" style="background-color:{{get_opacity(data['day_totals']['PV'][i], data['max_totals']['week_by_day']['PV'])}}">{{data['day_totals']['PV'][i]}}</td>
+                        <td class="text-center" style="background-color:{{get_opacity(data['day_totals']['UV'][i], data['max_totals']['week_by_day']['UV'])}}">{{data['day_totals']['UV'][i]}}</td>
                     % end
-                        <th class="align-middle">{{k}}</th>
-                        % for i in range(len(days)):
-                            <td class="text-center" style="background-color:rgba(255,193,7,{{get_opacity(v['PV'][i], v['PV'])}})">{{v['PV'][i]}}</td>
-                            <td class="text-center" style="background-color: rgba(220,53,69,1)">{{v['UV'][i]}}</td>
+                </tr>
+                % for p,v in data['hours'].items():
+                    <tr>
+                        <th class="align-middle">{{p}}</th>
+                        % for i in range(7): 
+                            <td class="text-center" style="background-color:{{get_opacity(v['PV'][i], data['max_totals']['week_whole']['PV'])}}">{{v['PV'][i]}}</td>
+                            <td class="text-center" style="background-color:{{get_opacity(v['UV'][i], data['max_totals']['week_whole']['UV'])}}">{{v['UV'][i]}}</td>
                         % end
                     </tr>
-
-
+                % end
+            </tbody>
+        </table>
+        <p></p>
+        <p>Each day unto itself:</p>
+        <p></p>
+        <table class="table table-sm table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Hour</th>
+                    % for day in days: 
+                    <th colspan="2" scope="col" class="text-center">{{day}}</th>
+                    % end
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 8px solid white;">
+                    <th class="text-center">Total</td>
+                    % for i in range(7):
+                        <td class="text-center" style="background-color:{{get_opacity(data['day_totals']['PV'][i], data['max_totals']['week_by_day']['PV'])}}">{{data['day_totals']['PV'][i]}}</td>
+                        <td class="text-center" style="background-color:{{get_opacity(data['day_totals']['UV'][i], data['max_totals']['week_by_day']['UV'])}}">{{data['day_totals']['UV'][i]}}</td>
+                    % end
+                </tr>
+                % for p,v in data['hours'].items():
+                    <tr>
+                        <th class="align-middle">{{p}}</th>
+                        % for i in range(7): 
+                            % this_day = days[i]
+                            <td class="text-center" style="background-color:{{get_opacity(v['PV'][i], data['max_totals'][this_day]['PV'])}}">{{v['PV'][i]}}</td>
+                            <td class="text-center" style="background-color:{{get_opacity(v['UV'][i], data['max_totals'][this_day]['UV'])}}">{{v['UV'][i]}}</td>
+                        % end
+                    </tr>
                 % end
             </tbody>
         </table>
