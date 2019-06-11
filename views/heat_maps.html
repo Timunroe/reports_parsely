@@ -1,12 +1,12 @@
 <%
 def get_opacity(v, max_min):
-    # returns percentage that value is of range
-    # given object of {'max': 234, 'min': 123, 'median_point': xxx}
+    # Shade by 20 percentile
+    # 0-20 is red, 20-40 pink, 40-60 clear, 60-80 light green, 80-100 dk green
     the_max = max_min['max']
     the_min = max_min['min']
     median_point = max_min['median_point']
-    print('v', v)
-    print('median', median_point)
+    # print('v', v)
+    # print('median', median_point)
     if v > median_point:
         if v == the_max:
             opacity = 1.0
@@ -18,7 +18,7 @@ def get_opacity(v, max_min):
         if v == the_min:
             opacity = 1.0
         else:
-            opacity = 1.0 - (round((v - the_min) / (median_point - the_min), 2))
+            opacity = round(1.0 - ((v - the_min) / (median_point - the_min)), 2)
         end
         return f'rgba(220,53,69,{str(opacity)})'
     else:

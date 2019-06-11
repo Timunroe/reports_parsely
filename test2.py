@@ -99,8 +99,8 @@ def articles_stats(articles):
         buzz = u.humanize(item["Social interactions"])
         assetID = (re.search(r'.*(\d{7})-.*', item['URL'])).group(1)
         sources = [
-            {'text': 'FB', 'value': item['Fb%']},
-            {'text': 'Tw', 'value': item['Tw%']},
+            {'text': 'Facebook', 'value': item['Fb%']},
+            {'text': 'Twitter', 'value': item['Tw%']},
             {'text': 'search', 'value': item['Search%']},
             {'text': 'other', 'value': item['Other%']},
             {'text': 'direct', 'value': item['Direct%']},
@@ -137,7 +137,10 @@ def articles_stats(articles):
 def top_article_by_referrer(articles, total, name, col_name):
     s = ''
     # s += "======================\n"
-    s += f'''#### **{name.upper()}**: Top articles by page views''' + newline
+    if name != 'Social interactions':
+        s += f'''#### **{name.upper()}**: Top articles by page views''' + newline
+    else:
+        s += f'''#### **{name.upper()}**: Top articles''' + newline
     for item in articles:
         # author = item['Authors'].title().replace(' And', ',')
         assetID = (re.search(r'.*(\d{7})-.*', item['URL'])).group(1)
@@ -360,7 +363,7 @@ if freq == 'daily':
 if freq == 'monthly':
     report += f'''##### *Average is 3-month rolling mean.'''
 # TEST POINT
-# print(report)
+print(report)
 
 # PLOT rolling averages of key metrics
 plt.figure()
@@ -443,19 +446,34 @@ df_article['Returning%'] = round(
 # print(df_article.head(2).to_dict(orient='records'))
 report += articles_stats(df_article.head(10).to_dict(orient='records'))
 
+# GET TOP ARTICLES BY DEVICE
+devices = [
+    {'name': "Mobile", 'col_name': 'Mobile views', 'limit': 3},
+    {'name': "Desktop", 'col_name': 'Desktop views', 'limit': 3},
+    {'name': "Tablet", 'col_name': 'Tablet views', 'limit': 3},
+]
+report += '''---''' + newline
+report += '''### **DEVICES**''' + newline
+for item in devices:
+    articles = df_article.sort_values(by=[item['col_name']], ascending=False).head(
+        item['limit']).to_dict(orient='records')
+    total = df_article[item['col_name']].sum()
+    report += top_article_by_referrer(articles,
+                                      total, item['name'], item['col_name'])
+
 # GET TOP ARTICLES BY REFERRERS
 referrers = [
     {'name': "Internal", 'col_name': 'Internal refs', 'limit': 3},
     {'name': "Search", 'col_name': 'Search refs', 'limit': 3},
     {'name': "Other", 'col_name': 'Other refs', 'limit': 3},
     {'name': "Social interactions", 'col_name': 'Social interactions', 'limit': 3},
-    {'name': "Social", 'col_name': 'Social refs', 'limit': 3},
+    {'name': "Social", 'col_name': 'Social refs', 'limit': 5},
     {'name': "Facebook", 'col_name': 'Fb refs', 'limit': 3},
     {'name': "Twitter", 'col_name': 'Tw refs', 'limit': 3},
     {'name': "LinkedIn", 'col_name': 'Li refs', 'limit': 3},
     # {'name': "Direct", 'col_name': 'Direct refs', 'limit': 3},
 ]
-report += '''---''' + newline
+report += newline
 report += '''### **TOP POSTS**: by Referrers''' + newline
 for item in referrers:
     articles = df_article.sort_values(by=[item['col_name']], ascending=False).head(
@@ -463,6 +481,17 @@ for item in referrers:
     total = df_article[item['col_name']].sum()
     report += top_article_by_referrer(articles,
                                       total, item['name'], item['col_name'])
+
+report += newline
+report += '''###TRAFFIC PRIMER
+Traffic is described by 5 categories: 4 external (social, search, direct, other) and internal.\n
+* **Internal**: Usually from home page to article, though also from article to article via related links, most read etc.\n
+* **Search**: Google overwhelmingly, though also Bing, Yahoo, DuckDuckGo.\n
+* **Social**: Networks such as Facebook, Twitter, Pinterest, LinkedIn, Reddit etc. Users supply most of the links. It fluctuates, but user posts account for about 30-40% of social traffic page views. Our posts account for the rest.\n
+* **Direct**: We don’t know how users got there because the source doesn’t provide the information. 
+If talking about *site* traffic, it mostly means people who type ‘thespec.com’ in the browser or have bookmarked the site. 
+If talking about *article* traffic, the user likely didn't type in the full URL, but came from a newsletter email, texting app or some other app such as Reddit's.\n 
+* **Other**: Curation services such as Google News, Apple News, Flipboard, SmartNews etc.'''
 
 # END ARTICLES STATS
 print(report)
