@@ -465,6 +465,7 @@ for item in devices:
 referrers = [
     {'name': "Internal", 'col_name': 'Internal refs', 'limit': 3},
     {'name': "Search", 'col_name': 'Search refs', 'limit': 3},
+    {'name': "Direct", 'col_name': 'Direct refs', 'limit': 3},
     {'name': "Other", 'col_name': 'Other refs', 'limit': 3},
     {'name': "Social interactions", 'col_name': 'Social interactions', 'limit': 3},
     {'name': "Social", 'col_name': 'Social refs', 'limit': 5},
