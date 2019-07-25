@@ -42,3 +42,5 @@ data_reports/test.html
 *.zip
 *.xls
 *.png
+Pipfile
+Pipfile.lock

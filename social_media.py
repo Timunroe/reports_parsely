@@ -14,13 +14,13 @@ from utils import utils_io
 # how much traffic do we see, performance of our posts
 # FACEBOOK
 # Followers: xxx,
-# Posts: xxx, 
+# Posts: xxx,
 # Impressions: xxx, reach: xxx
 
 # TWITTER
 # Followers:
 # Posts: xxx,
-# Impressions: xxxx, 
+# Impressions: xxxx,
 
 # ---[ FUNCTIONS ]-------------
 
@@ -42,7 +42,7 @@ def process_csv(file_name, folders, cols_to_keep=None):
     return df
 
 
-def get_count(site, url):
+def get_follower_count(site, url):
     r = session.get(url)
     if site == 'facebook':
         temp = r.html.find('div._4bl9 > div')
@@ -69,7 +69,7 @@ def get_count(site, url):
 session = HTMLSession()
 
 reports = ["daily", "weekly", "monthly"]
-sites = ["Spectator", "Record"]
+sites = ["Spectator", "Record", "Standard", "Review", "Tribune", "Examiner"]
 
 site_cols_keep = [
     'Post Message',
@@ -86,7 +86,8 @@ site_cols_keep = [
 
 cli = Check(
     prompt="\nChoose report: ",
-    choices=(reports + sites),
+    choices="Follower counts",
+    # choices=(reports + sites),
     indent=0,
     align=5,
     margin=2,
@@ -146,7 +147,7 @@ df['CTR Reach'] = round((df['Link Clicks'] / df['Reach']) * 100, 1)
 posts = len(df.index)
 impressions = df['Impressions'].sum()
 reach = df['Reach'].sum()
-impressions_ctr = round((df['Link Clicks'].sum() / impressions ) * 100, 1)
+impressions_ctr = round((df['Link Clicks'].sum() / impressions) * 100, 1)
 reach_ctr = round((df['Link Clicks'].sum() / reach) * 100, 1)
 own_fans = round((df['Engaged Fans'].sum() / df['Engaged Users'].sum()) * 100, 0)
 impressions_per_post = int(round(impressions / posts, 0))

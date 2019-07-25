@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 import seaborn as sns
 import markdown
+from io import StringIO
 import pathlib
 import sys
 import re
@@ -181,8 +182,9 @@ def process_csv(freq, site, file_name, cols_to_keep=None, parsely_fix=True):
         # TEST POINT
         # print(fixed_csv)
     if cols_to_keep:
-        df = pd.read_csv(pd.compat.StringIO(fixed_csv), usecols=cols_to_keep)
-    # df = pd.read_csv(file_name, usecols=cols_to_keep, keep_default_na=False, na_values='0')
+        df = pd.read_csv(StringIO(fixed_csv), usecols=cols_to_keep)
+        # df = pd.read_csv(pd.compat.StringIO(fixed_csv), usecols=cols_to_keep)
+        # df = pd.read_csv(file_name, usecols=cols_to_keep, keep_default_na=False, na_values='0')
     else:
         df = pd.read_csv(file_name,
                          keep_default_na=False,
@@ -465,8 +467,8 @@ for item in devices:
 referrers = [
     {'name': "Internal", 'col_name': 'Internal refs', 'limit': 3},
     {'name': "Search", 'col_name': 'Search refs', 'limit': 3},
-    {'name': "Direct", 'col_name': 'Direct refs', 'limit': 3},
     {'name': "Other", 'col_name': 'Other refs', 'limit': 3},
+    {'name': "Direct", 'col_name': 'Direct refs', 'limit': 3},
     {'name': "Social interactions", 'col_name': 'Social interactions', 'limit': 3},
     {'name': "Social", 'col_name': 'Social refs', 'limit': 5},
     {'name': "Facebook", 'col_name': 'Fb refs', 'limit': 3},
@@ -489,7 +491,7 @@ Traffic is described by 5 categories: 4 external (social, search, direct, other)
 * **Internal**: Usually from home page to article, though also from article to article via related links, most read etc.\n
 * **Search**: Google overwhelmingly, though also Bing, Yahoo, DuckDuckGo.\n
 * **Social**: Networks such as Facebook, Twitter, Pinterest, LinkedIn, Reddit etc. Users supply most of the links. It fluctuates, but user posts account for about 30-40% of social traffic page views. Our posts account for the rest.\n
-* **Direct**: We don’t know how users got there because the source doesn’t provide the information. 
+* **Direct**: We don’t know how users got there because the source doesn’t provide the information.
 If talking about *site* traffic, it mostly means people who type ‘thespec.com’ in the browser or have bookmarked the site. 
 If talking about *article* traffic, the user likely didn't type in the full URL, but came from a newsletter email, texting app or some other app such as Reddit's.\n 
 * **Other**: Curation services such as Google News, Apple News, Flipboard, SmartNews etc.'''
