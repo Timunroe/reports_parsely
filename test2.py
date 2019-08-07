@@ -164,12 +164,30 @@ def top_article_by_referrer(articles, total, name, col_name):
 
 # FIX CSV FILE
 posts_cols_keep = [
-    'URL', 'Title', 'Publish date', 'Authors', 'Section', 'Visitors', 'Views',
-    'Engaged minutes', 'New vis.', 'Returning vis.', 'Desktop views',
-    'Mobile views', 'Tablet views', 'Search refs', 'Internal refs',
-    'Other refs', 'Direct refs', 'Social refs', 'Fb refs', 'Tw refs',
-    'Li refs', 'Social interactions', 'Fb interactions',
-    'Tw interactions', 'Li refs'
+    'URL', 'Title', 
+    'Publish date', 
+    'Authors', 
+    'Section', 
+    'Visitors', 
+    'Views',
+    'Engaged minutes', 
+    'New vis.', 
+    'Returning vis.', 
+    'Desktop views',
+    'Mobile views', 
+    'Tablet views', 
+    'Search refs', 
+    'Internal refs',
+    'Other refs', 
+    'Direct refs', 
+    'Social refs', 
+    'Fb refs', 
+    'Tw refs',
+    # 'Li refs', 
+    'Social interactions', 
+    'Fb interactions',
+    'Tw interactions', 
+    # 'Li refs'
 ]
 
 
@@ -224,7 +242,7 @@ site_cols_keep = [
     'Social interactions',
     'Fb interactions',
     'Tw interactions',
-    'Li interactions',
+    # 'Li interactions',
     'Desktop views',
     'Mobile views',
     'Tablet views',
@@ -235,7 +253,7 @@ site_cols_keep = [
     'Social refs',
     'Fb refs',
     'Tw refs',
-    'Li refs',
+    # 'Li refs',
     'New vis.',
     'Views new vis.',
     'Avg. views new vis.',
@@ -410,7 +428,7 @@ pages_cols_keep = [
     'Social refs',
     'Fb refs',
     'Tw refs',
-    'Li refs',
+    # 'Li refs',
     'Pi refs',
     'Social interactions',
     'Fb interactions',
@@ -473,8 +491,7 @@ referrers = [
     {'name': "Social", 'col_name': 'Social refs', 'limit': 5},
     {'name': "Facebook", 'col_name': 'Fb refs', 'limit': 3},
     {'name': "Twitter", 'col_name': 'Tw refs', 'limit': 3},
-    {'name': "LinkedIn", 'col_name': 'Li refs', 'limit': 3},
-    # {'name': "Direct", 'col_name': 'Direct refs', 'limit': 3},
+    # {'name': "LinkedIn", 'col_name': 'Li refs', 'limit': 3},
 ]
 report += newline
 report += '''### **TOP POSTS**: by Referrers''' + newline
