@@ -85,7 +85,7 @@ dbline = '\n\n'
 def articles_stats(articles):
     # articles is a dict as converted from pandas dataframe
     s = ''
-    s += f'''\n### TOP POSTS: by Total Engaged Minutes''' + newline
+    s += f'''\n### TOP POSTS: by Page Views''' + newline
     # s += f'''###### Limited to content with pubdate in last 2 days''' + newline
     for rank, item in enumerate(articles, start=1):
         # data for report
@@ -118,7 +118,10 @@ def articles_stats(articles):
         s += f''' | {item['Publish date'].date()} | '''
         s += f'''Asset# [{assetID}]({item['URL']})''' + newline
         s += f'''PV **{u.humanize(item['Views'])}** | visitors: **{visitors_total}**, '''
-        s += f'''{t(item['Returning%'])}% returning | {t(item['time'], mn=0.6)} min/visitor'''
+        article_minutes = int(item['time'])
+        article_seconds = int(round((item['time'] * 60) % 60, 0))
+        article_time = f'''{str(article_minutes)}:{article_seconds:02}'''
+        s += f'''{t(item['Returning%'])}% returning | {article_time} min/visitor'''
         s += newline
         # examine each stat, if < 10 don't bother showing it ...
         s += f'''Key sources %: '''
@@ -164,29 +167,29 @@ def top_article_by_referrer(articles, total, name, col_name):
 
 # FIX CSV FILE
 posts_cols_keep = [
-    'URL', 'Title', 
-    'Publish date', 
-    'Authors', 
-    'Section', 
-    'Visitors', 
+    'URL', 'Title',
+    'Publish date',
+    'Authors',
+    'Section',
+    'Visitors',
     'Views',
-    'Engaged minutes', 
-    'New vis.', 
-    'Returning vis.', 
+    'Engaged minutes',
+    'New vis.',
+    'Returning vis.',
     'Desktop views',
-    'Mobile views', 
-    'Tablet views', 
-    'Search refs', 
+    'Mobile views',
+    'Tablet views',
+    'Search refs',
     'Internal refs',
-    'Other refs', 
-    'Direct refs', 
-    'Social refs', 
-    'Fb refs', 
+    'Other refs',
+    'Direct refs',
+    'Social refs',
+    'Fb refs',
     'Tw refs',
-    # 'Li refs', 
-    'Social interactions', 
+    # 'Li refs',
+    'Social interactions',
     'Fb interactions',
-    'Tw interactions', 
+    'Tw interactions',
     # 'Li refs'
 ]
 
@@ -321,7 +324,7 @@ df_site['Tablet%'] = round(
 df_site['Returning%'] = round(
     (df_site['Returning vis.'] / df_site['Views']) * 100, 0)
 # Minutes per visitor
-df_site['time'] = round((df_site['Engaged minutes'] / df_site['Views']), 2)
+df_site['time'] = round((df_site['Engaged minutes'] / df_site['Views']), 4)
 
 # this period data = df_site.head(1)
 # rolling average data = df_site.tail(len(df_site.index) - 1)
@@ -455,8 +458,8 @@ for x in [('Social%', 'Social refs'), ('Search%', 'Search refs'),
           ('Desktop%', 'Desktop views'), ('Tablet%', 'Tablet views')]:
     df_article[x[0]] = round((df_article[x[1]] / df_article['Views']) * 100, 0)
 
-df_article['time'] = round(
-    (df_article['Engaged minutes'] / df_article['Visitors']), 2)
+df_article['time'] = round((df_article['Engaged minutes'] / df_article['Visitors']), 4)
+
 df_article['Returning%'] = round(
     (df_article['Returning vis.'] / df_article['Visitors']) * 100, 0)
 
