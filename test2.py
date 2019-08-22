@@ -362,6 +362,7 @@ shifts = [
     {'text': 'Internal', 'value': internal_delta},
 ]
 report += f'''\n## {freq.title()} report {site.title()}\n'''
+report += f'''PATH TO REGISTRATION: Last 3 clicks in 7 days\n\nMOST READ BY REGISTERED USERS (PV)\n\n'''
 report += f'''### SITE HIGHLIGHTS:\n'''
 # need test here: if pv number 6 digits, fraction point = 0, but if 7, fraction point = 2
 report += f'''Page views: {u.humanize(pv, 2) if pv > 1000000 else u.humanize(pv, 0)}, **{pv_vs_ra:+}%** vs average.\n'''
