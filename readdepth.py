@@ -14,6 +14,17 @@ rcParams.update({'figure.autolayout': True})
 # close
 plt.close('all')
 
+# VARIABLES
+
+avg_reading_per_minute = 200
+# file_name = 'CI_spec_feb_july_edit.csv'
+# file_name = 'CI_spec_local_sept2018_Aug2019.csv'
+# file_name = 'CI_rec_local_sept2018_aug2019.csv'
+# file_name = 'CI_standard_local_sept2018_aug2019.csv'
+file_name = 'CI_examiner_local_sept2018_aug2019.csv'
+
+# HELPER FUNCTIONS
+
 
 def process_csv(filename, folders=None, cols_to_keep=None):
     if folders:
@@ -74,11 +85,6 @@ article_reads_average,
 '''
 
 # MAIN START
-
-avg_reading_per_minute = 200
-# file_name = 'CI_spec_feb_july_edit.csv'
-file_name = 'CI_spec_local_sept2018_Aug2019.csv'
-
 df = process_csv(file_name, ['data_in', 'readdepth'])
 
 # DROP UNUSED COLUMNS
@@ -93,7 +99,7 @@ df['words_read'] = (df['attention_minutes_average'] / 60) * avg_reading_per_minu
 df['percent_read'] = 100 * (df['words_read'] / df['article_word_count'])
 
 articles_all = df[df['article_word_count'] > 0]
-articles_localnews = df[ (df['article_word_count'] > 0) & (df['article_sections'].str.contains('news>local'))]
+articles_localnews = df[(df['article_word_count'] > 0) & (df['article_sections'].str.contains('news>local'))]
 articles_total = articles_localnews['article_word_count'].count()
 
 print('Articles total: ', articles_total)

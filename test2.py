@@ -193,7 +193,6 @@ posts_cols_keep = [
     # 'Li refs'
 ]
 
-
 def process_csv(freq, site, file_name, cols_to_keep=None, parsely_fix=True):
     if parsely_fix:
         path = pathlib.Path.cwd() / 'data_in' / f'{freq}' / file_name
@@ -511,8 +510,8 @@ report += '''###TRAFFIC PRIMER
 Traffic is described by 5 categories: 4 external (social, search, direct, other) and internal.\n
 * **Internal**: Usually from home page to article, though also from article to article via related links, most read etc.\n
 * **Search**: Google overwhelmingly, though also Bing, Yahoo, DuckDuckGo.\n
-* **Social**: Networks such as Facebook, Twitter, Pinterest, LinkedIn, Reddit etc. Users supply most of the links. It fluctuates, but user posts account for about 20% of social traffic page views. Our posts account for the rest.\n
-* **Direct**: We don’t know how users got there because the source doesn’t provide the information.
+* **Social**: Networks such as Facebook, Twitter, Pinterest, LinkedIn, Reddit etc. Users supply most of the links.\n
+* **Direct**: We don’t know how users got there because the source doesn’t provide the information. 
 If talking about *site* traffic, it mostly means people who type ‘thespec.com’ in the browser or have bookmarked the site. 
 If talking about *article* traffic, the user likely didn't type in the full URL, but came from a newsletter email, texting app or some other app such as Reddit's or Facebook Messenger.\n 
 * **Other**: Curation services such as Google News, Apple News, Flipboard, SmartNews etc.'''
