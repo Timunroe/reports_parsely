@@ -1,14 +1,18 @@
-import pandas as pd
-# import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib import rcParams
-import seaborn as sns
-import markdown
 from io import StringIO
+from statistics import mean
 import pathlib
 import sys
 import re
+# third party
+import matplotlib.pyplot as plt
+from matplotlib import rcParams
+# import numpy as np
+import seaborn as sns
+import markdown
+import pandas as pd
+# mine
 import utils_num_new as u
+
 
 sns.set()
 rcParams.update({'figure.autolayout': True})
@@ -67,11 +71,21 @@ def sign(text):
     return text
 
 
-def column_stats(data, ):
-    # take a list of data from a CSV column,
-    # [parsely order is latest data is first]
+def column_stats(col):
+    # take a Pandas of data,
+    # [latest data is last, because we fixed that already]
     # return an object of stats and comparisons
-    # like {'mean': xx, 'rank': xxx}
+    # and return {'latest value': xxx, 'mean': xx, 'rank': xxx}
+    obj = {}
+    the_list = col.tolist()
+    latest = the_list[-1]
+    obj['latest value'] = latest
+    obj['latest value short'] = u.humanize(latest)
+    the_list_avg = mean(the_list)
+    obj['mean'] = the_list_avg
+    obj['mean diff'] = u.percentage(latest, the_list_avg)
+    # mean of list
+
     pass
 
 
@@ -162,9 +176,9 @@ def top_article_by_referrer(articles, total, name, col_name):
         # s += f'''By {author} in {section}'''
         # s += f''' | {item['Publish date'][:-6]} | Asset# [{assetID}]({item['URL']})''' + newline
         if col_name == 'Social interactions':
-            s += f'''**{u.percentage(item[col_name], total)}**% of total -- **{u.humanize(item[col_name])}** interactions'''
+            s += f'''**{t(u.percentage(item[col_name], total))}**% of total -- **{u.humanize(item[col_name])}** interactions'''
         else:
-            s += f'''**{u.percentage(item[col_name], total)}**% of total -- **{u.humanize(item[col_name])}** clicks'''
+            s += f'''**{t(u.percentage(item[col_name], total))}**% of total -- **{u.humanize(item[col_name])}** clicks'''
         s += f''' | asset [{assetID}]({item['URL']})''' + newline
         s += newline
     if name == 'Other':

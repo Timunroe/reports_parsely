@@ -4,6 +4,8 @@ import os
 from decimal import Decimal, ROUND_UP
 import re
 
+# ordinal = lambda n: "%d%s" % (n,"tsnrhtdd"[(n//10%10!=1)*(n%10<4)*n%10::4])
+
 
 def process_csv(file_path, report_type, site):
     # get list of dicts representing rows in CSV file
@@ -140,7 +142,7 @@ def site_stats(new, ma, units):
     result['pagev']['kpi_delta'] = vs_ma(result['pagev']['kpi_new'], result['pagev']['kpi_ma'])
     result['minutes']['kpi_pages'] = str(round((float(result['minutes']['new_pages']) / float(result['visitors']['new_pages'])), 2))
     result['minutes']['kpi_pages_ma'] = str(round((float(result['minutes']['total_pages']) / float(result['visitors']['total_pages'])), 2))
-    result['minutes']['kpi_pages_ma_delta'] = vs_ma( result['minutes']['kpi_pages'], result['minutes']['kpi_pages_ma'])
+    result['minutes']['kpi_pages_ma_delta'] = vs_ma(result['minutes']['kpi_pages'], result['minutes']['kpi_pages_ma'])
     result['minutes']['kpi_new'] = str(round((float(result['minutes']['new']) / float(result['visitors']['new'])), 2))
     result['minutes']['kpi_new_ma'] = str(round((float(result['minutes']['total']) / float(result['visitors']['total'])), 2))
     result['minutes']['kpi_new_ma_delta'] = vs_ma(result['minutes']['kpi_new'], result['minutes']['kpi_new_ma']) 

@@ -64,10 +64,13 @@ def humanize(value, fraction_point=1):
         return '0'
 
 
-def percentage(part, total):
+def percentage(part, total, fraction_point=0):
     # have to take into account part might be none (actually '')
     if part != '':
-        result = round((float(part) / float(total)) * 100, 0)
-        return result
+        result = round((float(part) / float(total)) * 100, fraction_point)
+        if fraction_point == 0:
+            return int(result)
+        else:
+            return result
     else:
         return 0
