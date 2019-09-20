@@ -76,6 +76,7 @@ def column_stats(col):
     # [latest data is last, because we fixed that already]
     # return an object of stats and comparisons
     # and return {'latest value': xxx, 'mean': xx, 'rank': xxx}
+    ordinal = lambda n: "%d%s" % (n,"tsnrhtdd"[(n//10%10!=1)*(n%10<4)*n%10::4])
     obj = {}
     the_list = col.tolist()
     latest = the_list[-1]
@@ -84,6 +85,7 @@ def column_stats(col):
     the_list_avg = mean(the_list)
     obj['mean'] = the_list_avg
     obj['mean diff'] = u.percentage(latest, the_list_avg)
+    obj['rank'] = 
     # mean of list
 
     pass
