@@ -50,3 +50,5 @@ Pipfile.lock
 *.pyc
 *.pyc
 *.png
+*.png
+*.pyc
