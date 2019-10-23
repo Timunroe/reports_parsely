@@ -249,7 +249,7 @@ if freq == 'weekly':
 if freq == 'daily':
     r_units = 90
 if freq == 'monthly':
-    r_units = 3
+    r_units = 6 # was 3
 
 # intialize string
 report = ''
@@ -300,7 +300,7 @@ if freq == 'weekly':
 if freq == 'daily':
     r_units = 90
 if freq == 'monthly':
-    r_units = 3
+    r_units = 6 # was 3
 
 df_site['Views rm'] = df_site['Views'].rolling(window=r_units, center=False).mean()
 # print(df_site.tail(1))
